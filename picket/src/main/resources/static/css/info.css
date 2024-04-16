@@ -167,6 +167,8 @@ dt {
 }
 .rn-01 {
   overflow:hidden;
+
+  margin-top: 100px;
 }
 .rn-01 .rn-location {
   float: left;
