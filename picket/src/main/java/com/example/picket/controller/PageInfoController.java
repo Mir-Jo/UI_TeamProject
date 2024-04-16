@@ -24,6 +24,14 @@ public class PageInfoController {
     @GetMapping("/worldtour")
     public String gotoworldtour(){return "/category/Concert/worldtour";}
 
+
+
+    /*musical_info*/
+
+    /*act_info*/
+
+    /*classic_info*/
+
     /* 라 트라비아타 이동 */
     @GetMapping("/LaTraviata")
     public String gotoLaTraviata() {
@@ -35,14 +43,6 @@ public class PageInfoController {
     public String gotoMaxim() {
         return "/category/Classic/Maxim";
     }
-
-
-
-    /*musical_info*/
-
-    /*act_info*/
-
-    /*classic_info*/
 
     /*exhibit_info*/
 }
