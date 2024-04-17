@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" type="text/css" href="../css/info.css">
   <title>info</title>
 </head>
@@ -46,7 +46,7 @@
       </div>
       <div class="rn-03-right">
         <div class="rn-product-area1">
-          <div>
+          <dl>
             <dt>등급</dt>
             <dd>&nbsp;전체관람</dd>
             <dt>관람시간</dt>
@@ -57,11 +57,44 @@
             <dd>스탠딩석 66,000원</dd>
             <dt>혜택</dt>
             <dd><button>사용가능쿠폰</button></dd>
-          </div>
+         </div>
             <dt>공연시간 안내</dt>
             <dd>&nbsp;&nbsp;&nbsp;2024년 4월20일(토) 오후 7시</dd>
             <dt>배송정보</dt>
             <dd>현장 수령만 가능</dd>
+          <div class="calendar-boxbox">
+            <div class="calendar-tit1">날짜/시간선택</div>
+            <div class="calendar-tit2"></div>
+            <div class="calendar-box">
+
+              <div class="calendar-container">
+                <div class="calendar-header">
+                  <button id="prevBtn">이전</button>
+                  <h2 id="currentMonth"></h2>
+                  <button id="nextBtn">다음</button>
+                </div>
+                <div>
+                  <div class="calendar-days">
+                    <div class="day" style="color:red;">일</div>
+                    <div class="day">월</div>
+                    <div class="day">화</div>
+                    <div class="day">수</div>
+                    <div class="day">목</div>
+                    <div class="day">금</div>
+                    <div class="day" style="color:blue;">토</div>
+                  </div>
+                  <div class="calendar-dates" id="calendarDates"></div>
+
+                </div>
+
+                <script src="../js/info.js"></script>
+              </div>
+            </div>
+          </div>
+          <div class="booking">
+            <button><b>예매하기</b></button>
+          </div>
+        </div>
           </dl>
           </div>
         </div>
@@ -72,9 +105,10 @@
     <div class="rn-03">
     <div class="rn-03-left">
   <div class="rn-product-social">
-    <img src="../image/info/heart.png">
-    <span>0</span>
-    <span>likes</span>
+      <div id="image-container">
+        <img src="../image/info/heart.png" alt="Image" onclick="changeImage()">
+        <span><b>찜하기</b></span>
+      </div>
     </div>
     </div>
   </div>
