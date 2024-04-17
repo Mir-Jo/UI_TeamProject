@@ -24,11 +24,67 @@ public class PageInfoController {
     @GetMapping("/worldtour")
     public String gotoworldtour(){return "/category/Concert/worldtour";}
 
+
+
     /*musical_info*/
+@GetMapping("/musical_paris.info")
+public String gotoMyPage() { return "/category/Musical/paris";}
+
 
     /*act_info*/
+    @GetMapping("/musicalTheaterCarolInfo")
+    public String musicalTheaterCarol(){
+        return "/category/Act/musicalTheaterCarol";
+    }
+
+    @GetMapping("/theaterCloserInfo")
+    public String theaterCloser(){
+        return "/category/Act/theaterCloser";
+    }
+
+    @GetMapping("/theaterHangOverInfo")
+    public String theaterHangOver(){
+        return "/category/Act/theaterHangOver";
+    }
+
+    @GetMapping("/theaterHerzKlangInfo")
+    public String theaterHerzKlang(){
+        return "/category/Act/theaterHerzKlang";
+    }
+
+    @GetMapping("/theaterHeungSinSoInfo")
+    public String theaterHeungSinSo(){
+        return "/category/Act/theaterHeungSinSo";
+    }
+
+    @GetMapping("/theaterInHellInfo")
+    public String theaterInHell(){
+        return "/category/Act/theaterInHell";
+    }
+
+    @GetMapping("/theaterPSpartnerInfo")
+    public String theaterPSpartner(){
+        return "/category/Act/theaterPSpartner";
+    }
+
+    @GetMapping("/theaterRainbowInfo")
+    public String theaterRainbow(){
+        return "/category/Act/theaterRainbow";
+    }
 
     /*classic_info*/
+
+    /* 라 트라비아타 이동 */
+    @GetMapping("/LaTraviata")
+    public String gotoLaTraviata() {
+        return "/category/Classic/LaTraviata";
+    }
+
+    /* 막심 벤게로프 이동 */
+    @GetMapping("/Maxim")
+    public String gotoMaxim() {
+        return "/category/Classic/Maxim";
+    }
 
     /*exhibit_info*/
 }
