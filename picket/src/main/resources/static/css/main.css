@@ -265,75 +265,10 @@ padding:20px;
 input[id *="answer"]:checked + label +div{max-height: 100px;}
 input[id *="answer"]:checked + label em{background-position: 0 -30px;}
 
-/* 풋터 클래스 */
-footer{
-  background-color: #e0dcdc;
-  padding-bottom: 1%;
-  
-}
-.footer-side{
-  padding-left: 40px;
-  height: 15% auto;
-}
-#foot-top{
-  padding-top:  10px;
-}
-#foot-top>a{
-color:#7e7b7b; 
-font-size: 15px;
-padding: 10px 15px;
-width: 50%; 
 
-}
-.footer-side>div span{
-  color:#7e7b7b; 
-  font-size: 15px;
-  /* padding:   */
-}
-
-#footer-left{
-  float: inline-end;
-  padding: 0 10% ;
-}
 
 .image-wrap img, .image-wrap2 img{
   border-radius: 20px;
 }
 
 
-
-/*테스트*/
-.test{
-  position: relative; 
-  overflow-y: auto;
-  overflow-x: hidden;
-  z-index: 1;
-  background-color: rgba(0, 0, 0, 0);
-}
-
-.blank{
-  height: 100vh;
-  width: 100vw;
-}
-
-header{
-  z-index: 100; 
-  position: fixed; 
-  top: 0; 
-  left: 0;
-  width: 100%;
-}
-
-body{
-  background-color: #ffffff;
-  width: 1900px;
-  overflow-x: hidden;
-}
-
-video{
-  transition: all 0.1s;
-  position: fixed;
-  top: 0;
-  left: 0;
-  object-fit: cover;
-}

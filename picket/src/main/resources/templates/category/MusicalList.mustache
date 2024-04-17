@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--    <link rel="stylesheet" href="../css/owl.carousel.css">-->
+    <link rel="stylesheet" href="../css/owl.carousel.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/products.css">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="/css/font.css">
     <title>뮤지컬</title>
-<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
-<!--    <script src="/js/owl.carousel.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
 </head>
 <body>
 <header>
@@ -33,55 +33,40 @@
     </div>
 </header>
 <main>
-<!--    <div class="container">-->
-<!--        <button class="customPrevBtn">&lt;</button>-->
-<!--        <div class="owl-carousel">-->
-<!--            <div class="item"><a href="#"><img src="/image/category/musical_mini/2024 뮤지컬 〈광염 소나타〉.jpg"></a></div>-->
-<!--            <div class="item"><a href="#"><img src="/image/category/musical_mini/뮤지컬 디아길레프.jpg"></a></div>-->
-<!--            <div class="item"><a href="#"><img src="/image/category/musical_mini/뮤지컬 디어 에반 핸슨 （Dear Evan Hansen）.jpg"></a></div>-->
-<!--            <div class="item"><a href="#"><img src="/image/category/musical_mini/뮤지컬 〈넥스트 투 노멀〉.jpg"></a></div>-->
-<!--            <div class="item"><a href="#"><img src="/image/category/musical_mini/뮤지컬 〈파가니니〉.jpg"></a></div>-->
-<!--        </div>-->
-<!--        <button class="customNextBtn">&gt;</button>-->
-<!--    </div>-->
-<!--    <script type="text/javascript">-->
-<!--        $(document).ready(function(){-->
-<!--            var owl = $('.owl-carousel');-->
-
-<!--            owl.owlCarousel({-->
-<!--                items:3,-->
-<!--                loop:true,-->
-<!--                margin:60,-->
-<!--                autoplay:true,-->
-<!--                autoplayTimeout:5000,-->
-<!--                autoplayHoverPause:true,-->
-<!--                center:true-->
-<!--            });-->
-
-<!--            $('.customNextBtn').click(function() {-->
-<!--                owl.trigger('next.owl.carousel');-->
-<!--            })-->
-
-<!--            $('.customPrevBtn').click(function() {-->
-<!--                owl.trigger('prev.owl.carousel', [300]);-->
-<!--            })-->
-<!--        });-->
-<!--    </script>-->
     <div class="container">
-        <div class="button_box">
-            <button class="prevBtn">&lt;</button>
-            <button class="nextBtn">&gt;</button>
+        <button class="customPrevBtn">&lt;</button>
+        <div class="owl-carousel">
+            <div class="item"><a href="#"><img src="/image/category/musical_mini/2024 뮤지컬 〈광염 소나타〉.jpg"></a></div>
+            <div class="item"><a href="#"><img src="/image/category/musical_mini/뮤지컬 디아길레프.jpg"></a></div>
+            <div class="item"><a href="#"><img src="/image/category/musical_mini/뮤지컬 디어 에반 핸슨 （Dear Evan Hansen）.jpg"></a></div>
+            <div class="item"><a href="#"><img src="/image/category/musical_mini/뮤지컬 〈넥스트 투 노멀〉.jpg"></a></div>
+            <div class="item"><a href="#"><img src="/image/category/musical_mini/뮤지컬 〈파가니니〉.jpg"></a></div>
         </div>
-        <div class="item_box">
-            <div class="item"><a href="#"><img src="../image/category/musical_mini/뮤지컬 〈파가니니〉.jpg"></a></div>
-            <div class="item"><a href="#"><img src="../image/category/musical_mini/2024 뮤지컬 〈광염 소나타〉.jpg"></a></div>
-            <div class="item"><a href="#"><img src="../image/category/musical_mini/뮤지컬 디아길레프.jpg"></a></div>
-            <div class="item center"><a href="#"><img src="../image/category/musical_mini/뮤지컬 디어 에반 핸슨 （Dear Evan Hansen）.jpg"></a></div>
-            <div class="item"><a href="#"><img src="../image/category/musical_mini/뮤지컬 〈넥스트 투 노멀〉.jpg"></a></div>
-            <div class="item"><a href="#"><img src="../image/category/musical_mini/뮤지컬 〈파가니니〉.jpg"></a></div>
-            <div class="item"><a href="#"><img src="../image/category/musical_mini/2024 뮤지컬 〈광염 소나타〉.jpg"></a></div>
-        </div>
+        <button class="customNextBtn">&gt;</button>
     </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var owl = $('.owl-carousel');
+
+            owl.owlCarousel({
+                items:3,
+                loop:true,
+                margin:60,
+                autoplay:true,
+                autoplayTimeout:5000,
+                autoplayHoverPause:true,
+                center:true
+            });
+
+            $('.customNextBtn').click(function() {
+                owl.trigger('next.owl.carousel');
+            })
+
+            $('.customPrevBtn').click(function() {
+                owl.trigger('prev.owl.carousel', [300]);
+            })
+        });
+    </script>
     <div class="product_list">
         <h1>작품 목록</h1>
         <hr>
@@ -103,6 +88,5 @@
 </main>
 <footer>
 </footer>
-<script src="../js/carouselTest.js"></script>
 </body>
 </html>
