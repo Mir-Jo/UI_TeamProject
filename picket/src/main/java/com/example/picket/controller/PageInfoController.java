@@ -26,9 +26,33 @@ public class PageInfoController {
 
 
 
+
     /*musical_info*/
+
 @GetMapping("/musical_paris.info")
-public String gotoMyPage() { return "/category/Musical/paris";}
+public String paris() { return "/category/Musical/paris";}
+
+@GetMapping("/musical_touching.info")
+public String touching() { return "/category/Musical/touching";}
+
+@GetMapping("/musical_dia.info")
+public String dia() { return "/category/Musical/디아길레프";}
+
+@GetMapping("/musical_dear.info")
+public String dear() { return "/category/Musical/dear";}
+
+@GetMapping("/musical_bear.info")
+public String bear() { return "/category/Musical/bear";}
+
+//@GetMapping("/musical_paris.info")
+//public String gotoMyPage() { return "/category/Musical/paris";}
+//
+//@GetMapping("/musical_paris.info")
+//public String gotoMyPage() { return "/category/Musical/paris";}
+//
+//@GetMapping("/musical_paris.info")
+//public String gotoMyPage() { return "/category/Musical/paris";}
+
 
 
     /*act_info*/
@@ -84,6 +108,58 @@ public String gotoMyPage() { return "/category/Musical/paris";}
     @GetMapping("/Maxim")
     public String gotoMaxim() {
         return "/category/Classic/Maxim";
+    }
+
+    /* 백조의 호수 이동 */
+    @GetMapping("/Swan")
+    public String gotoSwan() {
+        return "/category/Classic/Swan";
+    }
+
+    /* 존 윌리엄스 이동 */
+    @GetMapping("/JohnWilliams")
+    public String gotoJohnWilliams() {
+        return "/category/Classic/JohnWilliams";
+    }
+
+    /* 한여름밤의 꿈 이동 */
+    @GetMapping("/MidsummerNight")
+    public String gotoMidsummerNight() {
+        return "/category/Classic/MidsummerNight";
+    }
+
+    /* 드뷔시 이동 */
+    @GetMapping("/Debussy")
+    public String gotoDebussy() {
+        return "/category/Classic/Debussy";
+    }
+
+    /* 지브리 이동 */
+    @GetMapping("/GhiBli")
+    public String gotoGhiBli() {
+        return "/category/Classic/GhiBli";
+    }
+
+    /*띵훈좌 이동 */
+    @GetMapping("/Jung")
+    public String gotoJung() {
+        return "/category/Classic/Jung";
+    }
+
+    /* 해리포터 이동 */
+    @GetMapping("/Harry")
+    public String gotoHarry() {
+        return "/category/Classic/Harry";
+    }
+    /* 상단 일무 이동*/
+    @GetMapping("/OneMu")
+    public String gotoOneMu() {
+        return "/category/Classic/OneMu";
+    }
+    /* 상단 유키 이동 */
+    @GetMapping("/Yuki")
+    public String gotoYuki() {
+        return "/category/Classic/Yuki";
     }
 
     /*exhibit_info*/
