@@ -29,6 +29,8 @@ public class PageInfoController {
     /*musical_info*/
 @GetMapping("/musical_paris.info")
 public String gotoMyPage() { return "/category/Musical/paris";}
+
+
     /*act_info*/
     @GetMapping("/musicalTheaterCarolInfo")
     public String musicalTheaterCarol(){
