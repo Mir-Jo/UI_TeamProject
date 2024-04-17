@@ -35,6 +35,7 @@ public class PageInfoController {
     /* 라 트라비아타 이동 */
     @GetMapping("/LaTraviata")
     public String gotoLaTraviata() {
+
         return "/category/Classic/LaTraviata";
     }
 
@@ -42,6 +43,30 @@ public class PageInfoController {
     @GetMapping("/Maxim")
     public String gotoMaxim() {
         return "/category/Classic/Maxim";
+    }
+    @GetMapping("/Swan")
+    public String gotoSwan() {
+        return "/category/Classic/Swan";
+    }
+    @GetMapping("/JohnWilliams")
+    public String gotoJohnWilliams() {
+        return "/category/Classic/JohnWilliams";
+    }
+    @GetMapping("/MidsummerNight")
+    public String gotoMidsummerNight() {
+        return "/category/Classic/MidsummerNight";
+    }
+    @GetMapping("/Debussy")
+    public String gotoDebussy() {
+        return "/category/Classic/Debussy";
+    }
+    @GetMapping("/GhiBli")
+    public String gotoGhiBli() {
+        return "/category/Classic/GhiBli";
+    }
+    @GetMapping("/Jung")
+    public String gotoJung() {
+        return "/category/Classic/Jung";
     }
 
     /*exhibit_info*/
