@@ -1,85 +1,92 @@
+*{padding:0;margin:0}
   ul,ol{list-style:none}
-  a{text-decoration:none;color:#fff; font-size:20px;}
-  nav{width:80%;overflow:hidden;height:70px;background-color:#000000;}
-  button{
-    cursor: pointer;
-  }
+  a{text-decoration:none;color:#fff;}
+  nav{width:80%;overflow:hidden;height:80px;background-color:#000000;margin:0px auto}
   #nav1 {
     width: 100%;
     position: relative;
-    display:flex;
-    justify-content: center;
+    text-align: center;
   }
 
   .top-main-bg{
     background-color:#000000;
   }
+
+
   #nav1_text{
     font-size:15px;
   }
   #nav1>a {
+    line-height: 70px;
     display: block;
-    font-size: 50px;
+    font-weight: 900;
     position: absolute;
-    left: 10px;
+    left: 30px;
   }
-
-
-
+  #search {
+    padding: 0 20px;
+    height: 30px;
+    background-color: #000000;
+    color: #fff;
+    position: absolute;
+    right: 200px;
+    top: 50%;
+    transform: translateY(-15px);   
+  }
+  #searchicon{
+    position:absolute;
+    top:30%;
+    right:16%;
+  }
+  #mypage{
+    padding: 0 20px;
+    height: 30px;
+    background-color: #000000;
+    color: #fff;
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-15px);  
+  }
+  #login{
+    padding: 0 20px;
+    height: 30px;
+    background-color: #000000;
+    color: #fff;
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-15px);
+  }
+  #nav1 > a > img{
+    width:200px;
+    height:90px;
+  }
   #nav1>ul {
     display: inline-block;
   }
   #nav1>ul li {
-    font-family: 'wind';
-    font-weight: 500;
     float: left;
-    line-height: 60px;
+    line-height: 80px;
     padding: 0 30px;
   }
   #nav2{
     float:left;
   }
-  #login{
-    position:absolute;
-    top:15px;
-    right:10%;
-  }
-  #callcenter{
-    position:absolute;
-    top:14px;
-    right:4.5%;
-  }
-  #my{
-    position: absolute;
-    top:10px;
-    right:7%;
-  }
-/* 네이게이션 끝 */
 
+
+/* 
 main{
+  margin-bottom:20%;
+} */
 
-  background-color:rgb(238, 245, 253);
-}
-
-/* 제목 */
 .mypagemain_titlename h2{
-  margin: 1px 35% 0%;
-
-
+  margin:3% 35% 1%;
   padding:2% 0;
-
-  text-align: center;
-
-  border:5px solid rgb(129, 131, 224);
-  border-radius:25%;
+  text-align:center;
+  border-top:1px solid black;
+  border-bottom:1px solid black;
 }
-
-/* 포인트 제목 아래 마진 */
-.scroll4{
-  margin-bottom:29.594px;
-}
-
-/* 구분선 */
 .underline{
   width:59%;
   margin:auto;
@@ -99,24 +106,23 @@ main{
     float: left;
     clear: left;
   }
-
-  #mypagemain_expand-menu {
+ 
+  #mypagemain_expand-menu { /* 체크박스 폼 요소 감춤 */
     display: none;
   }
-  #mypagemain_expand-menu:checked ~ ul {
+  #mypagemain_expand-menu:checked ~ ul { /* 체크박스 체크되었으면 메뉴 목록 표시 - 반응형 표시용 */
     display: block;
     height: auto;
   }
   .mypagemain_menu {
     display: block;
-    width:180px;
-    height: 300px ;
-    background-color: rgb(129, 131, 224);
-    margin-top: 5%;
-    color: #fff;
-    border-radius: 10%;
-    /* border-bottom-right-radius: 10%; */
-
+    width:150px;
+    background-color: #000;
+    color: #fff;  
+    border-top-right-radius: 15%;
+    border-bottom-right-radius: 15%;
+    margin-top:0%;
+    margin-bottom:50%;
     padding: 0%;
     box-sizing: border-box;
     position:fixed;
@@ -135,140 +141,54 @@ main{
     text-decoration: none;
   }
   .mypagemain_menu ul li:hover, .mypagemain_menu > label:hover, .mypagemain_menu a:hover {
-    color: #292470;
-
+    color: #5a4949;
+  
   }
-
+  
   .mypagemain_menu div {
-    font-family: 'wind';
-    font-weight: 800;
     left: 50px;
-    line-height: 3.5;
-    font-size: 20px;
+    line-height: 1.5;
+    font-size: 1em;
     font-family: 'Noto Sans KR';
     padding:0 0 0 20px;
-  }
-/* 사이드바 끝 */
-
-/* 테이블 박스 */
-  .mypagemain_listmain{
-    flex:1;
-    display:flex;
-    justify-content: center;
-  }
-  .mypagemain_listmain > table{
-
-    border-collapse: collapse;
-    text-align:center;
-
-    width:60%;
-    height:100%;
-
-  }
-  .mypagemain_tablehead , .mypagemain_tablebody {
-    border-bottom:2px solid rgb(129, 131, 224);
-    font-weight: bold;
-  }
-  .mypagemain_listmain td{
-    padding:2% 3%;
-  }
-  .mypagemain_checkbox_width{
-    padding:1% 3%;
-  }
-  .mypagemain_tablehead{
-    background-color:rgb(129, 131, 224); opacity: 0.8;
-    padding:20px;
-    color:white;
-    font-size:18px;
-  }
-
-
-  .mypagemain_ticketnum button{
-    width:20%;
-
-  }
-  .mypagemain_spacetable{
-    border-bottom:0px;
-    padding-bottom:7%;
-  }
-  .mypagemain_pageleft, .mypagemain_pageright{
-    padding:5px 10px;
-  }
-
-  .mypagemain_pagenum{
-   text-align:center;
-  }
-  .mypagemain_tablesum{
-
-    background-color:rgba(90, 91, 92, 0.774); opacity: 0.8;
-  }
-
-  .mypagemain_tablebutton{
-    text-align:right;
-
-  }
-
-  .mypagemain_buttons{
-    padding:10px 20px;
-    border-radius:20%;
-    border:0;
-    background-color:rgb(129, 131, 224);
-    text-align:right;
-    color:#fff;
-  }
-  .mypagemain_buttons:hover{
-    background-color:rgb(69, 72, 209);
-    color:#000000;
-  }
-  .mypagemain_select_tr{
-    background-color:rgb(238, 245, 253);
-
-  }
-
-  .mypagemain_select_th div{
-    padding:2%;
-    text-align:left;
-  }
-
-
-  .mypagemain_tablehead{
-    background-color:rgb(129, 131, 224); opacity: 0.8;
-    padding:20px;
-    color:white;
-    font-size:18px;
+     /* 패딩 20p로 축소 */
   }
   .mypa{
     display:flex;
     justify-content: center;
-    margin-top:40px;
   }
   .mypageplace{
+<<<<<<< HEAD
+    background-color:rgb(129, 131, 224);
+    width:60%;
+    height:250px;
+=======
     background: rgb(0,41,250);
     background: radial-gradient(circle, rgba(0,41,250,0.8239670868347339) 24%, rgba(42,45,44,0.8687850140056023) 74%);
     margin-top:30px;
     width:100%;
     height:200px;
+>>>>>>> 448c51c2ca3cb56135d3c94e766ec816c8728961
     display:flex;
-    font-size:20px;
-    justify-content: space-around;
+    font-size:35px;
+    justify-content: space-between;
   }
   .mypageimgtext{
     display:flex;
-    margin-left:300px;
+    padding-left:50px;
+    
     align-items: center;
     width:30%;
   }
   #userimage{
     background-color:rgb(87, 118, 153);
     width:80%;
-
+    
   }
   .mypagelist{
     display:flex;
     font-size:25px;
     align-items:center;
-    margin-right:150px;
-
   }
   .mypagelist_right_border{
     border-right:2px solid #ffffff;
@@ -282,35 +202,32 @@ main{
   .mypagelist_count{
     font-size:15px;
   }
-
   #userimage > img{
     border-radius: 50%;
     width:80%;
-
+    
   }
   .usernicknamebox{
     width:300px;
-
+    
   }
   .usernickname{
-    font-family: 'wind';
-    font-weight:800;
-    font-size:60px  ;
+    font-size:50px;
   }
   .mypagekind{
     display:flex;
     justify-content: center;
     align-items: center;
-
+    
   }
-
+  
 
 
 
   /* 푸터 */
   footer{
-
-    background-color:#fff;
+  
+    background-color:#9e9c9c;
     
   }
   
