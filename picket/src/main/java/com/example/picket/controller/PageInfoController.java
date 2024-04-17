@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class PageInfoController {
     /*concert_info*/
-    @GetMapping("season")
+    @GetMapping("/season")
     public String gotoseason(){return "/category/Concert/season";}
     @GetMapping("/beautiful")
     public String gotobeautiful(){return "/category/Concert/beautiful";}
@@ -21,8 +21,8 @@ public class PageInfoController {
     public String gotoking(){return "/category/Concert/king";}
     @GetMapping("/glow")
     public String gotoglow(){return "/category/Concert/glow";}
-    @GetMapping("/worldtour")
-    public String gotoworldtour(){return "/category/Concert/worldtour";}
+    @GetMapping("/hipho")
+    public String gotoworldtour(){return "/category/Concert/hipho";}
 
 
 
