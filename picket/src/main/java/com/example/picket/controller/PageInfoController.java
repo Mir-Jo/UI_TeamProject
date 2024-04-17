@@ -28,7 +28,28 @@ public class PageInfoController {
 
     /*musical_info*/
 @GetMapping("/musical_paris.info")
-public String gotoMyPage() { return "/category/Musical/paris";}
+public String paris() { return "/category/Musical/paris";}
+
+@GetMapping("/musical_touching.info")
+public String touching() { return "/category/Musical/touching";}
+
+@GetMapping("/musical_dia.info")
+public String dia() { return "/category/Musical/디아길레프";}
+
+@GetMapping("/musical_dear.info")
+public String dear() { return "/category/Musical/dear";}
+
+@GetMapping("/musical_bear.info")
+public String bear() { return "/category/Musical/bear";}
+
+//@GetMapping("/musical_paris.info")
+//public String gotoMyPage() { return "/category/Musical/paris";}
+//
+//@GetMapping("/musical_paris.info")
+//public String gotoMyPage() { return "/category/Musical/paris";}
+//
+//@GetMapping("/musical_paris.info")
+//public String gotoMyPage() { return "/category/Musical/paris";}
 
 
     /*act_info*/
