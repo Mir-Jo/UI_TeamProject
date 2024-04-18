@@ -23,7 +23,7 @@ public class PicketMainController {
     /* 로그인상태인 메인으로 이동 */
     @GetMapping("/loginmain")
     public String gotologinMain(){
-        return "/loginmain";
+        return "loginmain";
     }
 
     /* 고객센터로 이동 */
