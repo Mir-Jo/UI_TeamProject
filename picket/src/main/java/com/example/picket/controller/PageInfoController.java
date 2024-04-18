@@ -11,8 +11,8 @@ public class PageInfoController {
     public String gotoseason(){return "/category/Concert/season";}
     @GetMapping("/beautiful")
     public String gotobeautiful(){return "/category/Concert/beautiful";}
-    @GetMapping("/bobby")
-    public String gotobobby(){return "/category/Concert/bobby";}
+    @GetMapping("/lovesome")
+    public String gotolovesome(){return "/category/Concert/lovesome";}
     @GetMapping("/boys")
     public String gotoboys(){return "/category/Concert/boys";}
     @GetMapping("/daysix")
@@ -44,14 +44,14 @@ public String dear() { return "/category/Musical/dear";}
 @GetMapping("/musical_bear.info")
 public String bear() { return "/category/Musical/bear";}
 
-//@GetMapping("/musical_paris.info")
-//public String gotoMyPage() { return "/category/Musical/paris";}
-//
-//@GetMapping("/musical_paris.info")
-//public String gotoMyPage() { return "/category/Musical/paris";}
-//
-//@GetMapping("/musical_paris.info")
-//public String gotoMyPage() { return "/category/Musical/paris";}
+@GetMapping("/musical_next.info")
+public String next() { return "/category/Musical/next";}
+
+@GetMapping("/musical_here.info")
+public String here() { return "/category/Musical/here";}
+
+@GetMapping("/musical_violin.info")
+public String violin() { return "/category/Musical/violin";}
 
 
 
