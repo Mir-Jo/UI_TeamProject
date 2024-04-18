@@ -44,14 +44,14 @@ public String dear() { return "/category/Musical/dear";}
 @GetMapping("/musical_bear.info")
 public String bear() { return "/category/Musical/bear";}
 
-//@GetMapping("/musical_paris.info")
-//public String gotoMyPage() { return "/category/Musical/paris";}
-//
-//@GetMapping("/musical_paris.info")
-//public String gotoMyPage() { return "/category/Musical/paris";}
-//
-//@GetMapping("/musical_paris.info")
-//public String gotoMyPage() { return "/category/Musical/paris";}
+@GetMapping("/musical_next.info")
+public String next() { return "/category/Musical/next";}
+
+@GetMapping("/musical_here.info")
+public String here() { return "/category/Musical/here";}
+
+@GetMapping("/musical_violin.info")
+public String violin() { return "/category/Musical/violin";}
 
 
 
