@@ -83,12 +83,18 @@
     justify-content: center;
   }
   .mypageplace{
+<<<<<<< HEAD
+    background-color:rgb(129, 131, 224);
+    width:60%;
+    height:250px;
+=======
 
     background: rgb(0,41,250);
     background: radial-gradient(circle, rgba(0,41,250,0.8239670868347339) 24%, rgba(42,45,44,0.8687850140056023) 74%);
     margin-top:30px;
     width:100%;
     height:200px;
+>>>>>>> f489853cbc95fa3694632dc79e9e278ed52e6668
     display:flex;
     font-size:35px;
     justify-content: space-between;
