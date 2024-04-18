@@ -11,8 +11,8 @@ public class PageInfoController {
     public String gotoseason(){return "/category/Concert/season";}
     @GetMapping("/beautiful")
     public String gotobeautiful(){return "/category/Concert/beautiful";}
-    @GetMapping("/bobby")
-    public String gotobobby(){return "/category/Concert/bobby";}
+    @GetMapping("/lovesome")
+    public String gotolovesome(){return "/category/Concert/lovesome";}
     @GetMapping("/boys")
     public String gotoboys(){return "/category/Concert/boys";}
     @GetMapping("/daysix")
