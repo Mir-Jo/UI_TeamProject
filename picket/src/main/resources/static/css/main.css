@@ -272,3 +272,36 @@ input[id *="answer"]:checked + label em{background-position: 0 -30px;}
 }
 
 
+/*테스트*/
+.test{
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.blank{
+  height: 100vh;
+  width: 100vw;
+}
+
+header{
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+body{
+  background-color: #ffffff;
+}
+
+video{
+  transition: all 0.1s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
