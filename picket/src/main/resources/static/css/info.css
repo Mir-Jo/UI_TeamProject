@@ -178,8 +178,11 @@ dt {
 }
 .rn-01 {
   overflow:hidden;
+<<<<<<< HEAD
+=======
 
   margin-top: 50px;
+>>>>>>> f489853cbc95fa3694632dc79e9e278ed52e6668
 }
 .rn-01 .rn-location {
   float: left;
@@ -391,6 +394,8 @@ dt {
 }
 .rn-04 a.on {
   border-top: 3px solid orange;
+  color:#000;
+  font-size:15px;
 }
 .on {
   border-right:2px solid #9e9696cc;
@@ -426,6 +431,7 @@ text-align: center;
 margin-top: 20px;
 margin-bottom: 20px;
 }
+
 .rn-05 > div {
   font-size: 30px;
   font-weight: bold;
