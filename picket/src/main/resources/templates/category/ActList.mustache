@@ -35,32 +35,16 @@
 </header>
 <main>
     <div class="container">
-        <div class="button_box">
-            <button class="prevBtn">&lt;</button>
-            <button class="nextBtn">&gt;</button>
+        <button class="customPrevBtn">&lt;</button>
+        <div class="owl-carousel">
+            <div class="item"><a href="#"><img src="/image/category/act_mini/사이먼 스톤 연출 ‘벚꽃동산’.jpg"></a></div>
+            <div class="item"><a href="#"><img src="/image/category/act_mini/연극 한뼘사이.jpg"></a></div>
+            <div class="item"><a href="#"><img src="/image/category/act_mini/연극 〈바스커빌 셜록홈즈 미스터리〉.jpg"></a></div>
+            <div class="item"><a href="#"><img src="/image/category/act_mini/연극 〈클로저〉.jpg"></a></div>
+            <div class="item"><a href="#"><img src="/image/category/act_mini/연극 〈헤르츠클란〉.jpg"></a></div>
         </div>
-        <div class="item_box">
-            <div class="item"><a href="#"><img src="../image/category/act_mini/연극 〈헤르츠클란〉.jpg"></a></div>
-            <div class="item"><a href="#"><img src="../image/category/act_mini/사이먼 스톤 연출 ‘벚꽃동산’.jpg"></a></div>
-            <div class="item"><a href="#"><img src="../image/category/act_mini/연극 [한뼘사이].jpg"></a></div>
-            <div class="item center"><a href="#"><img src="../image/category/act_mini/연극 〈바스커빌 셜록홈즈 미스터리〉.jpg"></a></div>
-            <div class="item"><a href="#"><img src="../image/category/act_mini/연극 〈클로저〉.jpg"></a></div>
-            <div class="item"><a href="#"><img src="../image/category/act_mini/연극 〈헤르츠클란〉.jpg"></a></div>
-            <div class="item"><a href="#"><img src="../image/category/act_mini/사이먼 스톤 연출 ‘벚꽃동산’.jpg"></a></div>
-        </div>
+        <button class="customNextBtn">&gt;</button>
     </div>
-
-<!--    <div class="container">-->
-<!--        <button class="customPrevBtn">&lt;</button>-->
-<!--        <div class="owl-carousel">-->
-<!--            <div class="item"><a href="#"><img src="/image/category/act_mini/사이먼 스톤 연출 ‘벚꽃동산’.jpg"></a></div>-->
-<!--            <div class="item"><a href="#"><img src="/image/category/act_mini/연극 한뼘사이.jpg"></a></div>-->
-<!--            <div class="item"><a href="#"><img src="/image/category/act_mini/연극 〈바스커빌 셜록홈즈 미스터리〉.jpg"></a></div>-->
-<!--            <div class="item"><a href="#"><img src="/image/category/act_mini/연극 〈클로저〉.jpg"></a></div>-->
-<!--            <div class="item"><a href="#"><img src="/image/category/act_mini/연극 〈헤르츠클란〉.jpg"></a></div>-->
-<!--        </div>-->
-<!--        <button class="customNextBtn">&gt;</button>-->
-<!--    </div>-->
     <div class="product_list">
         <h1>작품 목록</h1>
         <hr>
@@ -82,29 +66,28 @@
 </main>
 <footer>
 </footer>
-<!--<script type="text/javascript">-->
-<!--    $(document).ready(function(){-->
-<!--        var owl = $('.owl-carousel');-->
+<script type="text/javascript">
+    $(document).ready(function(){
+        var owl = $('.owl-carousel');
 
-<!--        owl.owlCarousel({-->
-<!--            items:3,-->
-<!--            loop:true,-->
-<!--            margin:60,-->
-<!--            autoplay:true,-->
-<!--            autoplayTimeout:5000,-->
-<!--            autoplayHoverPause:true,-->
-<!--            center:true-->
-<!--        });-->
+        owl.owlCarousel({
+            items:3,
+            loop:true,
+            margin:60,
+            autoplay:true,
+            autoplayTimeout:5000,
+            autoplayHoverPause:true,
+            center:true
+        });
 
-<!--        $('.customNextBtn').click(function() {-->
-<!--            owl.trigger('next.owl.carousel');-->
-<!--        })-->
+        $('.customNextBtn').click(function() {
+            owl.trigger('next.owl.carousel');
+        })
 
-<!--        $('.customPrevBtn').click(function() {-->
-<!--            owl.trigger('prev.owl.carousel', [300]);-->
-<!--        })-->
-<!--    });-->
-<!--</script>-->
-<script src="../js/carouselTest.js"></script>
+        $('.customPrevBtn').click(function() {
+            owl.trigger('prev.owl.carousel', [300]);
+        })
+    });
+</script>
 </body>
 </html>
