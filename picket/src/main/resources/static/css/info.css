@@ -391,6 +391,8 @@ dt {
 }
 .rn-04 a.on {
   border-top: 3px solid orange;
+  color:#000;
+  font-size:15px;
 }
 .on {
   border-right:2px solid #9e9696cc;
@@ -426,6 +428,7 @@ text-align: center;
 margin-top: 20px;
 margin-bottom: 20px;
 }
+
 .rn-05 > div {
   font-size: 30px;
   font-weight: bold;
