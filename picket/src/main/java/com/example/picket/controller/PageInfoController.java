@@ -163,4 +163,28 @@ public String violin() { return "/category/Musical/violin";}
     }
 
     /*exhibit_info*/
+    @GetMapping("/banksy")
+    public String getbanksy(){
+        return "/category/Exhibit/banksy";}
+    @GetMapping("/ghibli")
+    public String getghibli(){
+        return "/category/Exhibit/ghibli";}
+    @GetMapping("/graffiti")
+    public String getgraffiti(){
+        return "/category/Exhibit/graffiti";}
+    @GetMapping("/india")
+    public String getindia(){
+        return "/category/Exhibit/india";}
+    @GetMapping("/osaka")
+    public String getosaka(){
+        return "/category/Exhibit/osaka";}
+    @GetMapping("/seoul")
+    public String getseoul(){
+        return "/category/Exhibit/seoul";}
+    @GetMapping("/todusk")
+    public String gettodusk(){
+        return "/category/Exhibit/todusk";}
+    @GetMapping("/unity")
+    public String getunity(){
+        return "/category/Exhibit/unity";}
 }

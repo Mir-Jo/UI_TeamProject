@@ -48,7 +48,7 @@
             </div>
             <div class="rn-03-right">
                 <div class="rn-product-area1">
-                    <div>
+                    <dl>
                         <dt>등급</dt>
                         <dd> 8세 이상 (미취학 아동 관람불가)</dd>
                         <dt>관람시간</dt>
@@ -59,6 +59,7 @@
                         <dd>자유석 88,000원</dd>
                         <dt>혜택</dt>
                         <dd><button>사용가능쿠폰</button></dd>
+                    </dl>
                 </div>
                 <dt>공연시간</dt>
                 <dd>화,수,목,금 7시 30분 / 주말,공휴일 2시 6시 30분/ 월 공연없음</dd>
@@ -67,27 +68,55 @@
                 <dd>* 5/7(화) 공연없음</dd>
                 <dt>배송정보</dt>
                 <dd>현장 수령만 가능</dd>
-                </dl>
+                <div class="calendar-boxbox">
+                    <div class="calendar-tit1">날짜/시간선택</div>
+                    <div class="calendar-tit2"></div>
+                    <div class="calendar-box">
+
+                        <div class="calendar-container">
+                            <div class="calendar-header">
+                                <button id="prevBtn">이전</button>
+                                <h2 id="currentMonth"></h2>
+                                <button id="nextBtn">다음</button>
+                            </div>
+                            <div>
+                                <div class="calendar-days">
+                                    <div class="day" style="color:red;">일</div>
+                                    <div class="day">월</div>
+                                    <div class="day">화</div>
+                                    <div class="day">수</div>
+                                    <div class="day">목</div>
+                                    <div class="day">금</div>
+                                    <div class="day" style="color:blue;">토</div>
+                                </div>
+                                <div class="calendar-dates" id="calendarDates"></div>
+
+                            </div>
+
+                            <script src="../js/info.js"></script>
+                        </div>
+                    </div>
+                </div>
+                <div class="booking">
+                    <button><b>예매하기</b></button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 <div class="renew-content">
     <div class="rn-03">
         <div class="rn-03-left">
             <div class="rn-product-social">
-                <img src="/image/info/heart.png">
-                <span>0</span>
-                <span>likes</span>
+                <div id="image-container">
+                    <img src="../image/info/heart.png" alt="Image" onclick="changeImage()">
+                    <span><b>찜하기</b></span>
+                </div>
             </div>
         </div>
     </div>
 </div>
 <div>
-    <div class="renew-content">
-        <input type="date">
-    </div>
     <div class="renew-content">
         <div class="rn-04">
             <a href="#scroll1" class="on">
@@ -193,12 +222,9 @@
                             각 상품별로 취소 정책이 다르게 적용될 수 있으니, 각 상품 안내 사항을 확인해주시기 바랍니다.</p>
                     </td>
                 </tr>
-
-
-
-            </table>
                 </tbody>
             </table>
+        </table>
             <div class="table_underline1"></div>
     </div>
 </div>
