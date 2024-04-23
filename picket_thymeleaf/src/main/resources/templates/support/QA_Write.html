@@ -66,19 +66,19 @@
         </div>
     <div id="buttons">
         <button id="QA_submit" type="submit">문의 등록</button>
-        <button id="QA_cancel" type="button">취소</button>
+        <a href="/support"><button id="QA_cancel" type="button" >취소</button></a>
     </div>
     </form>
     </div>
-    <script>
-      window.onload = function() {
-        var message = "{{#QAError}}{{QAError}}{{/QAError}}";
-            if(message){
-                alert(message);
-                message = null;
+    <script th:inline="javascript">
+        window.onload = function() {
+          var message = /*[[${QAError}]]*/ null;
+            if(message) {
+              alert(message);
             }
-      }
+        }
     </script>
+
 </main>
 <footer>
 </footer>
