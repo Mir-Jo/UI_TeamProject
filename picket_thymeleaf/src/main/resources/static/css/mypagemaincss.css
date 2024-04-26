@@ -19,8 +19,8 @@ main{
 /* 제목 */
 .mypagemain_titlename h2{
   font-family: 'wind';
-  font-size:40px;
-  margin: 1px 35% 0%;
+  font-size:45px;
+  margin: 40px 35% 0%;
   padding:2% 0;
   text-align: center;
 
@@ -80,21 +80,21 @@ main{
     padding: 0;
   }
   .mypagemain_menu a, .mypagemain_menu > label {
-
     display: block;
     font-family: 'sdgothic';
     font-weight: 800;
     left: 50px;
-    font-size: 35px;
+    font-size: 30px;
     height: 25px;
     padding: 8px;
-    margin: 20px 0;
+    margin: 31px 0;
     cursor: pointer;
     color: #fff;
     text-decoration: none;
   }
   .mypagemain_menu ul li:hover, .mypagemain_menu > label:hover, .mypagemain_menu a:hover {
-    color: #292470;
+    background-color:#fff;
+    color: #000000;
 
   }
 
@@ -114,11 +114,18 @@ main{
 
     width:60%;
     height:100%;
-
+  .mypagemain_listmain td :hover{
+    background-color:gray;
+  }
   }
   .mypagemain_tablehead , .mypagemain_tablebody {
-    border-bottom:2px solid #000000;
+    border-bottom:2px solid gray;
     font-weight: bold;
+
+  }
+  .mypagemain_tablebody a{
+    color:#000000;
+    font-size
   }
   .mypagemain_listmain td{
     padding:2% 3%;
@@ -144,6 +151,7 @@ main{
   }
   .mypagemain_pageleft, .mypagemain_pageright{
     padding:5px 10px;
+    border-radius:40px;
   }
 
   .mypagemain_pagenum{
@@ -156,7 +164,6 @@ main{
 
   .mypagemain_tablebutton{
     text-align:right;
-
   }
 
   .mypagemain_buttons{
@@ -176,10 +183,16 @@ main{
   }
   .mypagemain_select_tr{
     background-color:#fff;
-
+  }
+  .mypagemain_select{
+    font-family:'wind';
+    font-weight:bold;
   }
 
   .mypagemain_select_th div{
+    font-family:'wind';
+    font-weight:bold;
+    font-size:20px;
     padding:2%;
     text-align:left;
   }
@@ -216,10 +229,16 @@ main{
     font-family:'wind';
     font-size:25px;
     align-items:center;
+  }
+  .mypagelist img{
 
+  }
+  .mypagelist a {
+  text-align:center;
   }
   .mypagelist div{
   margin: 0 10px;
+  font-size:22px;
   }
   .mypagelist_right_border{
     text-align:center;
@@ -245,7 +264,7 @@ main{
   .usernickname{
     font-family: 'wind';
     font-weight:800;
-    font-size:60px  ;
+    font-size:80px;
   }
   .mypagekind{
     display:flex;

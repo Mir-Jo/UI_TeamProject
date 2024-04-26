@@ -9,18 +9,20 @@
 
 
 
-
 main{
-
-  background-color: #eef5FD;
+  background-color: #fff;
 }
 
 .profile_titlename h2{
-
+  font-family:'wind';
+  font-size:40px;
   padding:2% 0;
   text-align:center;
-  border-top:1px solid black;
 
+}
+
+.mypagemain_menu{
+    margin-top:148px !important;
 }
   .profile_asta{
     padding-bottom:30px;
@@ -29,11 +31,8 @@ main{
     display:flex;
     justify-content: center;
     margin-top: 20px;
-
-
   }
   .profile_tablemain > table{
-
     border-collapse: collapse;
     border: 4px solid black;
     width:60%;
@@ -41,27 +40,32 @@ main{
   }
 
   .profile_table_td, .profile_solid_tr th{
-    border:1px solid #000;
+    border:1px solid #121212;
   }
+
   .profile_table_td{
     padding:3%;
     background-color:#fff;
 
   }
+
   .profile_table_space_td{
     padding:3%;
   }
-  .profile_tablemain th{
 
+  .profile_tablemain th{
+    font-family:'wind';
+    font-size:15px;
     width:15%;
     color:white;
-    background-color:rgb(129, 131, 224);
-
+    background-color:#121212;
     text-align:center;
   }
+
   .profile_spacetable td{
     background-color:rgb(255, 255, 255);
   }
+
   .profile_button1 {
     display:flex;
     justify-content: right;
@@ -69,18 +73,21 @@ main{
   }
 
   .profile_button1 button{
+    font-family: 'wind';
+    font-weight: 500;
     padding:10px 20px;
     margin-right:20px;
-    border-radius:20%;
-    border:0;
-    background-color:rgb(129, 131, 224);
+    border: 2px solid #000000;
+    border-radius:980px;
+    background-color:#fff;
     font-size:14px;
-    color:#fff;
+    color:#000000;
     cursor: pointer;
 
   }
   .profile_button1 :hover{
-    color:#000;
+    color:#fff;
+    background-color:#000000;
   }
   .profile_button1 a{
     font-size:14px !important;
