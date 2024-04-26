@@ -15,12 +15,10 @@ public class CustomerForm {
     private String name;
     private String birthdate;
     private String tel;
-    private Long card;
-    private Long balance;
     private Long point;
 
 
     public Customer toEntity(){
-        return new Customer(id, pass, email, name, birthdate, tel, card, 1000000L, 0L);
+        return new Customer(id, pass, email, name, birthdate, tel, 1000000L);
     }
 }

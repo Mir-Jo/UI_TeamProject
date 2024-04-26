@@ -8,7 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.ArrayList;
 
 
-public interface QARepository extends JpaRepository<QA, String> {
+public interface QARepository extends JpaRepository<QA, Long> {
     @Override
     ArrayList<QA> findAll();
 }
