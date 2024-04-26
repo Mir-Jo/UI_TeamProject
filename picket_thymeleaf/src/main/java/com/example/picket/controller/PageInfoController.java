@@ -8,21 +8,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class PageInfoController {
     /*concert_info*/
     @GetMapping("/season")
-    public String gotoseason(){return "/category/Concert/season";}
+    public String gotoseason(){return "/categories/Concert/season";}
     @GetMapping("/beautiful")
-    public String gotobeautiful(){return "/category/Concert/beautiful";}
+    public String gotobeautiful(){return "/categories/Concert/beautiful";}
     @GetMapping("/lovesome")
-    public String gotolovesome(){return "/category/Concert/lovesome";}
+    public String gotolovesome(){return "/categories/Concert/lovesome";}
     @GetMapping("/boys")
-    public String gotoboys(){return "/category/Concert/boys";}
+    public String gotoboys(){return "/categories/Concert/boys";}
     @GetMapping("/daysix")
-    public String gotodaysix(){return "/category/Concert/daysix";}
+    public String gotodaysix(){return "/categories/Concert/daysix";}
     @GetMapping("/king")
-    public String gotoking(){return "/category/Concert/king";}
+    public String gotoking(){return "/categories/Concert/king";}
     @GetMapping("/glow")
-    public String gotoglow(){return "/category/Concert/glow";}
+    public String gotoglow(){return "/categories/Concert/glow";}
     @GetMapping("/hipho")
-    public String gotoworldtour(){return "/category/Concert/hipho";}
+    public String gotoworldtour(){return "/categories/Concert/hipho";}
 
 
 
@@ -30,70 +30,70 @@ public class PageInfoController {
     /*musical_info*/
 
 @GetMapping("/musical_paris.info")
-public String paris() { return "/category/Musical/paris";}
+public String paris() { return "/categories/Musical/paris";}
 
 @GetMapping("/musical_touching.info")
-public String touching() { return "/category/Musical/touching";}
+public String touching() { return "/categories/Musical/touching";}
 
 @GetMapping("/musical_dia.info")
-public String dia() { return "/category/Musical/디아길레프";}
+public String dia() { return "/categories/Musical/디아길레프";}
 
 @GetMapping("/musical_dear.info")
-public String dear() { return "/category/Musical/dear";}
+public String dear() { return "/categories/Musical/dear";}
 
 @GetMapping("/musical_bear.info")
-public String bear() { return "/category/Musical/bear";}
+public String bear() { return "/categories/Musical/bear";}
 
 @GetMapping("/musical_next.info")
-public String next() { return "/category/Musical/next";}
+public String next() { return "/categories/Musical/next";}
 
 @GetMapping("/musical_here.info")
-public String here() { return "/category/Musical/here";}
+public String here() { return "/categories/Musical/here";}
 
 @GetMapping("/musical_violin.info")
-public String violin() { return "/category/Musical/violin";}
+public String violin() { return "/categories/Musical/violin";}
 
 
 
     /*act_info*/
     @GetMapping("/musicalTheaterCarolInfo")
     public String musicalTheaterCarol(){
-        return "/category/Act/musicalTheaterCarol";
+        return "/categories/Act/musicalTheaterCarol";
     }
 
     @GetMapping("/theaterCloserInfo")
     public String theaterCloser(){
-        return "/category/Act/theaterCloser";
+        return "/categories/Act/theaterCloser";
     }
 
     @GetMapping("/theaterHangOverInfo")
     public String theaterHangOver(){
-        return "/category/Act/theaterHangOver";
+        return "/categories/Act/theaterHangOver";
     }
 
     @GetMapping("/theaterHerzKlangInfo")
     public String theaterHerzKlang(){
-        return "/category/Act/theaterHerzKlang";
+        return "/categories/Act/theaterHerzKlang";
     }
 
     @GetMapping("/theaterHeungSinSoInfo")
     public String theaterHeungSinSo(){
-        return "/category/Act/theaterHeungSinSo";
+        return "/categories/Act/theaterHeungSinSo";
     }
 
     @GetMapping("/theaterInHellInfo")
     public String theaterInHell(){
-        return "/category/Act/theaterInHell";
+        return "/categories/Act/theaterInHell";
     }
 
     @GetMapping("/theaterPSpartnerInfo")
     public String theaterPSpartner(){
-        return "/category/Act/theaterPSpartner";
+        return "/categories/Act/theaterPSpartner";
     }
 
     @GetMapping("/theaterRainbowInfo")
     public String theaterRainbow(){
-        return "/category/Act/theaterRainbow";
+        return "/categories/Act/theaterRainbow";
     }
 
     /*classic_info*/
@@ -101,90 +101,90 @@ public String violin() { return "/category/Musical/violin";}
     /* 라 트라비아타 이동 */
     @GetMapping("/LaTraviata")
     public String gotoLaTraviata() {
-        return "/category/Classic/LaTraviata";
+        return "/categories/Classic/LaTraviata";
     }
 
     /* 막심 벤게로프 이동 */
     @GetMapping("/Maxim")
     public String gotoMaxim() {
-        return "/category/Classic/Maxim";
+        return "/categories/Classic/Maxim";
     }
 
     /* 백조의 호수 이동 */
     @GetMapping("/Swan")
     public String gotoSwan() {
-        return "/category/Classic/Swan";
+        return "/categories/Classic/Swan";
     }
 
     /* 존 윌리엄스 이동 */
     @GetMapping("/JohnWilliams")
     public String gotoJohnWilliams() {
-        return "/category/Classic/JohnWilliams";
+        return "/categories/Classic/JohnWilliams";
     }
 
     /* 한여름밤의 꿈 이동 */
     @GetMapping("/MidsummerNight")
     public String gotoMidsummerNight() {
-        return "/category/Classic/MidsummerNight";
+        return "/categories/Classic/MidsummerNight";
     }
 
     /* 드뷔시 이동 */
     @GetMapping("/Debussy")
     public String gotoDebussy() {
-        return "/category/Classic/Debussy";
+        return "/categories/Classic/Debussy";
     }
 
     /* 지브리 이동 */
     @GetMapping("/GhiBli")
     public String gotoGhiBli() {
-        return "/category/Classic/GhiBli";
+        return "/categories/Classic/GhiBli";
     }
 
     /*띵훈좌 이동 */
     @GetMapping("/Jung")
     public String gotoJung() {
-        return "/category/Classic/Jung";
+        return "/categories/Classic/Jung";
     }
 
     /* 해리포터 이동 */
     @GetMapping("/Harry")
     public String gotoHarry() {
-        return "/category/Classic/Harry";
+        return "/categories/Classic/Harry";
     }
     /* 상단 일무 이동*/
     @GetMapping("/OneMu")
     public String gotoOneMu() {
-        return "/category/Classic/OneMu";
+        return "/categories/Classic/OneMu";
     }
     /* 상단 유키 이동 */
     @GetMapping("/Yuki")
     public String gotoYuki() {
-        return "/category/Classic/Yuki";
+        return "/categories/Classic/Yuki";
     }
 
     /*exhibit_info*/
     @GetMapping("/banksy")
     public String getbanksy(){
-        return "/category/Exhibit/banksy";}
+        return "/categories/Exhibit/banksy";}
     @GetMapping("/ghibli")
     public String getghibli(){
-        return "/category/Exhibit/ghibli";}
+        return "/categories/Exhibit/ghibli";}
     @GetMapping("/graffiti")
     public String getgraffiti(){
-        return "/category/Exhibit/graffiti";}
+        return "/categories/Exhibit/graffiti";}
     @GetMapping("/india")
     public String getindia(){
-        return "/category/Exhibit/india";}
+        return "/categories/Exhibit/india";}
     @GetMapping("/osaka")
     public String getosaka(){
-        return "/category/Exhibit/osaka";}
+        return "/categories/Exhibit/osaka";}
     @GetMapping("/seoul")
     public String getseoul(){
-        return "/category/Exhibit/seoul";}
+        return "/categories/Exhibit/seoul";}
     @GetMapping("/todusk")
     public String gettodusk(){
-        return "/category/Exhibit/todusk";}
+        return "/categories/Exhibit/todusk";}
     @GetMapping("/unity")
     public String getunity(){
-        return "/category/Exhibit/unity";}
+        return "/categories/Exhibit/unity";}
 }
