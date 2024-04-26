@@ -1,22 +1,18 @@
 package com.example.picket.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.stereotype.Controller;
 
 import java.sql.Date;
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
-@Controller
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-public class Order {
+@Entity
+public class Payment {
     @Id
     private String ticket_id;
     @ManyToOne
@@ -25,7 +21,7 @@ public class Order {
     @Column(nullable = false)
     private Date perform_date;
     @Column(nullable = false)
-    private Timestamp pay_date;
+    private LocalDateTime pay_date;
     @Column(nullable = false)
     private Date cancel_date;
 }
