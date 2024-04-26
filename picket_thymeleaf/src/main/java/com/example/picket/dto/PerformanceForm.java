@@ -9,8 +9,9 @@ import lombok.ToString;
 public class PerformanceForm {
     private String title;
     private String place;
+    private String dates;
     private String category;
-    private Long tickets;
+    private Long price;
 
-    public Performance toEntity() { return new Performance(title,place,category,tickets);}
+    public Performance toEntity() { return new Performance(title,place,dates,category,price);}
 }

@@ -227,7 +227,7 @@
 </div>
 <div>
     <div class="scroll4" id="scroll4"><div class="map_location_name"><h2>찾아오시는길</h2><br></div></div>
-    <div class="map_location_name"><h3>중앙역</h3></div>
+    <div class="map_location_name"><h3>울산문화예술회관 대공연장</h3></div>
     <div class="map_location">경기 안산시 단원구 중앙대로 918</div>
 </div>
 <div class="map_location_underline"></div>
@@ -255,7 +255,7 @@
     </div>
 
 </footer>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=05678d2d4345b6c9447401cea1079ece"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9f14da32fd93dc01f17e4ef94b7ed3d1"></script>
 <script>
     var container = document.getElementById('map');
 
@@ -263,18 +263,18 @@
 </script>
 
 
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=발급받은 APP KEY를 사용하세요"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9f14da32fd93dc01f17e4ef94b7ed3d1"></script>
 <script>
     var mapContainer = document.getElementById('map'), // 지도를 표시할 div
         mapOption = {
-            center: new kakao.maps.LatLng(37.316370839865904, 126.8399283572091), // 지도의 중심좌표
+            center: new kakao.maps.LatLng(35.542958304429234, 129.32714836477552), // 지도의 중심좌표
             level: 3 // 지도의 확대 레벨
         };
 
     var map = new kakao.maps.Map(mapContainer, mapOption);
 
     // 마커가 표시될 위치입니다
-    var markerPosition  = new kakao.maps.LatLng(37.316370839865904, 126.8399283572091);
+    var markerPosition  = new kakao.maps.LatLng(35.542958304429234, 129.32714836477552);
 
     // 마커를 생성합니다
     var marker = new kakao.maps.Marker({
@@ -284,8 +284,8 @@
     // 마커가 지도 위에 표시되도록 설정합니다
     marker.setMap(map);
 
-    var iwContent = '<div style="padding:5px;text-align:center;">중앙역 <br><a href="https://map.kakao.com/link/map/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/Hello World!,37.316370839865904, 126.8399283572091" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-        iwPosition = new kakao.maps.LatLng(37.316370839865904, 126.8399283572091); //인포윈도우 표시 위치입니다
+    var iwContent = '<div style="padding:5px;text-align:center;">울산문화예술회관 대공연장<br><a href="https://map.kakao.com/link/map/울산문화예술회관 대공연장,35.542958304429234, 129.32714836477552" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/울산문화예술회관 대공연장,35.542958304429234, 129.32714836477552" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+        iwPosition = new kakao.maps.LatLng(35.542958304429234, 129.32714836477552); //인포윈도우 표시 위치입니다
 
     // 인포윈도우를 생성합니다
     var infowindow = new kakao.maps.InfoWindow({

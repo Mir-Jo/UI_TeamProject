@@ -18,23 +18,23 @@ import java.util.List;
 @Entity
 public class Customer implements UserDetails {
     @Id
-    @Column(name = "id")
+    @Column(name = "customer_id")
     private String id;
-    @Column(name = "password", nullable = false)
+    @Column(name = "customer_pw", nullable=false)
     private String password;
-    @Column(name = "email", nullable = false)
+    @Column(name = "customer_email", nullable = false)
     private String email;
-    @Column(name= "name", nullable = false)
+    @Column(name= "customer_name", nullable = false)
     private String name;
-    @Column(name = "birthdate", nullable = false)
+    @Column(name = "customer_birth", nullable = false)
     private String birthdate;
-    @Column(name="tel", unique = true, nullable = false)
+    @Column(name="customer_tel", unique = true, nullable = false)
     private String tel;
-    @Column(name = "point")
+    @Column(name = "customer_point")
     private Long point;
 
     @Builder
-    public Customer(String id, String password, String email, String name, String birthdate, String tel, Long card, Long balance, Long point){
+    public Customer(String id, String password, String email, String name, String birthdate, String tel, Long point){
         this.id = id;
         this.password = password;
         this.email = email;

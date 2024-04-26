@@ -574,6 +574,9 @@ tbody{
 #map{
   border:3px solid #9e9696cc;
 }
+#map div {
+  width:270px
+}
 .kakaoapi{
   display:flex;
   justify-content: center;

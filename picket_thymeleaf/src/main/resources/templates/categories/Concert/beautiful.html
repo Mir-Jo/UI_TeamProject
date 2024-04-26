@@ -37,6 +37,7 @@
     </div>
     <div class="rn-02">
         <p class="rn-big-title"><b>뷰티풀 민트 라이프 2024</b></p>
+
     </div>
     <span>2024.05.11 ~ 2024.05.12 | 올림픽공원 </span>
 
@@ -65,38 +66,38 @@
                 <dd>&nbsp;&nbsp;&nbsp;2024년 5월11일(토) ~ 12(일) 오후 12시</dd>
                 <dt>배송정보</dt>
                 <dd>현장 수령만 가능</dd>
-                <div class="calendar-boxbox">
-                    <div class="calendar-tit1">날짜/시간선택</div>
-                    <div class="calendar-tit2"></div>
-                    <div class="calendar-box">
+                    <div class="calendar-boxbox">
+                        <div class="calendar-tit1">날짜/시간선택</div>
+                        <div class="calendar-tit2"></div>
+                        <div class="calendar-box">
 
-                        <div class="calendar-container">
-                            <div class="calendar-header">
-                                <button id="prevBtn">이전</button>
-                                <h2 id="currentMonth"></h2>
-                                <button id="nextBtn">다음</button>
-                            </div>
-                            <div>
-                                <div class="calendar-days">
-                                    <div class="day" style="color:red;">일</div>
-                                    <div class="day">월</div>
-                                    <div class="day">화</div>
-                                    <div class="day">수</div>
-                                    <div class="day">목</div>
-                                    <div class="day">금</div>
-                                    <div class="day" style="color:blue;">토</div>
+                            <div class="calendar-container">
+                                <div class="calendar-header">
+                                    <button id="prevBtn">이전</button>
+                                    <h2 id="currentMonth"></h2>
+                                    <button id="nextBtn">다음</button>
                                 </div>
-                                <div class="calendar-dates" id="calendarDates"></div>
+                                <div>
+                                    <div class="calendar-days">
+                                        <div class="day" style="color:red;">일</div>
+                                        <div class="day">월</div>
+                                        <div class="day">화</div>
+                                        <div class="day">수</div>
+                                        <div class="day">목</div>
+                                        <div class="day">금</div>
+                                        <div class="day" style="color:blue;">토</div>
+                                    </div>
+                                    <div class="calendar-dates" id="calendarDates"></div>
 
+                                </div>
+
+                                <script src="../js/info.js"></script>
                             </div>
-
-                            <script src="../js/info.js"></script>
                         </div>
                     </div>
-                </div>
-                <div class="booking">
-                    <button><b>예매하기</b></button>
-                </div>
+                    <div class="booking">
+                            <button onclick="submit"><b>예매하기</b></button>
+                    </div>
             </div>
         </div>
     </div>
@@ -260,7 +261,7 @@
     </div>
 
 </footer>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=05678d2d4345b6c9447401cea1079ece"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9f14da32fd93dc01f17e4ef94b7ed3d1"></script>
 <script>
     var container = document.getElementById('map');
 
@@ -268,18 +269,18 @@
 </script>
 
 
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=발급받은 APP KEY를 사용하세요"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9f14da32fd93dc01f17e4ef94b7ed3d1"></script>
 <script>
     var mapContainer = document.getElementById('map'), // 지도를 표시할 div
         mapOption = {
-            center: new kakao.maps.LatLng(37.316370839865904, 126.8399283572091), // 지도의 중심좌표
+            center: new kakao.maps.LatLng(37.51792793637262, 127.11399047796081), // 지도의 중심좌표
             level: 3 // 지도의 확대 레벨
         };
 
     var map = new kakao.maps.Map(mapContainer, mapOption);
 
     // 마커가 표시될 위치입니다
-    var markerPosition  = new kakao.maps.LatLng(37.316370839865904, 126.8399283572091);
+    var markerPosition  = new kakao.maps.LatLng(37.51792793637262, 127.11399047796081);
 
     // 마커를 생성합니다
     var marker = new kakao.maps.Marker({
@@ -289,8 +290,8 @@
     // 마커가 지도 위에 표시되도록 설정합니다
     marker.setMap(map);
 
-    var iwContent = '<div style="padding:5px;text-align:center;">올림픽공원 <br><a href="https://map.kakao.com/link/map/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/Hello World!,37.316370839865904, 126.8399283572091" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-        iwPosition = new kakao.maps.LatLng(37.316370839865904, 126.8399283572091); //인포윈도우 표시 위치입니다
+    var iwContent = '<div style="padding:5px;text-align:center;">올림픽공원 <br><a href="https://map.kakao.com/link/map/올림픽공원,37.51792793637262, 127.11399047796081" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/올림픽공원,37.51792793637262, 127.11399047796081" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+        iwPosition = new kakao.maps.LatLng(37.51792793637262, 127.11399047796081); //인포윈도우 표시 위치입니다
 
     // 인포윈도우를 생성합니다
     var infowindow = new kakao.maps.InfoWindow({

@@ -15,12 +15,14 @@ import lombok.ToString;
 @ToString
 public class Performance {
     @Id
-    @Column(name="title")
+    @Column
     private String title;
-    @Column(name = "place", nullable = false)
+    @Column(nullable = false)
     private String place;
-    @Column(name = "category", unique = true, nullable = false)
+    @Column(nullable = false)
+    private String dates;
+    @Column(nullable = false)
     private String category;
-    @Column(name = "tickets", nullable = false)
-    private Long tickets;
+    @Column(nullable = false)
+    private Long price;
 }
