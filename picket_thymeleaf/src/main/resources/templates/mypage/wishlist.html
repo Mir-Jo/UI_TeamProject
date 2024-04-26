@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -37,13 +36,10 @@
 
                 <div>
                     <div class="usernicknamebox">
-                            <span class="usernickname">최부용</span>님<br>어서오세요
-                            <br>
-
+                        <span class="usernickname">최부용</span>님<br>어서오세요
+                        <br>
                     </div>
-
                 </div>
-
             </div>
             <div class="mypagelist">
                 <div class="mypagelist_right_border">예매내역<br><span><a href="/mypagemain">1</a></span></div>
@@ -68,12 +64,9 @@
         </ul>
     </div>
     <form>
-        </div>
-
         <div class="underline"></div>
-
         <!--<div class="listbox">-->
-        <div class="mypagemain_titlename"><h2>예매내역</h2></div>
+        <div class="mypagemain_titlename"><h2>찜목록</h2></div></div>
         <form>
             <div class="mypagemain_asta">
 
@@ -99,58 +92,50 @@
                             <th></th>
                             <th></th>
                         </tr>
-
                         <tr class="mypagemain_tablehead">
-                            <th class="mypagemain_checkbox_width"><input type="checkbox" name="mypagemain_ticket1" onclick='selectAll1(this)'></th>
-                            <th>예매 일자</th>
-                            <th>티켓 목록</th>
+                            <th class="mypagemain_checkbox_width"><input type="checkbox" name="mypagemain_ticket2" onclick='selectAll2(this)'></th>
                             <th>공연 일자</th>
-
-                            <th>개수</th>
+                            <th>티켓목록</th>
+                            <th>카테고리</th>
                             <th>가격</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr class="mypagemain_tablebody">
-                            <td><input type="checkbox" name="mypagemain_ticket1"></td>
+                            <td><input type="checkbox" name="mypagemain_ticket2"></td>
                             <td>2024-03-26</td>
                             <td>뮤지컬 물랑루즈</td>
-                            <td>2024-04-01</td>
-                            <td>1</td>
-                            <td>140000</td>
+                            <td>뮤지컬</td>
+                            <td>40000</td>
                         </tr>
                         <tr class="mypagemain_tablebody">
-                            <td><input type="checkbox" name="mypagemain_ticket1"></td>
+                            <td><input type="checkbox" name="mypagemain_ticket2"></td>
                             <td>2024-03-26</td>
                             <td>뮤지컬 물랑루즈</td>
-                            <td>2024-04-01</td>
-                            <td>1</td>
-                            <td>140000</td>
+                            <td>뮤지컬</td>
+                            <td>40000</td>
                         </tr>
                         <tr class="mypagemain_tablebody">
-                            <td><input type="checkbox" name="mypagemain_ticket1"></td>
+                            <td><input type="checkbox" name="mypagemain_ticket2"></td>
                             <td>2024-03-26</td>
                             <td>뮤지컬 물랑루즈</td>
-                            <td>2024-04-01</td>
-                            <td>1</td>
-                            <td>140000</td>
-                        </tr>
-                        <tr class="mypagemain_tablebody">
-                            <td><input type="checkbox" name="mypagemain_ticket1"></td>
-                            <td>2024-03-26</td>
-                            <td>뮤지컬 물랑루즈</td>
-                            <td>2024-04-01</td>
-                            <td>1</td>
+                            <td>뮤지컬</td>
 
-                            <td>140000</td>
+                            <td>40000</td>
                         </tr>
                         <tr class="mypagemain_tablebody">
-                            <td><input type="checkbox" name="mypagemain_ticket1"></td>
+                            <td><input type="checkbox" name="mypagemain_ticket2"></td>
                             <td>2024-03-26</td>
                             <td>뮤지컬 물랑루즈</td>
-                            <td>2024-04-01</td>
-                            <td>1</td>
-                            <td>140000</td>
+                            <td>뮤지컬</td>
+                            <td>40000</td>
+                        </tr>
+                        <tr class="mypagemain_tablebody">
+                            <td><input type="checkbox" name="mypagemain_ticket2"></td>
+                            <td>2024-03-26</td>
+                            <td>뮤지컬 물랑루즈</td>
+                            <td>뮤지컬</td>
+                            <td>40000</td>
                         </tr>
                         <tr>
                             <td class="mypagemain_spacetable" colspan="6">
@@ -158,19 +143,18 @@
                                 <input class="mypagemain_pagenum" type="text" size="1" value="1"></input>&nbsp;
                                 <button class="mypagemain_pageright">&gt</button>
                             </td>
-
                         </tr>
-
                         <tr>
                             <td class="mypagemain_tablebutton" colspan="6">
 
-                                <button class="mypagemain_buttons">환불하기</button>
+                                <button class="mypagemain_buttons">취소하기</button>
                             </td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
+
         </form>
     </form>
 </main>

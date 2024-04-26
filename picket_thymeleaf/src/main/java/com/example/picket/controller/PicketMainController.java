@@ -33,6 +33,10 @@ public class PicketMainController {
     /* 마이페이지로 이동 */
     @GetMapping("/mypagemain")
     public String gotoMyPage() { return "/mypage/mypagemain";}
+    @GetMapping("/wishlist")
+    public String gotowishlist() { return "/mypage/wishlist";}
+    @GetMapping("/pointlist")
+    public String gotopointlist() { return "/mypage/pointlist";}
     @GetMapping("/profile")
     public String gotoProfile() { return "/mypage/profile";}
 
