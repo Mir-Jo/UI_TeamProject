@@ -14,21 +14,20 @@
 <!-- 헤더 -->
 <header>
     <nav id="nav1">
-        <a href="/main"><img id="logo" src="/image/icon/로고.png" width="55%" ></a>
+        <a href="/loginmain"><img id="logo" src="/image/icon/로고.png" width="55%" ></a>
         <ul>
-            <li><a href="/concertlist">콘서트</a></li>
-            <li><a href="/musicallist">뮤지컬</a></li>
-            <li><a href="/actlist">연극</a></li>
-            <li><a href="/classiclist">클래식</a></li>
-            <li><a href="/exhibitlist">전시회</a></li>
+            <li><a href="/categories/concertlist">콘서트</a></li>
+            <li><a href="/categories/musicallist">뮤지컬</a></li>
+            <li><a href="/categories/actlist">연극</a></li>
+            <li><a href="/categories/classiclist">클래식</a></li>
+            <li><a href="/categories/exhibitlist">전시회</a></li>
         </ul>
 
     </nav>
     <div>
         <a href="/mypagemain"><img id="my" src="/image/icon/마이페이지.png" width="50" padding="10 0 0 0"></a>
         <a href="/support"><img id="callcenter" src="/image/icon/물음표.png" width="45" padding="10 0 0 0"></a>
-        <a href="/main"><img id="login" src="/image/icon/로그아웃.png" width="45"></a>
-
+            <a href="/logout"><img id="login" src="/image/icon/로그아웃.png" width="45"></a>
     </div>
 </header>
 
@@ -47,35 +46,35 @@
             </div>
             <div class="iconbox">
                 <div class="icon">
-                    <a href="/musicallist">
+                    <a href="/categories/musicallist">
                         <img src="/image/icon/뮤지컬1.png"><br>
-                        <p id="icontext">뮤지컬</p>
+                        <p class="icontext">뮤지컬</p>
                     </a>
                 </div>
                 <div class="icon">
-                    <a href="/actlist">
+                    <a href="/categories/actlist">
                         <img src="/image/icon/극장1.png"><br>
-                        <p id="icontext">연극</p>
+                        <p class="icontext">연극</p>
                     </a>
                 </div>
                 <div class="icon">
-                    <a href="/exhibitlist">
+                    <a href="/categories/exhibitlist">
                         <img src="/image/icon/전시회1.png"><br>
-                        <p id="icontext">전시회</p>
+                        <p class="icontext">전시회</p>
                     </a>
                 </div>
             </div>
             <div class="iconbox">
                 <div class="icon">
-                    <a href="/concertlist">
+                    <a href="/categories/concertlist">
                         <img src="/image/icon/콘서트1.png"><br>
-                        <p id="icontext">콘서트</p>
+                        <p class="icontext">콘서트</p>
                     </a>
                 </div>
                 <div class="icon">
-                    <a href="/classiclist">
+                    <a href="/categories/classiclist">
                         <img src="/image/icon/피아노1.png"><br>
-                        <p id="icontext">클래식</p>
+                        <p class="icontext">클래식</p>
                     </a>
                 </div>
             </div>
@@ -181,6 +180,26 @@
             <span>호스팅서비스사업자 : Picket(주) </span><span>&copy;PicketCorp.Allright Reserved</span>
         </div>
     </div>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+window.onload = function() {
+ var message = /*[[${message}]]*/ null;
+   if(message) {
+     alert(message);
+   }
+}
+const logoutBtn = document.querySelector("#login")
+
+logoutBtn.addEventListener("click", function(event){
+   if(confirm("로그아웃 하시겠습니까?")){
+       alert("로그아웃되었습니다.");
+   }
+   else{
+       event.preventDefault();
+   }
+});
+    /*]]>*/
+</script>
 </footer>
 <script src="/js/main.js"></script>
 

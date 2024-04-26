@@ -1,0 +1,28 @@
+<header>
+    <nav id="nav1">
+        <a href="/main"><img id="logo" src="/image/icon/로고.png" width="55%" ></a>
+        <ul>
+            <li><a href="/categories/concertlist">콘서트</a></li>
+            <li><a href="/categories/musicallist">뮤지컬</a></li>
+            <li><a href="/categories/actlist">연극</a></li>
+            <li><a href="/categories/classiclist">클래식</a></li>
+            <li><a href="/categories/exhibitlist">전시회</a></li>
+        </ul>
+
+    </nav>
+    <div>
+        <div th:if="${isLoggedIn}">
+            <form id="logoutBtn" method="POST" action="/logout">
+                <a href="/main"><img class="login" src="/image/icon/로그아웃.png" width="45"></a>
+            </form>
+        </div>
+
+        <!-- 세션이 없는 경우 -->
+        <div th:unless="${isLoggedIn}">
+            <a href="/loginpage"><img class="login" src="../image/icon/로그인.png" width="45"></a>
+        </div>
+        <a href="/mypagemain"><img id="my" src="../image/icon/마이페이지.png" width="50" padding="10 0 0 0"></a>
+        <a href="/support"><img id="callcenter" src="../image/icon/물음표.png" width="45" padding="10 0 0 0"></a>
+
+    </div>
+</header>
