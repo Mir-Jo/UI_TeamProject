@@ -61,18 +61,15 @@ main{
   }
   .mypagemain_menu {
     display: block;
-    width:330px;
+    width:12%;
     height: 400px ;
     background-color: #000000;
-    margin-top: 65px;
+    margin-top: 218px;
     color: #fff;
-    border-radius: 10%;
     text-align:center;
-    /* border-bottom-right-radius: 10%; */
-
     padding: 0%;
     box-sizing: border-box;
-    position:fixed;
+    position:absolute;
   }
   .mypagemain_menu ul {
     list-style: none;
