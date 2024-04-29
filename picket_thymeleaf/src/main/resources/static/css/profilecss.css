@@ -68,9 +68,14 @@ main{
 
   .profile_button1 {
     display:flex;
-    justify-content: right;
-    margin:30px 400px;
+    justify-content:right;
+    margin:30px 370px;
   }
+  .profile_button2 {
+      display:flex;
+      justify-content: space-between;
+      margin:30px 370px 30px 390px;
+    }
 
   .profile_button1 button{
     font-family: 'wind';
@@ -92,7 +97,143 @@ main{
   .profile_button1 a{
     font-size:14px !important;
   }
+  .profile_button2 button{
+      font-family: 'wind';
+      font-weight: 500;
+      padding:10px 20px;
+      margin-right:20px;
+      border: 2px solid #000000;
+      border-radius:980px;
+      background-color:#fff;
+      font-size:14px;
+      color:#000000;
+      cursor: pointer;
+
+    }
+    .profile_button2 :hover{
+      color:#fff;
+      background-color:#000000;
+    }
+    .profile_button2 a{
+      font-size:14px !important;
+    }
 
 
 
-  
+  /* 모달 창 */
+
+  #modal{
+      display : none;
+      z-index : 1;
+      background-color: rgba(0,0,0,.3);
+      position:fixed;
+      left:0;
+      top: 0;
+      width:100%;
+      height:100%;
+  }
+  #modal>#content{
+      width:500px;
+      margin:100px auto;
+      padding:20px;
+      position: relative;
+      background-color:#fff;
+      font-family:'wind';
+      font-size:30px;
+      font-weight:300;
+      text-align:center;
+      border:3px solid;
+  }
+
+  #modal .close{
+      position:absolute;
+      top:4px;
+      right:4px;
+      font-size:20px;
+      border:0;
+      background-color: #fff;
+    }
+  #modal .close:hover,
+  #modal .close:focus {
+      color : #000;
+      text-decoration: none;
+      cursor :pointer;
+  }
+  #pwd{
+    width:250px;
+    height:30px;
+    font-size:20px;
+    border:3px solid;
+  }
+  #btnCheck{
+    width:100px;
+    height:30px;
+    background-color:#fff;
+    color:#000;
+
+  }
+  #btnCheck:hover{
+  background-color:#000;
+  coloR:#fff;
+  }
+
+
+
+
+
+
+  /* 회원탈퇴 */
+  #modal2{
+        display : none;
+        z-index : 1;
+        background-color: rgba(0,0,0,.3);
+        position:fixed;
+        left:0;
+        top: 0;
+        width:100%;
+        height:100%;
+    }
+    #modal2>#content2{
+        width:500px;
+        margin:100px auto;
+        padding:20px;
+        position: relative;
+        background-color:#fff;
+        font-family:'wind';
+        font-size:30px;
+        font-weight:300;
+        text-align:center;
+        border:3px solid;
+    }
+
+    #modal2 .close{
+        position:absolute;
+        top:4px;
+        right:4px;
+        font-size:20px;
+        border:0;
+        background-color: #fff;
+      }
+    #modal2 .close:hover,
+    #modal2 .close:focus {
+        color : #000;
+        text-decoration: none;
+        cursor :pointer;
+    }
+    #pwd2{
+      width:250px;
+      height:30px;
+      font-size:20px;
+      border:3px solid;
+    }
+    #btnCheck2{
+      width:100px;
+      height:30px;
+      background-color:#fff;
+      color:#000;
+
+    }
+    #btnCheck2:hover{
+    background-color:#000;
+    coloR:#fff;
+    }

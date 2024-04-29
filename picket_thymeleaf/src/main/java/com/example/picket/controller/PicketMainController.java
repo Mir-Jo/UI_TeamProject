@@ -41,6 +41,10 @@ public class PicketMainController {
     public String gotopointlist() { return "/mypage/pointlist";}
     @GetMapping("/profile")
     public String gotoProfile() { return "/mypage/profile";}
+    @GetMapping("/profileedit")
+    public String gotoProfileedit() { return "/mypage/profileedit";}
+    @GetMapping("/withdrawal")
+    public String gotoWithdrawal() { return "/mypage/withdrawal";}
 
     /* 내 문의내역으로 이동 */
     @GetMapping("/QAList")
