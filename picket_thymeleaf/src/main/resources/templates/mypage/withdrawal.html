@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../css/mypagemaincss.css">
     <link rel="stylesheet" href="/css/font.css">
 
-    <title>회원정보수정</title>
+    <title>회원탈퇴</title>
 </head>
 <body>
 <header>
@@ -42,7 +42,7 @@
             <li><a href="/QAList" class="mypagemain_item">문의내역</a></li>
         </ul>
     </div>
-    <div class="profile_titlename"><h2>회원정보수정</h2></div>
+    <div class="profile_titlename"><h2>회원정보</h2></div>
     <form>
         <div class="profile_asta">
 
@@ -79,10 +79,19 @@
                 </table>
             </div>
             <div class="profile_button1">
-                <button>수정하기</button>
+                <!-- <button>돌아가기</button> -->
+
+                <button type="button" value="open" id="btnOpen">수정하기</button>
             </div>
         </div>
-
+        <div id='modal'>
+            <div id='content'>
+                <input type='button' value='X' class="close" id='btnClose'/>
+                <label>PW확인</label><br/>
+                <div><input type='password' id='pwd' placeholder="PW를 입력하세요"/></div>
+                <input type='button' value='PW확인' id='btnCheck' />
+            </div>
+        </div>
     </form>
 </main>
 <footer>
