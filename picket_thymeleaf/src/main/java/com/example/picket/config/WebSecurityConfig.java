@@ -55,7 +55,8 @@ public class WebSecurityConfig {
                 .headers(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authorize ->
                         authorize
-                                .requestMatchers("/loginpage", "/main", "/signup", "/login", "/categories/**").permitAll()
+                                .requestMatchers("/loginpage", "/main", "/signup", "/login", "/categories/**",
+                                        "/concert/**", "/musical/**", "/act/**", "/classic/**", "/exhibit/**").permitAll()
                                 .anyRequest().authenticated()
                 )
                 .formLogin(login -> login
