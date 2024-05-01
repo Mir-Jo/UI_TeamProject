@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" type="text/css" href="/css/info.css">
     <link rel="stylesheet" href="/css/font.css">
-    <title>PICKET/ 뮤지컬 [파가니니] (bare the musical)</title>
+    <title th:text="${title}"></title>
 </head>
 <body>
 <header>
@@ -31,14 +31,14 @@
 <div class="renew-content">
     <div class="rn-01">
         <p class="rn-location">
-            <a>뮤지컬 > 창작</a>
+            <a th:text="${category}"></a>
         </p>
         <p class="rn-labels"></p>
     </div>
     <div class="rn-02">
-        <p class="rn-big-title"><b>뮤지컬 [파가니니]</b></p>
+        <p class="rn-big-title"><b th:text="${title}"></b></p>
     </div>
-    <span>2024.04.06 ~ 2024.06.02 | 국립중앙박물관 내 극장용 </span>
+    <span th:text="${dates} + ' | ' + ${place}"></span>
 
     <div class="renew-content">
         <div class="rn-03">
@@ -56,7 +56,7 @@
                         <dt>출연</dt>
                         <dd> KoN,홍석기,홍주찬,김경수,윤형렬,백인태,이준혁,김준영,기세중,박좌헌,이준우,박준형,성민재,유소리</dd>
                         <dt>가격</dt>
-                        <dd>자유석 88,000원</dd>
+                        <dd th:text="${price} + '원'"></dd>
                         <dt>혜택</dt>
                         <dd><button>사용가능쿠폰</button></dd>
                     </dl>

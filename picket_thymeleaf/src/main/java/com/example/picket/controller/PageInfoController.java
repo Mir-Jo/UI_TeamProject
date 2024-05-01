@@ -1,8 +1,6 @@
 package com.example.picket.controller;
 
 import com.example.picket.dto.PerformanceForm;
-import com.example.picket.entity.Performance;
-import com.example.picket.repository.PerformanceRepository;
 import com.example.picket.service.PerformanceService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -14,106 +12,195 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 @RequiredArgsConstructor
 public class PageInfoController {
+    private final PerformanceService performanceService;
+
     /*concert_info*/
     @GetMapping("/concert/season")
-    public String gotoseason(){return "/categories/Concert/season";}
+    public String gotoseason(Model model){
+        PerformanceForm performanceForm = performanceService.findInfo("2024 SEASON TEAM 노지훈 in SEOUL");
+        performanceService.toModel(performanceForm, model);
+
+        return "/categories/Concert/season";
+    }
     @GetMapping("/concert/beautiful")
-    public String gotobeautiful(){return "/categories/Concert/beautiful";}
+    public String gotobeautiful(Model model){
+        PerformanceForm performanceForm = performanceService.findInfo("뷰티풀 민트 라이프 2024");
+        performanceService.toModel(performanceForm, model);
+
+        return "/categories/Concert/beautiful";
+    }
     @GetMapping("/concert/lovesome")
-    public String gotolovesome(){return "/categories/Concert/lovesome";}
+    public String gotolovesome(Model model){
+        PerformanceForm performanceForm = performanceService.findInfo("2024 LOVESOME - 마음 방울 채집");
+        performanceService.toModel(performanceForm, model);
+
+        return "/categories/Concert/lovesome";}
     @GetMapping("/concert/boys")
-    public String gotoboys(){return "/categories/Concert/boys";}
+    public String gotoboys(Model model){
+        PerformanceForm performanceForm = performanceService.findInfo("Boys Like Girls Live in Seoul");
+        performanceService.toModel(performanceForm, model);
+
+        return "/categories/Concert/boys";
+    }
     @GetMapping("/concert/daysix")
-    public String gotodaysix(){return "/categories/Concert/daysix";}
+    public String gotodaysix(Model model){
+        PerformanceForm performanceForm = performanceService.findInfo("DAY6 CONCERT〈Welcome to the Show〉");
+        performanceService.toModel(performanceForm, model);
+
+        return "/categories/Concert/daysix";
+    }
     @GetMapping("/concert/king")
-    public String gotoking(){return "/categories/Concert/king";}
+    public String gotoking(Model model){
+        PerformanceForm performanceForm = performanceService.findInfo("King Gnu Asia Tour ‘THE GREATEST UNKNOWN’ in Seoul");
+        performanceService.toModel(performanceForm, model);
+
+        return "/categories/Concert/king";
+    }
     @GetMapping("/concert/glow")
-    public String gotoglow(){return "/categories/Concert/glow";}
+    public String gotoglow(Model model){
+        PerformanceForm performanceForm = performanceService.findInfo("더 글로우 2024 (THE GLOW 2024)");
+        performanceService.toModel(performanceForm, model);
+
+        return "/categories/Concert/glow";
+    }
     @GetMapping("/concert/hipho")
-    public String gotoworldtour(){return "/categories/Concert/hipho";}
+    public String gotoworldtour(Model model){
+        PerformanceForm performanceForm = performanceService.findInfo("HIPHOPPLAYA FESTIVAL 2024");
+        performanceService.toModel(performanceForm, model);
 
-
-
+        return "/categories/Concert/hipho";
+    }
 
     /*musical_info*/
 
-@GetMapping("/musical/musical_paris.info")
-public String paris() { return "/categories/Musical/paris";}
+    @GetMapping("/musical/musical_paris.info")
+    public String paris(Model model){
+        PerformanceForm performanceForm = performanceService.findInfo("[울산] 2024 뮤지컬 노테르담 드 파리 한국어 버전");
+        performanceService.toModel(performanceForm, model);
 
-@GetMapping("/musical/musical_touching.info")
-public String touching() { return "/categories/Musical/touching";}
+        return "/categories/Musical/paris";
+    }
 
-@GetMapping("/musical/musical_dia.info")
-public String dia() { return "/categories/Musical/디아길레프";}
+    @GetMapping("/musical/musical_touching.info")
+    public String touching(Model model){
+        PerformanceForm performanceForm = performanceService.findInfo("뮤지컬 [낭만별곡]");
+        performanceService.toModel(performanceForm, model);
 
-@GetMapping("/musical/musical_dear.info")
-public String dear() { return "/categories/Musical/dear";}
+        return "/categories/Musical/touching";
+    }
 
-@GetMapping("/musical/musical_bear.info")
-public String bear() { return "/categories/Musical/bear";}
+    @GetMapping("/musical/musical_dia.info")
+    public String dia(Model model) {
+        PerformanceForm performanceForm = performanceService.findInfo("뮤지컬 [디아길레프]");
+        performanceService.toModel(performanceForm, model);
 
-@GetMapping("/musical/musical_next.info")
-public String next() { return "/categories/Musical/next";}
+        return "/categories/Musical/디아길레프";
+    }
 
-@GetMapping("/musical/musical_here.info")
-public String here() { return "/categories/Musical/here";}
+    @GetMapping("/musical/musical_dear.info")
+    public String dear(Model model) {
+        PerformanceForm performanceForm = performanceService.findInfo("뮤지컬 [디어 에반 핸슨] （Dear Evan Hansen)");
+        performanceService.toModel(performanceForm, model);
 
-@GetMapping("/musical/musical_violin.info")
-public String violin() { return "/categories/Musical/violin";}
+        return "/categories/Musical/dear";
+    }
 
+    @GetMapping("/musical/musical_bear.info")
+    public String bear(Model model) {
+        PerformanceForm performanceForm = performanceService.findInfo("뮤지컬 [베어 더 뮤지컬] (bare the musical)");
+        performanceService.toModel(performanceForm, model);
 
-    private final PerformanceService performanceService;
-    private final PerformanceRepository performanceRepository;
+        return "/categories/Musical/bear";
+    }
+
+    @GetMapping("/musical/musical_next.info")
+    public String next(Model model) {
+        PerformanceForm performanceForm = performanceService.findInfo("뮤지컬 [넥스트 투 노멀]");
+        performanceService.toModel(performanceForm, model);
+
+        return "/categories/Musical/next";
+    }
+
+    @GetMapping("/musical/musical_here.info")
+    public String here(Model model) {
+        PerformanceForm performanceForm = performanceService.findInfo("뮤지컬 [여기,피화당]");
+        performanceService.toModel(performanceForm, model);
+
+        return "/categories/Musical/here";
+    }
+
+    @GetMapping("/musical/musical_violin.info")
+    public String violin(Model model) {
+        PerformanceForm performanceForm = performanceService.findInfo("뮤지컬 [파가니니]");
+        performanceService.toModel(performanceForm, model);
+
+        return "/categories/Musical/violin";
+    }
+
 
     /*act_info*/
     @GetMapping("/act/musicalTheaterCarolInfo")
     public String musicalTheaterCarol(Model model){
         PerformanceForm performanceForm = performanceService.findInfo("음악극 〈캐롤〉");
-
-        System.out.println("확인: " + performanceForm);
-
-        model.addAttribute("title", performanceForm.getTitle());
-        model.addAttribute("place", performanceForm.getPlace());
-        model.addAttribute("dates", performanceForm.getDates());
-        model.addAttribute("category", performanceForm.getCategory());
-        model.addAttribute("price", performanceForm.getPrice());
+        performanceService.toModel(performanceForm, model);
 
 
         return "/categories/Act/musicalTheaterCarol";
     }
 
     @GetMapping("/act/theaterCloserInfo")
-    public String theaterCloser(){
+    public String theaterCloser(Model model){
+        PerformanceForm performanceForm = performanceService.findInfo("연극 〈클로저〉");
+        performanceService.toModel(performanceForm, model);
+
         return "/categories/Act/theaterCloser";
     }
 
     @GetMapping("/act/theaterHangOverInfo")
-    public String theaterHangOver(){
+    public String theaterHangOver(Model model){
+        PerformanceForm performanceForm = performanceService.findInfo("연극 [행오버]");
+        performanceService.toModel(performanceForm, model);
+
         return "/categories/Act/theaterHangOver";
     }
 
     @GetMapping("/act/theaterHerzKlangInfo")
-    public String theaterHerzKlang(){
+    public String theaterHerzKlang(Model model){
+        PerformanceForm performanceForm = performanceService.findInfo("연극 〈헤르츠클란〉");
+        performanceService.toModel(performanceForm, model);
+
         return "/categories/Act/theaterHerzKlang";
     }
 
     @GetMapping("/act/theaterHeungSinSoInfo")
-    public String theaterHeungSinSo(){
+    public String theaterHeungSinSo(Model model){
+        PerformanceForm performanceForm = performanceService.findInfo("연극 [수상한 흥신소]");
+        performanceService.toModel(performanceForm, model);
+
         return "/categories/Act/theaterHeungSinSo";
     }
 
     @GetMapping("/act/theaterInHellInfo")
-    public String theaterInHell(){
+    public String theaterInHell(Model model){
+        PerformanceForm performanceForm = performanceService.findInfo("연극 〈지옥에서〉");
+        performanceService.toModel(performanceForm, model);
+
         return "/categories/Act/theaterInHell";
     }
 
     @GetMapping("/act/theaterPSpartnerInfo")
-    public String theaterPSpartner(){
+    public String theaterPSpartner(Model model){
+        PerformanceForm performanceForm = performanceService.findInfo("연극 [나의PS파트너]");
+        performanceService.toModel(performanceForm, model);
+
         return "/categories/Act/theaterPSpartner";
     }
 
     @GetMapping("/act/theaterRainbowInfo")
-    public String theaterRainbow(){
+    public String theaterRainbow(Model model){
+        PerformanceForm performanceForm = performanceService.findInfo("연극 [넓은 하늘의 무지개를 보면 내 마음은 춤춘다]");
+        performanceService.toModel(performanceForm, model);
+
         return "/categories/Act/theaterRainbow";
     }
 
@@ -121,49 +208,73 @@ public String violin() { return "/categories/Musical/violin";}
 
     /* 라 트라비아타 이동 */
     @GetMapping("/classic/LaTraviata")
-    public String gotoLaTraviata() {
+    public String gotoLaTraviata(Model model) {
+        PerformanceForm performanceForm = performanceService.findInfo("라 트라비아타 - 춘희");
+        performanceService.toModel(performanceForm, model);
+
         return "/categories/Classic/LaTraviata";
     }
 
     /* 막심 벤게로프 이동 */
     @GetMapping("/classic/Maxim")
-    public String gotoMaxim() {
+    public String gotoMaxim(Model model) {
+        PerformanceForm performanceForm = performanceService.findInfo("막심 벤게로프 바이올린 리사이틀");
+        performanceService.toModel(performanceForm, model);
+
         return "/categories/Classic/Maxim";
     }
 
     /* 백조의 호수 이동 */
     @GetMapping("/classic/Swan")
-    public String gotoSwan() {
+    public String gotoSwan(Model model) {
+        PerformanceForm performanceForm = performanceService.findInfo("국립발레단 - 백조의 호수");
+        performanceService.toModel(performanceForm, model);
+
         return "/categories/Classic/Swan";
     }
 
     /* 존 윌리엄스 이동 */
     @GetMapping("/classic/JohnWilliams")
-    public String gotoJohnWilliams() {
+    public String gotoJohnWilliams(Model model) {
+        PerformanceForm performanceForm = performanceService.findInfo("국립심포니오케스트라 - 존 윌리엄스 시네마 콘서트");
+        performanceService.toModel(performanceForm, model);
+
         return "/categories/Classic/JohnWilliams";
     }
 
     /* 한여름밤의 꿈 이동 */
     @GetMapping("/classic/MidsummerNight")
-    public String gotoMidsummerNight() {
+    public String gotoMidsummerNight(Model model) {
+        PerformanceForm performanceForm = performanceService.findInfo("국립오페라단 - 한여름 밤의 꿈");
+        performanceService.toModel(performanceForm, model);
+
         return "/categories/Classic/MidsummerNight";
     }
 
     /* 드뷔시 이동 */
     @GetMapping("/classic/Debussy")
-    public String gotoDebussy() {
+    public String gotoDebussy(Model model) {
+        PerformanceForm performanceForm = performanceService.findInfo("클래식 디깅 클럽 - 드뷔시");
+        performanceService.toModel(performanceForm, model);
+
         return "/categories/Classic/Debussy";
     }
 
     /* 지브리 이동 */
     @GetMapping("/classic/GhiBli")
-    public String gotoGhiBli() {
+    public String gotoGhiBli(Model model) {
+        PerformanceForm performanceForm = performanceService.findInfo("지브리 '&' 히사이시 조 : 디오케스트라 - 부천");
+        performanceService.toModel(performanceForm, model);
+
         return "/categories/Classic/GhiBli";
     }
 
     /*띵훈좌 이동 */
     @GetMapping("/classic/Jung")
-    public String gotoJung() {
+    public String gotoJung(Model model) {
+        PerformanceForm performanceForm = performanceService.findInfo("정명훈'&'도쿄필하모닉 내한공연");
+        performanceService.toModel(performanceForm, model);
+
         return "/categories/Classic/Jung";
     }
 
@@ -172,6 +283,7 @@ public String violin() { return "/categories/Musical/violin";}
     public String gotoHarry() {
         return "/categories/Classic/Harry";
     }
+
     /* 상단 일무 이동*/
     @GetMapping("/classic/OneMu")
     public String gotoOneMu() {
@@ -185,27 +297,67 @@ public String violin() { return "/categories/Musical/violin";}
 
     /*exhibit_info*/
     @GetMapping("/exhibit/banksy")
-    public String getbanksy(){
-        return "/categories/Exhibit/banksy";}
+    public String getbanksy(Model model){
+        PerformanceForm performanceForm = performanceService.findInfo("리얼뱅크시 REAL BANKSY");
+        performanceService.toModel(performanceForm, model);
+
+        return "/categories/Exhibit/banksy";
+    }
+
     @GetMapping("/exhibit/ghibli")
-    public String getghibli(){
-        return "/categories/Exhibit/ghibli";}
+    public String getghibli(Model model){
+        PerformanceForm performanceForm = performanceService.findInfo("[2차 얼리버드] 스튜디오 지브리 애니메이션의 거장 타카하타 이사오전");
+        performanceService.toModel(performanceForm, model);
+
+        return "/categories/Exhibit/ghibli";
+    }
+
     @GetMapping("/exhibit/graffiti")
-    public String getgraffiti(){
-        return "/categories/Exhibit/graffiti";}
+    public String getgraffiti(Model model){
+        PerformanceForm performanceForm = performanceService.findInfo("그래피티 연금술사，시릴 콩고 Cyril Kongo´s");
+        performanceService.toModel(performanceForm, model);
+
+        return "/categories/Exhibit/graffiti";
+    }
+
     @GetMapping("/exhibit/india")
-    public String getindia(){
-        return "/categories/Exhibit/india";}
+    public String getindia(Model model){
+        PerformanceForm performanceForm = performanceService.findInfo("스투파의 숲， 신비로운 인도 이야기");
+        performanceService.toModel(performanceForm, model);
+
+        return "/categories/Exhibit/india";
+    }
+
     @GetMapping("/exhibit/osaka")
-    public String getosaka(){
-        return "/categories/Exhibit/osaka";}
+    public String getosaka(Model model){
+        PerformanceForm performanceForm = performanceService.findInfo("후지시로 세이지 탄생 100주년 기념-오사카 파노라마展");
+        performanceService.toModel(performanceForm, model);
+
+        return "/categories/Exhibit/osaka";
+    }
+
     @GetMapping("/exhibit/seoul")
-    public String getseoul(){
-        return "/categories/Exhibit/seoul";}
+    public String getseoul(Model model){
+        PerformanceForm performanceForm = performanceService.findInfo("서울바앤스피릿쇼 2024");
+        performanceService.toModel(performanceForm, model);
+
+        return "/categories/Exhibit/seoul";
+    }
+
     @GetMapping("/exhibit/todusk")
-    public String gettodusk(){
-        return "/categories/Exhibit/todusk";}
+    public String gettodusk(Model model){
+        PerformanceForm performanceForm = performanceService.findInfo("새벽부터 황혼까지 - 스웨덴 국립미술관 컬렉션");
+        performanceService.toModel(performanceForm, model);
+
+        return "/categories/Exhibit/todusk";
+    }
+
     @GetMapping("/exhibit/unity")
-    public String getunity(){
-        return "/categories/Exhibit/unity";}
+    public String getunity(Model model){
+        PerformanceForm performanceForm = performanceService.findInfo("THE GREAT UNITY");
+        performanceService.toModel(performanceForm, model);
+
+        return "/categories/Exhibit/unity";
+    }
+
 }

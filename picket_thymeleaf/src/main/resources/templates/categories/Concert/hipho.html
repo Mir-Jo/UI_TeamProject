@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" type="text/css" href="/css/info.css">
     <link rel="stylesheet" href="/css/font.css">
-    <title>HIPHOPPLAYA FESTIVAL 2024</title>
+    <title th:text="${title}"></title>
 </head>
 <body>
 <header>
@@ -31,14 +31,14 @@
 <div class="renew-content">
     <div class="rn-01">
         <p class="rn-location">
-            <a>콘서트 > 페스티벌</a>
+            <a th:text="${category}"></a>
         </p>
         <p class="rn-labels"></p>
     </div>
     <div class="rn-02">
-        <p class="rn-big-title"><b>HIPHOPPLAYA FESTIVAL 2024</b></p>
+        <p class="rn-big-title"><b th:text="${title}"></b></p>
     </div>
-    <span>2024.05.04 ~ 2024.05.05 | 난지한강공원 </span>
+    <span th:text="${dates} + ' | ' + ${place}"></span>
 
     <div class="renew-content">
         <div class="rn-03">
@@ -56,7 +56,7 @@
                         <dt>출연</dt>
                         <dd>&nbsp;ZICO, DYNAMICDUO, GIRIBOY,pH-1, BIG NAUGHTY, B.I, LEE YOUNG JI, E SENS, CHANGMO, AWICH, KID MILLI, YANGHONGWON, ASH ISLAND, CAMO</dd>
                         <dt>가격</dt>
-                        <dd>스탠딩석 66,000원</dd>
+                        <dd th:text="${price} + '원'"></dd>
                         <dt>혜택</dt>
                         <dd><button>사용가능쿠폰</button></dd>
                     </dl>
