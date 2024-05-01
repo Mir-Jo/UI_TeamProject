@@ -1,8 +1,7 @@
 package com.example.picket.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import com.example.picket.dto.PerformanceForm;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,8 +13,12 @@ import lombok.ToString;
 @Getter
 @ToString
 public class Performance {
+
     @Id
-    @Column
+//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "performance_seq")
+//    @SequenceGenerator(name = "performance_seq", sequenceName = "performance_seq", initialValue = 1, allocationSize = 1)
+//    private Long performance_id;
+//    @Column(nullable = false)
     private String title;
     @Column(nullable = false)
     private String place;
@@ -25,4 +28,9 @@ public class Performance {
     private String category;
     @Column(nullable = false)
     private Long price;
+
+
+    public PerformanceForm toForm(){
+        return new PerformanceForm(this.title, this.place, this.dates, this.category, this.price);
+    }
 }

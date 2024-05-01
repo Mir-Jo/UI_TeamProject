@@ -10,6 +10,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Getter
 @AllArgsConstructor
@@ -21,7 +22,7 @@ public class QAForm {
 
     private String qa_content;
 
-    private Timestamp date;
+    private Timestamp write_date;
 
     private String category;
 
@@ -31,6 +32,6 @@ public class QAForm {
 
 
     public QA toEntity(){
-        return new QA(qa_id, qa_title,qa_content, date, category, state, customer);
+        return new QA(qa_id, qa_title,qa_content, write_date, category, state, customer);
     }
 }

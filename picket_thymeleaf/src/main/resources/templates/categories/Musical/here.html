@@ -36,9 +36,11 @@
         <p class="rn-labels"></p>
     </div>
     <div class="rn-02">
-        <p class="rn-big-title"><b>뮤지컬 [여기,피화당]</b></p>
+        <p class="rn-big-title"><b th:text="${title}"></b></p>
     </div>
-    <p class="rn-big-title"><b  th:text="${title}" ></b></p>
+
+    <span th:text="${dates} + ' | ' + ${place}"></span>
+
 
     <div class="renew-content">
         <div class="rn-03">
@@ -56,7 +58,7 @@
                         <dt>출연</dt>
                         <dd>&nbsp; 정인지,최수진,김이후,조풍래,조훈,정다예,장보람,백예은,곽나윤,이찬렬,류찬열</dd>
                         <dt>가격</dt>
-                        <dd>자유석 70,000원</dd>
+                        <dd th:text="${price} + '원'"></dd>
                         <dt>혜택</dt>
                         <dd><button>사용가능쿠폰</button></dd>
                     </dl>
