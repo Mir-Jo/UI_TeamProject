@@ -3,6 +3,8 @@ package com.example.picket.service;
 
 import com.example.picket.dto.AddCustomerRequest;
 import com.example.picket.repository.CustomerRepository;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -31,8 +33,8 @@ public class CustomerService {
     public boolean authentication(String id, String password) {
         String encodedPassword = customerRepository.findById(id).orElse(null).getPassword();
         log.info("id: "+id);
-        log.info(("password: ")+password);
-        log.info(("encodedPassword: ")+encodedPassword);
+        log.info("password: "+password);
+        log.info("encodedPassword: "+encodedPassword);
         if(customerRepository.findById(id).orElse(null).getId() != null){
             if(password == null){
                 return false;
@@ -41,6 +43,37 @@ public class CustomerService {
                 return true;
             }
         }
-            return false;
+                return false;
+    }
+
+    public String findId(String name, String tel){
+        Customer customer = customerRepository.findByTel(tel).orElse(null);
+        if(customer != null && customer.getName().equals(name)){
+            return customer.getId();
+        }
+        return "입력된 정보가 일치하지 않습니다. 다시 입력해주세요.";
+    }
+    public String findPW(String name, String tel, String id){
+        Customer customer = customerRepository.findById(id).orElse(null);
+        if(customer != null && customer.getName().equals(name) && customer.getTel().equals(tel)){
+            return customer.getName();
+        }
+        else{
+            return "입력된 정보가 일치하지 않습니다. 다시 입력해주세요.";
+        }
+    }
+    @Transactional
+    public boolean ChangePW(String id, String changePW){
+        Customer customer = customerRepository.findById(id).orElse(null);
+        if(customer != null){
+            customer.setPassword(bCryptPasswordEncoder.encode(changePW));
+            customerRepository.save(customer);
+            return true;
+        }
+        return false;
+    }
+    public String getReferer(HttpServletRequest request){
+        String referer = request.getHeader("Referer");
+        return referer;
     }
 }

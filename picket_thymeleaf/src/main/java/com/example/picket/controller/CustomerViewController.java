@@ -14,7 +14,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Slf4j
@@ -36,35 +35,74 @@ public class CustomerViewController{
         return "/login/login";
     }
     @PostMapping("/login")
-    public String login(String id, String password, HttpSession session, HttpServletRequest request, RedirectAttributes rttr){
+    public String login(String id, String password, HttpSession session, RedirectAttributes rttr){
         if(customerService.authentication(id, password)){
             Customer customer = customerRepository.findById(id).orElse(null);
-
-            if(customer!=null){
+            if(customer != null){
                 session.setAttribute("id", customer);
-                log.info("현재 세션id: "+session.getAttribute(customer.getId().toString()));
-
-                log.info("로그인 성공");
-                rttr.addFlashAttribute("message", customer.getName()+"님 환영합니다.");
+                String userName = customer.getName();
+                rttr.addFlashAttribute("message", userName+"님 환영합니다.");
                 return "redirect:/loginmain";
+                }
             } else{
                 rttr.addFlashAttribute("message", "잘못된 ID 혹은 비밀번호입니다. 다시 입력해주세요.");
-                return "redirect:/loginpage";
             }
-        }
-        else{
-            rttr.addFlashAttribute("message", "잘못된 ID 혹은 비밀번호입니다. 다시 입력해주세요.");
-            return "redirect:/loginpage";
-        }
+                return "redirect:/loginpage";
     }
 
     @GetMapping("/logout")
-    public String logout(HttpServletRequest request, HttpServletResponse response, HttpSession session, RedirectAttributes rttr){
+    public String logout(HttpServletRequest request, HttpServletResponse response, HttpSession session){
         new SecurityContextLogoutHandler().logout(request, response, SecurityContextHolder.getContext().getAuthentication());
         log.info("request: "+request+", response: "+response+", authentication: "+SecurityContextHolder.getContext().getAuthentication());
         session.invalidate();
         log.info("세션 무력화 완료");
-        rttr.addFlashAttribute("message", "로그아웃되었습니다.");
         return "redirect:/main";
+    }
+
+    @PostMapping("/FindId")
+    public String findId(String name, String tel, RedirectAttributes rttr){
+        String foundId = customerService.findId(name, tel);
+        if(foundId.equals("입력된 정보가 일치하지 않습니다. 다시 입력해주세요.")){
+            rttr.addFlashAttribute("findIdError", foundId);
+            return "redirect:/FindIDPW";
+        }
+        rttr.addFlashAttribute("foundId", foundId);
+        rttr.addFlashAttribute("name", name);
+        return "redirect:/FindIDPW";
+    }
+
+    @PostMapping("/FindPW")
+    public String findPW(String name2, String tel2, String id2, RedirectAttributes rttr, HttpSession session){
+        String userName = customerService.findPW(name2, tel2, id2);
+        Customer customer = customerRepository.findById(id2).orElse(null);
+        if(userName.equals("입력된 정보가 일치하지 않습니다. 다시 입력해주세요.")){
+        rttr.addFlashAttribute("findPWError", userName);
+        return "redirect:/FindIDPW";
+        }
+        else if(userName != null && customer.getName().equals(userName)){
+            rttr.addFlashAttribute("changePW", true);
+            session.setAttribute("id2", id2);
+            log.info("changePW: "+rttr.getFlashAttributes());
+            return "redirect:/FindIDPW";
+        }
+        else{
+            rttr.addFlashAttribute("findPWError", "잘못 입력하셨습니다. 다시 입력해주세요.");
+            return "redirect:/FindIDPW";
+        }
+    }
+
+    @PostMapping("/ChangePW")
+    public String changePW(String changedPW, String changedPWCheck,HttpServletRequest request, RedirectAttributes rttr, HttpSession session){
+        if(changedPW.equals(changedPWCheck)){
+            String userId = session.getAttribute("id2").toString();
+            if(userId != null){
+            customerService.ChangePW(userId, changedPW);
+            rttr.addFlashAttribute("successMessage", "비밀번호 변경이 완료되었습니다.");
+            return "redirect:/loginpage";
+            }
+        } else{
+            rttr.addFlashAttribute("findPWError", "입력한 비밀번호가 서로 다릅니다. 다시 확인해주세요.");
+        }
+            return "redirect:"+customerService.getReferer(request);
     }
 }

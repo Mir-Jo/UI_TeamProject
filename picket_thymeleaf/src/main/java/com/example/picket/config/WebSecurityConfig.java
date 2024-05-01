@@ -55,14 +55,15 @@ public class WebSecurityConfig {
                 .headers(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authorize ->
                         authorize
-                                .requestMatchers("/loginpage", "/main", "/signup", "/login", "/categories/**").permitAll()
+                                .requestMatchers("/loginpage", "/main", "/signup", "/login",
+                                        "/categories/**", "/FindIDPW", "/FindId", "/FindPW", "/ChangePW").permitAll()
                                 .anyRequest().authenticated()
                 )
                 .formLogin(login -> login
                         .loginPage("/loginpage")
                         .loginProcessingUrl("/login")
                         .usernameParameter("id")
-                        .defaultSuccessUrl("/loginmain", true)
+                        .defaultSuccessUrl("/loginmain", false)
                         .failureHandler((request, response, exception) -> {
                             request.getSession().setAttribute("errorMessage", "아이디 또는 비밀번호가 일치하지 않습니다.");
                             response.sendRedirect("/loginpage");

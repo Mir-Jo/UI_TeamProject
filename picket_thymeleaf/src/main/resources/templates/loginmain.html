@@ -183,7 +183,8 @@
 <script th:inline="javascript">
     /*<![CDATA[*/
 window.onload = function() {
- var message = /*[[${message}]]*/ null;
+ var message = /*[[${message}]]*/ '';
+   console.log(message);
    if(message) {
      alert(message);
    }
