@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" type="text/css" href="/css/info.css">
-    <title>연극 〈지옥에서〉</title>
+    <title th:text="${title}"></title>
 </head>
 <body>
 <header>
@@ -30,14 +30,14 @@
 <div class="renew-content">
     <div class="rn-01">
         <p class="rn-location">
-            <a>연극 > 대학로</a>
+            <a th:text="${category}"></a>
         </p>
         <p class="rn-labels"></p>
     </div>
     <div class="rn-02">
-        <p class="rn-big-title"><b>연극 〈지옥에서〉</b></p>
+        <p class="rn-big-title"><b th:text="${title}"></b></p>
     </div>
-    <span>2024.04.19 ~ 2024.04.28 | 대학로예술극장 대극장 </span>
+    <span th:text="${dates} + ' | ' + ${place}"></span>
 
     <div class="renew-content">
         <div class="rn-03">
@@ -55,8 +55,7 @@
                         <dt>출연</dt>
                         <dd>&nbsp;권미나,김주빈,김형균,박신후,유영욱,전정욱,곽소영,주선옥,고민재,정찬희,박서안,김도하,한아름,권승구</dd>
                         <dt>가격</dt>
-                        <dd>R석 60,000원<br>
-                            S석 40,000원</dd>
+                        <dd th:text="${price} + '원'"></dd>
                         <dt>혜택</dt>
                         <dd><button>사용가능쿠폰</button></dd>
                     </dl>

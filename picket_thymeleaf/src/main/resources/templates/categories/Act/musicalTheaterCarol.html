@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/info.css">
-    <title>음악극 〈캐롤〉</title>
+    <title th:text="${title}"></title>
 </head>
 <body>
 <header>
@@ -56,7 +56,7 @@
                         <dt>출연</dt>
                         <dd>&nbsp;한종훈,길주희,강병훈,주영진,김주영,서원,정이운,최유현,조은재,전민옥,장수연,박훈규,최시우</dd>
                         <dt>가격</dt>
-                        <dd th:text="'전석 ' + ${price} + '원'"></dd>
+                        <dd th:text="${price} + '원'"></dd>
                         <dt>혜택</dt>
                         <dd><button>사용가능쿠폰</button></dd>
                     </dl>

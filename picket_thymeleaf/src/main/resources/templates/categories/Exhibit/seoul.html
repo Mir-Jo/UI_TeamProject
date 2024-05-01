@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" type="text/css" href="/css/info.css">
     <link rel="stylesheet" href="/css/font.css">
-    <title>서울바앤스피릿쇼 2024</title>
+    <title th:text="${title}"></title>
 </head>
 <body>
 <header>
@@ -31,14 +31,14 @@
     <div class="renew-content">
         <div class="rn-01">
             <p class="rn-location">
-                <a>전시 > 전시</a>
+                <a th:text="${category}"></a>
             </p>
             <p class="rn-labels"></p>
         </div>
         <div class="rn-02">
-            <p class="rn-big-title"><b>서울바앤스피릿쇼 2024</b></p>
+            <p class="rn-big-title"><b th:text="${title}"></b></p>
         </div>
-        <span>2024.05.03 ~ 2024.05.05 | 삼성동 코엑스 B홀 </span>
+        <span th:text="${dates} + ' | ' + ${place}"></span>
 
         <div class="renew-content">
             <div class="rn-03">
@@ -56,7 +56,7 @@
                             <dt>출연</dt>
                             <dd>&nbsp;-</dd>
                             <dt>가격</dt>
-                            <dd>자유석 55,000원</dd>
+                            <dd th:text="${price} + '원'"></dd>
                             <dt>혜택</dt>
                             <dd><button>사용가능쿠폰</button></dd>
                         </dl>
