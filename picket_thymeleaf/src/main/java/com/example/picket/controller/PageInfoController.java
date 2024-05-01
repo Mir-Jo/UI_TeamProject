@@ -1,6 +1,8 @@
 package com.example.picket.controller;
 
+import com.example.picket.dto.PerformanceForm;
 import com.example.picket.entity.Performance;
+import com.example.picket.repository.PerformanceRepository;
 import com.example.picket.service.PerformanceService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -61,19 +63,20 @@ public String violin() { return "/categories/Musical/violin";}
 
 
     private final PerformanceService performanceService;
+    private final PerformanceRepository performanceRepository;
 
     /*act_info*/
     @GetMapping("/act/musicalTheaterCarolInfo")
     public String musicalTheaterCarol(Model model){
-        Performance performance = performanceService.findInfo("음악극 〈캐롤〉");
+        PerformanceForm performanceForm = performanceService.findInfo("음악극 〈캐롤〉");
 
-        System.out.println("확인: " + performance.toString());
+        System.out.println("확인: " + performanceForm);
 
-        model.addAttribute("title", performance.getTitle());
-        model.addAttribute("place", performance.getPlace());
-        model.addAttribute("dates", performance.getDates());
-        model.addAttribute("category", performance.getCategory());
-        model.addAttribute("price", performance.getPrice());
+        model.addAttribute("title", performanceForm.getTitle());
+        model.addAttribute("place", performanceForm.getPlace());
+        model.addAttribute("dates", performanceForm.getDates());
+        model.addAttribute("category", performanceForm.getCategory());
+        model.addAttribute("price", performanceForm.getPrice());
 
 
         return "/categories/Act/musicalTheaterCarol";

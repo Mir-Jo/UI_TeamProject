@@ -1,5 +1,6 @@
 package com.example.picket.entity;
 
+import com.example.picket.dto.PerformanceForm;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,4 +28,9 @@ public class Performance {
     private String category;
     @Column(nullable = false)
     private Long price;
+
+
+    public PerformanceForm toForm(){
+        return new PerformanceForm(this.title, this.place, this.dates, this.category, this.price);
+    }
 }
