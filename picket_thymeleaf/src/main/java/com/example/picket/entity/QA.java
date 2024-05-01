@@ -15,19 +15,20 @@ import java.sql.Timestamp;
 @ToString
 public class QA {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "qa_id")
+    @SequenceGenerator(name = "qa_id", sequenceName = "qa_id", initialValue = 1, allocationSize = 1)
     private Long qa_id;
-    @Column
+    @Column(nullable = false)
     private String qa_title;
-    @Column
+    @Column(nullable = false)
     private String qa_content;
-    @Column
-    private Timestamp date;
+    @Column(nullable = false)
+    private Timestamp write_date;
     @Column(nullable = false)
     private String category;
     @Column(nullable = false)
     private String state;
     @ManyToOne
-    @JoinColumn(name = "customer_id")
+    @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 }

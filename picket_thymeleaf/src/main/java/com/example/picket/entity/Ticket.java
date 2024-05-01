@@ -16,6 +16,6 @@ public class Ticket {
     @Column(name="ticket_id")
     private String ticket_id;
     @ManyToOne
-    @JoinColumn(name = "title")
+    @JoinColumn(name = "title", nullable = false)
     private Performance performance;
 }

@@ -7,6 +7,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class PerformanceForm {
+//    private Long id;
     private String title;
     private String place;
     private String dates;
