@@ -89,9 +89,9 @@ function moveCarousel(direct){
 
                 setTimeout(() => {
                     items.forEach((item) => {
-                        item.style.transition = "all 0.1s";
+                        item.style.transition = "all 0.3s";
                     })
-                    itemBox.style.transition = "all 0.1s";
+                    itemBox.style.transition = "all 0.3s";
                     isAnimating = false;
                 }, 1100);
             }

@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" type="text/css" href="/css/info.css">
-    <title>연극 〈클로저〉</title>
+    <title th:text="${title}"></title>
 </head>
 <body>
 <header>
     <nav id="nav1">
         <a href="/main"><img id="logo" src="/image/icon/로고.png" width="55%" ></a>
         <ul>
-            <li><a href="/category/concertlist">콘서트</a></li>
-            <li><a href="/category/musicallist">뮤지컬</a></li>
-            <li><a href="/category/actlist">연극</a></li>
-            <li><a href="/category/classiclist">클래식</a></li>
-            <li><a href="/category/exhibitlist">전시회</a></li>
+            <li><a href="/categories/concertlist">콘서트</a></li>
+            <li><a href="/categories/musicallist">뮤지컬</a></li>
+            <li><a href="/categories/actlist">연극</a></li>
+            <li><a href="/categories/classiclist">클래식</a></li>
+            <li><a href="/categories/exhibitlist">전시회</a></li>
         </ul>
     </nav>
     <div>
@@ -30,14 +30,14 @@
 <div class="renew-content">
     <div class="rn-01">
         <p class="rn-location">
-            <a>연극 > 대학로</a>
+            <a th:text="${category}"></a>
         </p>
         <p class="rn-labels"></p>
     </div>
     <div class="rn-02">
-        <p class="rn-big-title"><b>연극 〈클로저〉</b></p>
+        <p class="rn-big-title"><b th:text="${title}"></b></p>
     </div>
-    <span>2024.04.23 ~ 2024.07.14 | 플러스씨어터 </span>
+    <span th:text="${dates} + ' | ' + ${place}"></span>
 
     <div class="renew-content">
         <div class="rn-03">
@@ -55,8 +55,8 @@
                         <dt>출연</dt>
                         <dd>&nbsp;이상윤,진서연,김다흰,이진희,최석진,유현석,안소희,김주연</dd>
                         <dt>가격</dt>
-                        <dd>R석 66,000원<br>
-                            S석 44,000원</dd>
+                        <dd th:text="${price} + '원'"></dd>
+
                         <dt>혜택</dt>
                         <dd><button>사용가능쿠폰</button></dd>
                     </dl>

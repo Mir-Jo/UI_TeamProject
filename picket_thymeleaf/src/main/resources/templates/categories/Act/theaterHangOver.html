@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" type="text/css" href="/css/info.css">
-    <title>연극 [행오버]</title>
+    <title th:text="${title}"></title>
 </head>
 <body>
 <header>
     <nav id="nav1">
         <a href="/main"><img id="logo" src="/image/icon/로고.png" width="55%" ></a>
         <ul>
-            <li><a href="/category/concertlist">콘서트</a></li>
-            <li><a href="/category/musicallist">뮤지컬</a></li>
-            <li><a href="/category/actlist">연극</a></li>
-            <li><a href="/category/classiclist">클래식</a></li>
-            <li><a href="/category/exhibitlist">전시회</a></li>
+            <li><a href="/categories/concertlist">콘서트</a></li>
+            <li><a href="/categories/musicallist">뮤지컬</a></li>
+            <li><a href="/categories/actlist">연극</a></li>
+            <li><a href="/categories/classiclist">클래식</a></li>
+            <li><a href="/categories/exhibitlist">전시회</a></li>
         </ul>
     </nav>
     <div>
@@ -30,14 +30,16 @@
 <div class="renew-content">
     <div class="rn-01">
         <p class="rn-location">
-            <a>연극 > 대학로</a>
+            <a th:text="${category}"></a>
         </p>
         <p class="rn-labels"></p>
     </div>
     <div class="rn-02">
-        <p class="rn-big-title"><b>연극 [행오버]</b></p>
+
+        <p class="rn-big-title"><b th:text="${title}"></b></p>
+
     </div>
-    <span>2022.01.21 ~ 2024.04.30 | 정극장 </span>
+    <span th:text="${dates} + ' | ' + ${place}"></span>
 
     <div class="renew-content">
         <div class="rn-03">
@@ -55,7 +57,9 @@
                         <dt>출연</dt>
                         <dd>&nbsp;-</dd>
                         <dt>가격</dt>
-                        <dd>전석 40,000원</dd>
+
+                        <dd th:text="${price} + '원'"></dd>
+
                         <dt>혜택</dt>
                         <dd><button>사용가능쿠폰</button></dd>
                     </dl>

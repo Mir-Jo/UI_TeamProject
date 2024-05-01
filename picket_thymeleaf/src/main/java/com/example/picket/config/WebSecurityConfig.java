@@ -39,7 +39,7 @@ public class WebSecurityConfig {
     @Bean
     public WebSecurityCustomizer configure() {
         return (web) -> web.ignoring()
-                .requestMatchers(toH2Console())
+//                .requestMatchers(toH2Console())
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations())
                 .requestMatchers("/image/**")
                 .requestMatchers("/font/**")
@@ -55,9 +55,11 @@ public class WebSecurityConfig {
                 .headers(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authorize ->
                         authorize
-                                .requestMatchers("/loginpage", "/main", "/signup", "/login",
-                                        "/categories/**", "/FindIDPW", "/FindId", "/FindPW", "/ChangePW").permitAll()
-                                .anyRequest().authenticated()
+//                                .requestMatchers("/loginpage", "/main", "/signup", "/login",
+//                                        "/categories/**", "/FindIDPW", "/FindId", "/FindPW", "/ChangePW").permitAll()
+//                                .anyRequest().authenticated()
+                                .requestMatchers("/QAWrite", "/QAList", "/mypagemain","/support", "/loginmain").authenticated()
+                                .anyRequest().permitAll()
                 )
                 .formLogin(login -> login
                         .loginPage("/loginpage")
