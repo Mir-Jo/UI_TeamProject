@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" type="text/css" href="/css/info.css">
     <link rel="stylesheet" href="/css/font.css">
-    <title>뷰티풀 민트 라이프 2024</title>
+    <title th:text="${title}"></title>
 </head>
 <body>
 <header>
@@ -31,15 +31,15 @@
 <div class="renew-content">
     <div class="rn-01">
         <p class="rn-location">
-            <a>콘서트 > 페스티벌</a>
+            <a th:text="${category}"></a>
         </p>
         <p class="rn-labels"></p>
     </div>
     <div class="rn-02">
-        <p class="rn-big-title"><b>뷰티풀 민트 라이프 2024</b></p>
+        <p class="rn-big-title"><b  th:text="${title}" ></b></p>
 
     </div>
-    <span>2024.05.11 ~ 2024.05.12 | 올림픽공원 </span>
+    <span th:text="${dates} + ' | ' + ${place}"></span>
 
     <div class="renew-content">
         <div class="rn-03">
@@ -57,7 +57,7 @@
                         <dt>출연</dt>
                         <dd>&nbsp;10cm, 너드커넥션, 데이브레이크, 설, 소란, 죠지, 페퍼톤스, 한로로, 김성규, 김필, LUCY, 오월오일, 이승윤, 콜드, 터치드, 홍이삭</dd>
                         <dt>가격</dt>
-                        <dd>자유석 110,000원</dd>
+                        <dd th:text="'전석 ' + ${price} + '원'"></dd>
                         <dt>혜택</dt>
                         <dd><button>사용가능쿠폰</button></dd>
                     </dl>
