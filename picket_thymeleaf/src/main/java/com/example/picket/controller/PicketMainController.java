@@ -49,7 +49,8 @@ public class PicketMainController {
     /* 내 문의내역으로 이동 */
     @GetMapping("/QAList")
     public String gotoQAList() { return "/mypage/QA_list";}
-
+    @GetMapping("/QaAnswer")
+    public String gotoQaAnswer() { return "/mypage/QaAnswer";}
     @GetMapping("/FindIDPW")
     public String findIDPW(){ return "/login/FindIDPW"; }
 
