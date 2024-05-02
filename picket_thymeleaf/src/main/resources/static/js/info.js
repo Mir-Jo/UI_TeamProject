@@ -77,16 +77,34 @@ nextBtn.addEventListener("click", () => {
 /* 찜목록 하트 */
 
 var images = ['../image/info/heart.png', '../image/info/heart_red.png']; // 이미지 파일 경로 배열
-      var currentIndex = 0; // 현재 이미지 인덱스
+var currentIndex = 0; // 현재 이미지 인덱스
 
-      function changeImage() {
-          currentIndex++; // 다음 이미지로 인덱스 증가
-          if (currentIndex >= images.length) {
-              currentIndex = 0; // 마지막 이미지까지 보여준 후 처음 이미지로 돌아가기
-          }
-          var imageElement = document.querySelector('#image-container img');
-          imageElement.src = images[currentIndex]; // 이미지 변경
 
-      }
+
+let title = document.querySelector(".rn-big-title b").value;
+
+function changeImage() {
+  currentIndex++; // 다음 이미지로 인덱스 증가
+  if (currentIndex >= images.length) {
+      currentIndex = 0; // 마지막 이미지까지 보여준 후 처음 이미지로 돌아가기
+  }
+  var imageElement = document.querySelector('#image-container img');
+  imageElement.src = images[currentIndex]; // 이미지 변경
+
+
+  if(currentIndex == 1){
+
+    fetch("http://localhost:8080/wishEnroll",{
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: {
+        title: title
+      }}
+    ).then((response) => console.log(response));
+  }
+
+}
 
 /* 찜목록 하트 끝 */
