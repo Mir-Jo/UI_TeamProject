@@ -1,12 +1,11 @@
 package com.example.picket.config;
 
 
-import com.example.picket.controller.CustomerViewController;
+import com.example.picket.entity.Customer;
+import com.example.picket.repository.CustomerRepository;
 import com.example.picket.service.CustomerDetailService;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
@@ -18,24 +17,16 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.factory.PasswordEncoderFactories;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.authentication.logout.LogoutHandler;
-import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
-import org.springframework.security.web.savedrequest.HttpSessionRequestCache;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.io.IOException;
-
-import static org.springframework.boot.autoconfigure.security.servlet.PathRequest.toH2Console;
-
+@Slf4j
 @EnableWebSecurity
 @Configuration
 public class WebSecurityConfig {
+    @Autowired
+    private CustomerRepository customerRepository;
     @Bean
     public WebSecurityCustomizer configure() {
         return (web) -> web.ignoring()
@@ -65,7 +56,17 @@ public class WebSecurityConfig {
                         .loginPage("/loginpage")
                         .loginProcessingUrl("/login")
                         .usernameParameter("id")
-                        .defaultSuccessUrl("/loginmain", false)
+                        .successHandler(((request, response, authentication) ->{
+                                User user = (User)authentication.getPrincipal();
+                                Customer customer = customerRepository.findById(user.getUsername()).orElse(null);
+                                if(customer != null){
+                                HttpSession session = request.getSession(true);
+                                session.setAttribute("customer", customer);
+                                log.info("customer name: "+customer.getName()+"customer id:"+customer.getId());
+                                response.sendRedirect("/loginmain");
+                                }
+                                })
+                        )
                         .failureHandler((request, response, exception) -> {
                             request.getSession().setAttribute("errorMessage", "아이디 또는 비밀번호가 일치하지 않습니다.");
                             response.sendRedirect("/loginpage");

@@ -1,10 +1,12 @@
 package com.example.picket.controller;
 
+import com.example.picket.entity.Customer;
 import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,7 +26,10 @@ public class PicketMainController {
 
     /* 로그인상태인 메인으로 이동 */
     @GetMapping("/loginmain")
-    public String gotologinMain(){
+    public String gotologinMain(HttpSession session, Model model){
+        Customer customer = (Customer)session.getAttribute("customer");
+        log.info("customer name: "+customer.getName()+ " customer id: "+customer.getId());
+        model.addAttribute("message", customer.getName()+"님 환영합니다.");
         return "loginmain";
     }
 
@@ -34,7 +39,10 @@ public class PicketMainController {
 
     /* 마이페이지로 이동 */
     @GetMapping("/mypagemain")
-    public String gotoMyPage() { return "/mypage/mypagemain";}
+    public String gotoMyPage(HttpSession session) {
+        Customer customer = (Customer)session.getAttribute("customer");
+        return "/mypage/mypagemain";
+    }
     @GetMapping("/wishlist")
     public String gotowishlist() { return "/mypage/wishlist";}
     @GetMapping("/pointlist")
@@ -46,11 +54,6 @@ public class PicketMainController {
     @GetMapping("/withdrawal")
     public String gotoWithdrawal() { return "/mypage/withdrawal";}
 
-    /* 내 문의내역으로 이동 */
-    @GetMapping("/QAList")
-    public String gotoQAList() { return "/mypage/QA_list";}
-    @GetMapping("/QaAnswer")
-    public String gotoQaAnswer() { return "/mypage/QaAnswer";}
     @GetMapping("/FindIDPW")
     public String findIDPW(){ return "/login/FindIDPW"; }
 
@@ -66,7 +69,5 @@ public class PicketMainController {
     @GetMapping("/categories/exhibitlist")
     public String exhibitList() {return "/categories/ExhibitList";}
 
-    /* 1:1문의 등록으로 이동 */
-    @GetMapping("/QAWrite")
-    public String qaWrite(){ return "/support/QA_Write"; }
+
 }

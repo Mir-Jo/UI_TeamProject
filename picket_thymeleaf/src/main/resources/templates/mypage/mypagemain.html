@@ -37,7 +37,7 @@
 
                 <div>
                     <div class="usernicknamebox">
-                            <span class="usernickname">최부용</span>님<br>어서오세요
+                            <span class="usernickname" th:text="${session.customer.name}"></span>님<br>어서오세요
                             <br>
 
                     </div>
@@ -191,6 +191,9 @@
             <span>호스팅서비스사업자 : Picket(주) </span><span>&copy;PicketCorp.Allright Reserved</span>
         </div>
     </div>
+    <script>
+
+    </script>
 </footer>
 <script src="/js/mypagemainjs.js"></script>
 </body>
