@@ -9,6 +9,27 @@
     <link rel="stylesheet" type="text/css" href="/css/mypagemaincss.css">
 
     <title>마이 티켓</title>
+
+<!--    지울거-->
+    <style>
+        .truncate {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 200px;
+            display: inline-block;
+        }
+         .truncate_leaf {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 200px;
+        }
+    </style>
+
+
+
+
 </head>
 <body>
 <header>
@@ -103,9 +124,8 @@
                             <th class="mypagemain_checkbox_width"><input type="checkbox" name="mypagemain_ticket1" onclick='selectAll1(this)'></th>
                             <th>예매 일자</th>
                             <th>티켓 목록</th>
+                            <th>공연 일자 / 매수</th>
                             <th>환불기간</th>
-                            <th>공연 일자</th>
-                            <th>개수</th>
                             <th>가격</th>
                         </tr>
                         </thead>
@@ -113,47 +133,41 @@
                         <tr class="mypagemain_tablebody">
                             <td><input type="checkbox" name="mypagemain_ticket1"></td>
                             <td>2024-03-26</td>
-                            <td><a href="/season">후지시로 세이지 탄생 100주년 기념 오사카 파노라마展</a></td>
-                            <td>2024-03-29</td>
+                            <td ><a href="/season" class="truncate">후지시로 세이지 탄생 100주년 기념 오사카 파노라마展</a></td>
+                            <td>2024-03-29<br>1매</td>
                             <td>2024-04-01</td>
-                            <td>1</td>
                             <td>140000</td>
                         </tr>
                         <tr class="mypagemain_tablebody">
                             <td><input type="checkbox" name="mypagemain_ticket1"></td>
+                            <td th:text="${pay_date}"></td>
+                            <td><a href="/season" class="truncate_leaf" th:text="${title}"></a></td>
+                            <td th:text="${perform_date}"><br>1매</td>
+                            <td th:text="${cancel_date}">2024-04-01</td>
+                             <td>140000</td>
+                        </tr>
+                        <tr class="mypagemain_tablebody">
+                            <td><input type="checkbox" name="mypagemain_ticket1"></td>
                             <td>2024-03-26</td>
-                            <td><a href="/season">King Gnu Asia Tour ‘THE GREATEST UNKNOWN’ in Seoul</a></td>
-                            <td>2024-03-29</td>
+                            <td><a href="/season">뮤지컬 물랑루즈</a></td>
+                            <td>2024-03-29 <br>1매</td>
                             <td>2024-04-01</td>
-                            <td>1</td>
                             <td>140000</td>
                         </tr>
                         <tr class="mypagemain_tablebody">
                             <td><input type="checkbox" name="mypagemain_ticket1"></td>
                             <td>2024-03-26</td>
                             <td><a href="/season">뮤지컬 물랑루즈</a></td>
-                            <td>2024-03-29</td>
+                            <td>2024-03-29 <br>1매</td>
                             <td>2024-04-01</td>
-                            <td>1</td>
                             <td>140000</td>
                         </tr>
                         <tr class="mypagemain_tablebody">
                             <td><input type="checkbox" name="mypagemain_ticket1"></td>
                             <td>2024-03-26</td>
                             <td><a href="/season">뮤지컬 물랑루즈</a></td>
-                            <td>2024-03-29</td>
+                            <td>2024-03-29<br>1매</td>
                             <td>2024-04-01</td>
-                            <td>1</td>
-
-                            <td>140000</td>
-                        </tr>
-                        <tr class="mypagemain_tablebody">
-                            <td><input type="checkbox" name="mypagemain_ticket1"></td>
-                            <td>2024-03-26</td>
-                            <td><a href="/season">뮤지컬 물랑루즈</a></td>
-                            <td>2024-03-29</td>
-                            <td>2024-04-01</td>
-                            <td>1</td>
                             <td>140000</td>
                         </tr>
                         <tr>
