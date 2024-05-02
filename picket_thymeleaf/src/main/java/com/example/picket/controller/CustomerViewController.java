@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
@@ -33,21 +34,6 @@ public class CustomerViewController{
             session.removeAttribute("errorMessage");
         }
         return "/login/login";
-    }
-    @PostMapping("/login")
-    public String login(String id, String password, HttpSession session, RedirectAttributes rttr){
-        if(customerService.authentication(id, password)){
-            Customer customer = customerRepository.findById(id).orElse(null);
-            if(customer != null){
-                session.setAttribute("id", customer);
-                String userName = customer.getName();
-                rttr.addFlashAttribute("message", userName+"님 환영합니다.");
-                return "redirect:/loginmain";
-                }
-            } else{
-                rttr.addFlashAttribute("message", "잘못된 ID 혹은 비밀번호입니다. 다시 입력해주세요.");
-            }
-                return "redirect:/loginpage";
     }
 
     @GetMapping("/logout")
