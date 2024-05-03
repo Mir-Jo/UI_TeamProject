@@ -47,8 +47,7 @@
     <div>
         <a href="/mypagemain"><img id="my" src="/image/icon/마이페이지.png" width="50" padding="10 0 0 0"></a>
         <a href="/support"><img id="callcenter" src="/image/icon/물음표.png" width="45" padding="10 0 0 0"></a>
-        <a href="/loginpage"><img id="login" src="/image/icon/로그인.png" width="45"></a>
-
+        <a href="/logout"><img id="login" src="/image/icon/로그아웃.png" width="45"></a>
     </div>
 </header>
 <main>
@@ -67,10 +66,10 @@
 
             </div>
             <div class="mypagelist">
-                <a href="/mypagemain" class="a"><img src="/image/mypage/ticket.png"><div class="mypagelist_right_border">마이 티켓<br>1</div></a>
-                <a href="/wishlist"><img src="/image/mypage/heart.png"><div class="mypagelist_right_border">관심목록<br>1</div></a>
-                <a href="/pointlist"><img src="/image/mypage/point.png"><div class="mypagelist_right_border">포인트<br>100000</div></a>
-                <a href="/QAList"><img src="/image/mypage/qalist.png"><div class="mypagelist_last_right_border">문의내역<br>1</div></a>
+                <a href="/mypagemain"><img src="/image/mypage/ticket.png"><div class="mypagelist_right_border">마이 티켓<br><span>1</span></div></a>
+                <a href="/wishlist"><img src="/image/mypage/heart.png"><div class="mypagelist_right_border">관심목록<br><span>1</span></div></a>
+                <a href="/pointlist"><img src="/image/mypage/point.png"><div class="mypagelist_right_border">포인트<br><span th:text="${session.customer.point}"></span></div></a>
+                <a href="/QAList"><img src="/image/mypage/qalist.png"><div class="mypagelist_last_right_border">문의내역<br><span>1</span></div></a>
             </div>
             <div class="mypagekind">
 
@@ -125,7 +124,7 @@
                             <th>예매 일자</th>
                             <th>티켓 목록</th>
                             <th>공연 일자 / 매수</th>
-                            <th>환불기간</th>
+                            <th>취소 가능일</th>
                             <th>가격</th>
                         </tr>
                         </thead>
@@ -144,9 +143,9 @@
                             <td><a href="/season" class="truncate_leaf" th:text="${title}"></a></td>
                             <td th:text="${perform_date}"><br>1매</td>
                             <td th:text="${cancel_date}">2024-04-01</td>
-                             <td>140000</td>
+                             <td th:text="${price}">140000</tdth:>
                         </tr>
-                        <tr class="mypagemain_tablebody">
+                        <tr class="mypagemain_tablebody" th:each="payment:${payment}">
                             <td><input type="checkbox" name="mypagemain_ticket1"></td>
                             <td>2024-03-26</td>
                             <td><a href="/season">뮤지컬 물랑루즈</a></td>
@@ -215,7 +214,19 @@
         </div>
     </div>
     <script>
+        /*<![CDATA[*/
+    const Btn = document.querySelector("#login")
 
+    if(Btn.getAttribute("src") === '/image/icon/로그아웃.png'){
+        Btn.addEventListener("click", function(event){
+            if(confirm("로그아웃 하시겠습니까?")){
+                alert("로그아웃되었습니다.");
+            } else{
+                event.preventDefault();
+            }
+        });
+    }
+        /*]]>*/
     </script>
 </footer>
 <script src="/js/mypagemainjs.js"></script>

@@ -27,7 +27,9 @@
     <div>
         <a href="/mypagemain"><img id="my" src="/image/icon/마이페이지.png" width="50" padding="10 0 0 0"></a>
         <a href="/support"><img id="callcenter" src="/image/icon/물음표.png" width="45" padding="10 0 0 0"></a>
-        <a href="/loginpage"><img id="login" src="/image/icon/로그인.png" width="45"></a>
+        <a th:href="${session.customer != null ? '/logout' : '/loginpage'}">
+            <img id="login" th:src="${session.customer != null ? '/image/icon/로그아웃.png' : '/image/icon/로그인.png'}" width="45">
+        </a>
     </div>
 </header>>
 
@@ -144,19 +146,19 @@
 
     <!-- FAQ -->
     <div class="FAQ">
-        <div id="FAQ-text" ><h1>자주 묻는 질문 FAQ</h1></div>
+        <div id="FAQ-text" ><h1>자주 묻는 질문 <br/>FAQ</h1></div>
         <input type="checkbox" id="answer01">
-        <label for=answer01> 콘텐츠 추가 목록<em><img id="un" src="/image/icon/화살표키.png" width="100%"></em></label>
+        <label for=answer01> Apple TV+란?<em><img class="un" src="../image/icon/화살표키.png" width="100%"></em></label>
         <div>
             <p>추가 되는 답변</p>
         </div>
         <input type="checkbox" id="answer02">
-        <label for=answer02> 콘텐츠 추가 목록<em><img src="/image/icon/화살표키.png" width="100%"></em></label>
+        <label for=answer02> 콘텐츠 추가 목록<em><img class="un" src="../image/icon/화살표키.png" width="100%"></em></label>
         <div>
             <p>추가 되는 답변</p>
         </div>
         <input type="checkbox" id="answer03">
-        <label for=answer03> 콘텐츠 추가 목록<em><img src="/image/icon/화살표키.png" width="100%"></em></label>
+        <label for=answer03> 콘텐츠 추가 목록<em><img class="un" src="../image/icon/화살표키.png" width="100%"></em></label>
         <div>
             <p>추가 되는 답변</p>
         </div>
@@ -181,15 +183,22 @@
             <span>호스팅서비스사업자 : Picket(주) </span><span>&copy;PicketCorp.Allright Reserved</span>
         </div>
     </div>
-    <script th:inline="javascript">
-        window.onload = function() {
-          var message = /*[[${message}]]*/ null;
-            if(message) {
-              alert(message);
-            }
+    </footer>
+<script>
+    /*<![CDATA[*/
+const Btn = document.querySelector("#login")
+
+if(Btn.getAttribute("src") === '/image/icon/로그아웃.png'){
+    Btn.addEventListener("click", function(event){
+        if(confirm("로그아웃 하시겠습니까?")){
+            alert("로그아웃되었습니다.");
+        } else{
+            event.preventDefault();
         }
-    </script>
-</footer>
+    });
+}
+    /*]]>*/
+</script>
 <script src="/js/main.js"></script>
 
 </body>

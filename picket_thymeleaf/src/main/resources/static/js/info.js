@@ -77,16 +77,40 @@ nextBtn.addEventListener("click", () => {
 /* 찜목록 하트 */
 
 var images = ['../image/info/heart.png', '../image/info/heart_red.png']; // 이미지 파일 경로 배열
-      var currentIndex = 0; // 현재 이미지 인덱스
+var currentIndex = 0; // 현재 이미지 인덱스
 
-      function changeImage() {
-          currentIndex++; // 다음 이미지로 인덱스 증가
-          if (currentIndex >= images.length) {
-              currentIndex = 0; // 마지막 이미지까지 보여준 후 처음 이미지로 돌아가기
-          }
-          var imageElement = document.querySelector('#image-container img');
-          imageElement.src = images[currentIndex]; // 이미지 변경
+let title = document.querySelector(".rn-big-title b").textContent;
 
-      }
+function changeImage() {
+  const imageUrl = document.querySelector('#image-container img').getAttribute('src');
+
+  if(images[0] == imageUrl) currentIndex = 0;
+  else if(images[1] == imageUrl) currentIndex = 1;
+
+  currentIndex++; // 다음 이미지로 인덱스 증가
+  if (currentIndex >= images.length) {
+      currentIndex = 0; // 마지막 이미지까지 보여준 후 처음 이미지로 돌아가기
+  }
+  var imageElement = document.querySelector('#image-container img');
+  imageElement.src = images[currentIndex]; // 이미지 변경
+
+  let url = "";
+  const path = window.location.pathname;
+
+  if(currentIndex == 1) url = "http://localhost:8080/wishEnroll"
+  else if(currentIndex == 0) url = "http://localhost:8080/wishDelete"
+
+  fetch(url,{
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      title: title,
+      path: path
+    })
+  })
+  .then((response) => console.log(response));
+}
 
 /* 찜목록 하트 끝 */

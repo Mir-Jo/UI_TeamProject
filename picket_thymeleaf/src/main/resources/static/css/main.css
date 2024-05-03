@@ -19,7 +19,7 @@ main{ background-color: #000000;
 
 #indexf{
   position: relative;
-  height: 1200px;
+  height: 1300px;
   width: 100%;
   z-index: 1;
 }
@@ -32,8 +32,8 @@ main{ background-color: #000000;
   padding:10% 0 0 0;
   margin-bottom:30px;
   color:#fff;
-  font-size:30px;
-  justify-content: center;   
+  font-size:50px;
+  justify-content: center;
 }
 .iconbox{
   display:flex;  /* 플렉스 컨테이너 지정 */
@@ -43,16 +43,13 @@ main{ background-color: #000000;
   justify-content: space-around;
 }
 .icon > a > img{
-  width:130px;
-}
-.iconbox > p{
-  text-align:center;
+  width:180px;
 }
 .icontext{
   font-family: 'wind';
   font-weight: 500;
   text-align:center;
-  
+  font-size: 30px;
 }
 
 /* 슬라이드 큰거 이미지 */
@@ -208,9 +205,11 @@ animation: rollingleft2 100s linear infinite;
   padding-bottom: 10%;
 }
 #FAQ-text{
-  padding-top: 5%;
-  margin: 5%;
-  font-size: 25px;
+  font-family: 'sdgothic';
+  font-weight: 300;
+  padding-top: 11% ;
+  margin: 5% 5% 1% 5% ;
+  font-size: 60px;
   color: #000000;
   text-align: center;
 }
@@ -220,33 +219,41 @@ animation: rollingleft2 100s linear infinite;
 }
 
  input[id *="answer"] + label{
-  left: 25%;
-  width: 50%;
+  font-family: 'sdgothic';
+  font-weight: 900;
+  left: 10%;
+  width: 80%;
   display: block;
-  padding:20px;
-  border: 1px solid #232188;
-  border-bottom:0;
-  color:#cbd6da; 
+  padding:40px 20px 20px 20px ;
+  border-top:1px solid #d3d3d3;
+  color:#black;
   font-weight:900;
-  background:#3634a5;
   cursor:pointer;
-  position:relative;  
+  position:relative;
   /* 화살표 백그라운드 이미지 */
+  font-size: 40px;
+  height: 70px;
+}
 
-}  
+input[id="answer01"] + label {
+  border-top: none;
+}
+
 /* 화살표 이미지 */
  input[id *="answer"] + label em {
   position: absolute;
-  top: 50%;
-  right: 10px;
+  top: 47%;
+  right: 35px;
   width: 30px;
-  height: 30px; 
+  height: 30px;
   margin-top: -15px;
   display:inline-block;
 
+  opacity: 0.5;
+
   /* 화살표 백그라운드 이미지 */
   background: url("화살표키.png") 0 0 no-repeat;
-  background-size: 100% auto; 
+  background-size: 100% auto;
 }
 
 input[id *="answer"] + label + div {
@@ -260,12 +267,56 @@ background: #ffffff;
 input[id *="answer"] + label + div p{
 font-size: 20px;
 display: inline-block;
-padding:20px; 
+padding:20px;
+padding-bottom: 50px
   }
 input[id *="answer"]:checked + label +div{max-height: 100px;}
 input[id *="answer"]:checked + label em{background-position: 0 -30px;}
 
 
+.un{
+ width:45px;
+}
+
+
+
+
+
+
+
+
+
+
+/* 풋터 클래스 */
+footer{
+  background-color: #e0dcdc;
+  padding-bottom: 1%;
+
+}
+.footer-side{
+  padding-left: 40px;
+  height: 15% auto;
+}
+#foot-top{
+  padding-top:  10px;
+}
+#foot-top>a{
+color:#7e7b7b;
+font-size: 15px;
+padding: 10px 15px;
+width: 50%;
+
+}
+.footer-side>div span{
+  color:#7e7b7b;
+  font-size: 15px;
+  /* padding:   */
+}
+
+#footer-left{
+  float: inline-end;
+  padding: 0 10% ;
+}
 
 .image-wrap img, .image-wrap2 img{
   border-radius: 20px;
