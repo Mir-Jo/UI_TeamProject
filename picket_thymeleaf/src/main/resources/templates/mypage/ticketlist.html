@@ -37,7 +37,7 @@
                 <div>
                     <div class="usernicknamebox">
                         <div class="scroll1" id="scroll1">
-                            <span class="usernickname">최부용</span>님<br>어서오세요
+                            <span class="usernickname" th:text="${session.customer.name}"></span>님<br>어서오세요
                             <br>
                         </div>
 
@@ -49,7 +49,7 @@
             <div class="mypagelist">
                 <a href="/mypagemain"><img src="/image/mypage/ticket.png"><div class="mypagelist_right_border">예매내역<br><span>1</span></div></a>
                 <a href="/wishlist"><img src="/image/mypage/heart.png"><div class="mypagelist_right_border">찜목록<br><span>1</span></div></a>
-                <a href="/pointlist"><img src="/image/mypage/point.png"><div class="mypagelist_right_border">포인트<br><span>100000</span></div></a>
+                <a href="/pointlist"><img src="/image/mypage/point.png"><div class="mypagelist_right_border">포인트<br><span th:text="${session.customer.point}"></span></div></a>
                 <a href="/QAList"><img src="/image/mypage/qalist.png"><div class="mypagelist_last_right_border">문의내역<br><span>1</span></div></a>
             </div>
             <div class="mypagekind">

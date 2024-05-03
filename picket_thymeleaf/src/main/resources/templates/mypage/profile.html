@@ -158,29 +158,38 @@
 
                     <tr class="profile_solid_tr">
                         <th>ID</th>
-                        <td class="profile_table_td"><input type="text" style="width:300px;height:40px;font-size:25px;"></td>
+                        <td class="profile_table_td"><input type="text"
+                                                            style="width:300px;height:40px;font-size:25px;"
+                                                            th:value="${session.customer.id}" readonly></td>
                     </tr>
                     <tr class="profile_solid_tr">
                         <th>PW</th>
-                        <td class="profile_table_td"><input type="password" style="width:300px;height:40px;font-size:25px;"></td>
+                        <td class="profile_table_td"><input type="password" style="width:300px;height:40px;font-size:25px;" readonly></td>
                     </tr>
                     <tr class="profile_solid_tr">
                         <th>이름</th>
-                        <td class="profile_table_td"><input type="text" style="width:150px;height:40px;font-size:25px;"></td>
+                        <td class="profile_table_td"><input type="text"
+                                                            style="width:150px;height:40px;font-size:25px;"
+                                                            th:value="${session.customer.name}" readonly></td>
                     </tr>
 
                     <tr class="profile_solid_tr">
                         <th>생년월일</th>
-                        <td class="profile_table_td"><input type="date" style="width:150px;height:40px; font-size:20px;"></td>
+                        <td class="profile_table_td"><input type="text"
+                                                            style="width:150px;height:40px; font-size:20px;"
+                                                            th:value="${session.customer.birthdate}" readonly></td>
                     </tr>
                     <tr class="profile_solid_tr">
                         <th>전화번호</th>
-                        <td class="profile_table_td"><input type="tel" style="width: 300px;
-              height: 40px; font-size: 20px;"></td>
+                        <td class="profile_table_td"><input type="text"
+                                                            style="width: 300px; height: 40px; font-size: 20px;"
+                                                            th:value="${session.customer.tel}" readonly></td>
                     </tr>
                     <tr class="profile_solid_tr">
                         <th>이메일</th>
-                        <td class="profile_table_td"><input type="email" style="width: 300px;height:40px; font-size:20px; "></td>
+                        <td class="profile_table_td"><input type="email"
+                                                            style="width: 300px;height:40px; font-size:20px; "
+                                                            th:value="${session.customer.email}" readonly></td>
                     </tr>
 
                 </table>
