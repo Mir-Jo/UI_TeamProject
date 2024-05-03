@@ -132,8 +132,7 @@
     <div>
         <a href="/mypagemain"><img id="my" src="/image/icon/마이페이지.png" width="50" padding="10 0 0 0"></a>
         <a href="/support"><img id="callcenter" src="/image/icon/물음표.png" width="45" padding="10 0 0 0"></a>
-        <a href="/loginpage"><img id="login" src="/image/icon/로그인.png" width="45"></a>
-
+        <a href="/logout"><img id="login" src="/image/icon/로그아웃.png" width="45"></a>
     </div>
 
 </header>
@@ -158,26 +157,34 @@
 
                     <tr class="profile_solid_tr">
                         <th>ID</th>
-                        <td class="profile_table_td"><input type="text" style="width:300px;height:40px;font-size:25px;" readonly></td>
+                        <td class="profile_table_td"><input type="text"
+                                                            style="width:300px;height:40px;font-size:25px;"
+                                                            th:value="${session.customer.id}" readonly></td>
                     </tr>
-
                     <tr class="profile_solid_tr">
                         <th>이름</th>
-                        <td class="profile_table_td"><input type="text" style="width:150px;height:40px;font-size:25px;" readonly></td>
+                        <td class="profile_table_td"><input type="text"
+                                                            style="width:150px;height:40px;font-size:25px;"
+                                                            th:value="${session.customer.name}" readonly></td>
                     </tr>
 
                     <tr class="profile_solid_tr">
                         <th>생년월일</th>
-                        <td class="profile_table_td"><input type="date" style="width:150px;height:40px; font-size:20px;" readonly></td>
+                        <td class="profile_table_td"><input type="text"
+                                                            style="width:150px;height:40px; font-size:20px;"
+                                                            th:value="${session.customer.birthdate}" readonly></td>
                     </tr>
                     <tr class="profile_solid_tr">
                         <th>전화번호</th>
-                        <td class="profile_table_td"><input type="tel" style="width: 300px;
-              height: 40px; font-size: 20px;" readonly></td>
+                        <td class="profile_table_td"><input type="text"
+                                                            style="width: 300px; height: 40px; font-size: 20px;"
+                                                            th:value="${session.customer.tel}" readonly></td>
                     </tr>
                     <tr class="profile_solid_tr">
                         <th>이메일</th>
-                        <td class="profile_table_td"><input type="email" style="width: 300px;height:40px; font-size:20px; " readonly></td>
+                        <td class="profile_table_td"><input type="email"
+                                                            style="width: 300px;height:40px; font-size:20px; "
+                                                            th:value="${session.customer.email}" readonly></td>
                     </tr>
 
                 </table>
@@ -224,6 +231,21 @@
         </div>
     </div>
 </footer>
+<script>
+    /*<![CDATA[*/
+const Btn = document.querySelector("#login")
+
+if(Btn.getAttribute("src") === '/image/icon/로그아웃.png'){
+    Btn.addEventListener("click", function(event){
+        if(confirm("로그아웃 하시겠습니까?")){
+            alert("로그아웃되었습니다.");
+        } else{
+            event.preventDefault();
+        }
+    });
+}
+    /*]]>*/
+</script>
 <script src="/js/profile.js"></script>
 </body>
 </html>

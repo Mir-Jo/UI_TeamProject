@@ -49,24 +49,26 @@ public class WebSecurityConfig {
 //                                .requestMatchers("/loginpage", "/main", "/signup", "/login",
 //                                        "/categories/**", "/FindIDPW", "/FindId", "/FindPW", "/ChangePW").permitAll()
 //                                .anyRequest().authenticated()
-                                .requestMatchers("/QAWrite", "/QAList", "/mypagemain","/support", "/loginmain").authenticated()
+                                .requestMatchers("/QAWrite", "/QAList", "/mypagemain", "/loginmain").authenticated()
                                 .anyRequest().permitAll()
                 )
                 .formLogin(login -> login
                         .loginPage("/loginpage")
                         .loginProcessingUrl("/login")
                         .usernameParameter("id")
-                        .successHandler(((request, response, authentication) ->{
+                        .successHandler((request, response, authentication) ->{
                                 User user = (User)authentication.getPrincipal();
                                 Customer customer = customerRepository.findById(user.getUsername()).orElse(null);
+
                                 if(customer != null){
-                                HttpSession session = request.getSession(true);
-                                session.setAttribute("customer", customer);
-                                log.info("customer name: "+customer.getName()+"customer id:"+customer.getId());
-                                response.sendRedirect("/loginmain");
+                                    HttpSession session = request.getSession(true);
+                                    session.setAttribute("customer", customer);
+                                    session.setMaxInactiveInterval(1800);
+
+                                    log.info("customer name: "+customer.getName()+"customer id:"+customer.getId());
+                                    response.sendRedirect("/main");
                                 }
-                                })
-                        )
+                        })
                         .failureHandler((request, response, exception) -> {
                             request.getSession().setAttribute("errorMessage", "아이디 또는 비밀번호가 일치하지 않습니다.");
                             response.sendRedirect("/loginpage");

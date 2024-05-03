@@ -20,18 +20,7 @@ public class PicketMainController {
 
     /* 메인으로 이동 */
     @GetMapping("/main")
-    public String gotoMain() {
-        return "main";
-    }
-
-    /* 로그인상태인 메인으로 이동 */
-    @GetMapping("/loginmain")
-    public String gotologinMain(HttpSession session, Model model){
-        Customer customer = (Customer)session.getAttribute("customer");
-        log.info("customer name: "+customer.getName()+ " customer id: "+customer.getId());
-        model.addAttribute("message", customer.getName()+"님 환영합니다.");
-        return "loginmain";
-    }
+    public String gotoMain(HttpSession session, Model model) { return "main"; }
 
     /* 고객센터로 이동 */
     @GetMapping("/support")
@@ -39,10 +28,7 @@ public class PicketMainController {
 
     /* 마이페이지로 이동 */
     @GetMapping("/mypagemain")
-    public String gotoMyPage(HttpSession session) {
-        Customer customer = (Customer)session.getAttribute("customer");
-        return "/mypage/mypagemain";
-    }
+    public String gotoMyPage() { return "/mypage/mypagemain"; }
     @GetMapping("/wishlist")
     public String gotowishlist() { return "/mypage/wishlist";}
     @GetMapping("/pointlist")
