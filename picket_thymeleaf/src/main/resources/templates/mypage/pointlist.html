@@ -15,11 +15,11 @@
 
         <a href="/main"><img id="logo" src="/image/icon/로고.png" width="55%" ></a>
         <ul>
-            <li><a href="/concertlist">콘서트</a></li>
-            <li><a href="/musicallist">뮤지컬</a></li>
-            <li><a href="/actlist">연극</a></li>
-            <li><a href="/classiclist">클래식</a></li>
-            <li><a href="/exhibitlist">전시회</a></li>
+            <li><a href="/categories/concertlist">콘서트</a></li>
+            <li><a href="/categories/musicallist">뮤지컬</a></li>
+            <li><a href="/categories/actlist">연극</a></li>
+            <li><a href="/categories/classiclist">클래식</a></li>
+            <li><a href="/categories/exhibitlist">전시회</a></li>
         </ul>
     </nav>
     <div>
@@ -41,10 +41,10 @@
                 </div>
             </div>
             <div class="mypagelist">
-                <a href="/mypagemain"><img src="/image/mypage/ticket.png"><div class="mypagelist_right_border">마이 티켓<br><span>1</span></div></a>
-                <a href="/wishlist"><img src="/image/mypage/heart.png"><div class="mypagelist_right_border">관심목록<br><span>1</span></div></a>
-                <a href="/pointlist"><img src="/image/mypage/point.png"><div class="mypagelist_right_border">포인트<br><span>100000</span></div></a>
-                <a href="/QAList"><img src="/image/mypage/qalist.png"><div class="mypagelist_last_right_border">문의내역<br><span>1</span></div></a>
+                <a href="/mypagemain" class="a"><img src="/image/mypage/ticket.png"><div class="mypagelist_right_border">마이 티켓<br>1</div></a>
+                <a href="/wishlist" class="b"><img src="/image/mypage/heart.png"><div class="mypagelist_right_border">관심목록<br>1</div></a>
+                <a href="/pointlist" class="c"><img src="/image/mypage/point.png"><div class="mypagelist_right_border">포인트<br>100000</div></a>
+                <a href="/QAList" class="d"><img src="/image/mypage/qalist.png"><div class="mypagelist_last_right_border">문의내역<br>1</div></a>
             </div>
             <div class="mypagekind">
 
@@ -108,7 +108,11 @@
                         <tr>
                             <td class="mypagemain_spacetable" colspan="6">
                                 <button class="mypagemain_pageleft">&lt</button>
-                                <input class="mypagemain_pagenum" type="text" size="1" value="1">
+                                <button class="mypagemain_pagenum">1</button>
+                                <button class="mypagemain_pagenum">2</button>
+                                <button class="mypagemain_pagenum">3</button>
+                                <button class="mypagemain_pagenum">4</button>
+                                <button class="mypagemain_pagenum">5</button>
                                 <button class="mypagemain_pageright">&gt</button>
                             </td>
                         </tr>

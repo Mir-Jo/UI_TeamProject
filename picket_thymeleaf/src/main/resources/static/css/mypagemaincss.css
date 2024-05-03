@@ -137,7 +137,21 @@ main{
   }
   .mypagemain_pageleft, .mypagemain_pageright{
     padding:5px 10px;
-    border-radius:40px;
+    border-radius:10px;
+    border:0;
+  }
+  .mypagemain_pageleft, .mypagemain_pageright{
+      padding:5px 10px;
+      border-radius:10px;
+      border:0;
+    }
+  .mypagemain_pagenum{
+    padding:5px 10px;
+    border-radius:10px;
+    border:0;
+    background-color:#fff;
+    font-family:'wind';
+    font-weight:bold;
   }
 
   .mypagemain_pagenum{
@@ -227,9 +241,25 @@ main{
     font-size:25px;
     align-items:center;
   }
-  .mypagelist img{
 
+  /* 사진 hover 확대 */
+  .mypagelist img{
+    transition: all 0.2s linear;
   }
+  .a:hover img{
+    transform: scale(1.2);
+  }
+  .b:hover img{
+    transform: scale(1.2);
+  }
+  .c:hover img{
+    transform: scale(1.2);
+  }
+  .d:hover img{
+    transform: scale(1.2);
+  }
+  /* 사진 hover 확대 */
+
   .mypagelist a {
   text-align:center;
   }
@@ -278,4 +308,3 @@ main{
 
 
 
-  
