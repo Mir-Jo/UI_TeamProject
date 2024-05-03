@@ -22,7 +22,7 @@ public class Performance {
     private String title;
     @Column(nullable = false)
     private String place;
-    @Column(nullable = false)
+    @Column(nullable = false) // 공연기간
     private String dates;
     @Column(nullable = false)
     private String category;

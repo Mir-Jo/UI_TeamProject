@@ -15,8 +15,8 @@ public class PaymentForm {
     private String ticket_id;
     private Customer customer;
     private Date perform_date;
-    private Timestamp pay_date;
-    private Date cancel_date;
+    private Timestamp pay_date; // 결제일
+    private Date cancel_date; //취소 가능일
 
     public Payment toEntity(){ return new Payment(ticket_id,customer ,perform_date,pay_date,cancel_date);}
 
