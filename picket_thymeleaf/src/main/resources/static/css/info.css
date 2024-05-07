@@ -277,6 +277,8 @@ dt {
   margin: 0 0 3px 86px;
   line-height: 35px;
   position: relative;
+  font-family: 'fair';
+  font-weight:bold;
 }
 .rn-03-right .rn-product-area1 {
   border-bottom: 1px solid #000;
