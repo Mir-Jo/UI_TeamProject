@@ -78,7 +78,8 @@ public class CustomerViewController{
     }
 
     @PostMapping("/ChangePW")
-    public String changePW(String changedPW, String changedPWCheck,HttpServletRequest request, RedirectAttributes rttr, HttpSession session){
+    public String changePW(String changedPW, String changedPWCheck,HttpServletRequest request,
+                           RedirectAttributes rttr, HttpSession session){
         if(changedPW.equals(changedPWCheck)){
             String userId = session.getAttribute("id2").toString();
             if(userId != null){

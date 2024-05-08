@@ -102,8 +102,7 @@
             </tr>
         </table>
         <p id="more"><a href="#">&lt;&lt;</a><a href="#">&lt;</a><a href>1</a>|<a href="#">2</a>|<a href>3</a>|<a href="#">4</a>|<a href>5</a>|<a href="#">6</a>|<a href>7</a>|<a href="#">8</a>|<a href="#">9</a> <a href="#">&gt;</a> <a href="#">&gt;&gt;</a></p>
-        <script>
-            /*<![CDATA[*/
+        <script th:inline="javascript">
         const Btn = document.querySelector("#login")
 
         if(Btn.getAttribute("src") === '/image/icon/로그아웃.png'){
@@ -116,7 +115,6 @@
                 }
             });
         }
-        /*]]>*/
         </script>
     </main>
 </div>

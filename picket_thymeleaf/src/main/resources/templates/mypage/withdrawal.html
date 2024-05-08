@@ -53,7 +53,7 @@
                 ⑤ 여러분의 회원자격이 본 조에 따라 박탈되는 경우, 회사는 관련 법령 및 개인정보처리방침에 따라 보유하는 여러분의 정보를 제외한 여러분의 계정에 등록된 정보 일체 등을 삭제합니다.
             </div>
             <div class=terms_red>탈퇴 후에는 아이디와 데이터는 복구할 수 없습니다.</div>
-            <form>
+            <form id="delete_form" action="/profile/delete" method="post">
                 <div><input type="checkbox" name="agreements" onClick="agreeCheck(this.form)"> 안내 사항을 모두 확인하였으며, 이에 동의합니다.</div>
                 <div class="button_box"><input type="button" id="checkButton" value="확인" class="terms_button" disabled/></input></div>
             </form>
@@ -79,8 +79,7 @@
         </div>
     </div>
 </footer>
-<script>
-    /*<![CDATA[*/
+<script th:inline="javascript">
 const Btn = document.querySelector("#login")
 
 if(Btn.getAttribute("src") === '/image/icon/로그아웃.png'){
@@ -92,7 +91,6 @@ if(Btn.getAttribute("src") === '/image/icon/로그아웃.png'){
         }
     });
 }
-    /*]]>*/
 </script>
 <script src="/js/withdrawal.js"></script>
 </body>

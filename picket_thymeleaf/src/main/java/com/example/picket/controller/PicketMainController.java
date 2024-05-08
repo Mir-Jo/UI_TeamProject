@@ -26,20 +26,6 @@ public class PicketMainController {
     @GetMapping("/support")
     public String supportMain() { return "/support/support";}
 
-    /* 마이페이지로 이동 */
-    @GetMapping("/mypagemain")
-    public String gotoMyPage() { return "/mypage/mypagemain"; }
-    @GetMapping("/wishlist")
-    public String gotowishlist() { return "/mypage/wishlist";}
-    @GetMapping("/pointlist")
-    public String gotopointlist() { return "/mypage/pointlist";}
-    @GetMapping("/profile")
-    public String gotoProfile() { return "/mypage/profile";}
-    @GetMapping("/profileedit")
-    public String gotoProfileedit() { return "/mypage/profileedit";}
-    @GetMapping("/withdrawal")
-    public String gotoWithdrawal() { return "/mypage/withdrawal";}
-
     @GetMapping("/FindIDPW")
     public String findIDPW(){ return "/login/FindIDPW"; }
 
