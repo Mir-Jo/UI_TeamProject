@@ -6,10 +6,7 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" type="text/css" href="/css/info.css">
     <link rel="stylesheet" href="/css/font.css">
-<<<<<<< HEAD
 
-=======
->>>>>>> 5f8e21affd88b17abf9269191c1458e1f4494171
     <title th:text="${title}"></title>
 </head>
 <body>
@@ -115,7 +112,7 @@
             <div class="rn-03-left">
                 <div class="rn-product-social">
                     <div id="image-container">
-                        <img src="../image/info/heart.png" alt="Image" onclick="changeImage()">
+                        <img th:src="@{${imgUrl}}" alt="Image" onclick="changeImage()">
                         <span><b>찜하기</b></span>
                     </div>
                 </div>
