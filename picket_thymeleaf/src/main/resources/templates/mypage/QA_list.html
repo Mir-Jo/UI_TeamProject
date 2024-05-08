@@ -1,94 +1,3 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-<!--    <link rel="stylesheet" href="/css/common.css">-->
-<!--    <link rel="stylesheet" href="/css/header.css">-->
-<!--    <link rel="stylesheet" href="/css/QA_list.css">-->
-<!--    <link rel="stylesheet" href="/css/font.css">-->
-<!--    <title>내 문의내역</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--<header>-->
-<!--    <nav id="nav1">-->
-<!--        <a href="/main"><img id="logo" src="/image/icon/로고.png" width="55%" ></a>-->
-<!--        <ul>-->
-<!--            <li><a href="/categories/concertlist">콘서트</a></li>-->
-<!--            <li><a href="/categories/musicallist">뮤지컬</a></li>-->
-<!--            <li><a href="/categories/actlist">연극</a></li>-->
-<!--            <li><a href="/categories/classiclist">클래식</a></li>-->
-<!--            <li><a href="/categories/exhibitlist">전시회</a></li>-->
-<!--        </ul>-->
-
-<!--    </nav>-->
-<!--    <div>-->
-<!--        <a href="/mypagemain"><img id="my" src="/image/icon/마이페이지.png" width="50" padding="10 0 0 0"></a>-->
-<!--        <a href="/support"><img id="callcenter" src="/image/icon/물음표.png" width="45" padding="10 0 0 0"></a>-->
-<!--        <a href="/loginpage"><img id="login" src="/image/icon/로그인.png" width="45"></a>-->
-<!--    </div>-->
-<!--</header>-->
-<!--<h1 id="List_title">내 문의내역</h1>-->
-<!--<form id="QA_query">-->
-<!--    <select id="QA_type">-->
-<!--        <option id="전체" name="전체">전체</option>-->
-<!--        <option id="type" name="type">유형</option>-->
-<!--        <option id="title" name="title">제목</option>-->
-<!--        <option id="status" name="status">상태</option>-->
-<!--    </select>-->
-<!--    <input type="text" name="QA_search" id="QA_search">-->
-<!--    <button id="submit" name="submit" method="post">검색</button>-->
-<!--</form>-->
-<!--<table id="my_QAlist" cellspacing="0">-->
-<!--    <tr>-->
-<!--        <th>번호</th>-->
-<!--        <th>문의유형</th>-->
-<!--        <th>문의제목</th>-->
-<!--        <th>등록일</th>-->
-<!--        <th>상태</th>-->
-<!--    </tr>-->
-<!--    <tr>-->
-<!--        <td><a href="#">1</a></td>-->
-<!--        <td>유형1</td>-->
-<!--        <td><a href="#">제목1</a></td>-->
-<!--        <td>xx-xx-xx</td>-->
-<!--        <td>답변완료</td>-->
-<!--    </tr>-->
-<!--    <tr>-->
-<!--        <td><a href="#">2</a></td>-->
-<!--        <td>유형2</td>-->
-<!--        <td><a href="#">제목2</a></td>-->
-<!--        <td>xx-xx-xx</td>-->
-<!--        <td>답변완료</td>-->
-<!--    </tr>-->
-<!--    <tr>-->
-<!--        <td><a href="#">3</a></td>-->
-<!--        <td>유형3</td>-->
-<!--        <td><a href="#">제목3</a></td>-->
-<!--        <td>xx-xx-xx</td>-->
-<!--        <td>답변완료</td>-->
-<!--    </tr>-->
-<!--    <tr>-->
-<!--        <td><a href="#">4</a></td>-->
-<!--        <td>유형4</td>-->
-<!--        <td><a href="#">제목4</a></td>-->
-<!--        <td>xx-xx-xx</td>-->
-<!--        <td>접수</td>-->
-<!--    </tr>-->
-<!--    <tr>-->
-<!--        <td><a href="#">5</a></td>-->
-<!--        <td>유형5</td>-->
-<!--        <td><a href="#">제목5</a></td>-->
-<!--        <td>xx-xx-xx</td>-->
-<!--        <td>접수</td>-->
-<!--    </tr>-->
-<!--</table>-->
-<!--<div class="page_select">-->
-<!--    <a href="#">&lt;</a> |1| <a href="#">&gt;</a>-->
-<!--</div>-->
-<!--</body>-->
-<!--</html>-->
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -98,7 +7,7 @@
     <link rel="stylesheet" href="/css/font.css">
     <link rel="stylesheet" type="text/css" href="/css/mypagemaincss.css">
 
-    <title>마이 티켓</title>
+    <title>내 문의내역</title>
 </head>
 <body>
 <header>
@@ -138,7 +47,7 @@
                 <a href="/mypagemain"><img src="/image/mypage/ticket.png"><div class="mypagelist_right_border">마이 티켓<br><span>1</span></div></a>
                 <a href="/wishlist"><img src="/image/mypage/heart.png"><div class="mypagelist_right_border">관심목록<br><span>1</span></div></a>
                 <a href="/pointlist"><img src="/image/mypage/point.png"><div class="mypagelist_right_border">포인트<br><span th:text="${session.customer.point}"></span></div></a>
-                <a href="/QAList"><img src="/image/mypage/qalist.png"><div class="mypagelist_last_right_border">문의내역<br><span>1</span></div></a>
+                <a href="/QAList"><img src="/image/mypage/qalist.png"><div class="mypagelist_last_right_border">문의내역<br><span th:text="${#lists.size(qaList)}"></span></div></a>
             </div>
             <div class="mypagekind">
 
@@ -182,55 +91,59 @@
                     <table>
                         <thead>
                         <tr class="mypagemain_tablehead">
-                            <th class="mypagemain_checkbox_width"><input type="checkbox" name="mypagemain_ticket1" onclick='selectAll1(this)'></th>
-                            <th class="table_qanum">번호</th>
                             <th class="table_qatype">문의유형</th>
                             <th class="table_qatitle">문의제목</th>
-                            <th class="table_qadate">등록일</th>
+                            <th class="table_qadate">등록시간</th>
                             <th class="table_qastatus">상태</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr class="mypagemain_tablebody">
-                            <td><input type="checkbox" name="mypagemain_ticket1"></td>
-                            <td><a href="/QaAnswer">1</a></td>
-                            <td>유형1</td>
-                            <td><a href="/QaAnswer">제목1</a></td>
-                            <td>xx-xx-xx</td>
-                            <td>답변완료</td>
-                        </tr>
-                        <tr class="mypagemain_tablebody">
-                            <td><input type="checkbox" name="mypagemain_ticket1"></td>
-                            <td><a href="/QaAnswer">2</a></td>
-                            <td>유형2</td>
-                            <td><a href="/QaAnswer">제목2</a></td>
-                            <td>xx-xx-xx</td>
-                            <td>답변완료</td>
-                        </tr>
-                        <tr class="mypagemain_tablebody">
-                            <td><input type="checkbox" name="mypagemain_ticket1"></td>
-                            <td><a href="/QaAnswer">3</a></td>
-                            <td>유형3</td>
-                            <td><a href="/QaAnswer">제목3</a></td>
-                            <td>xx-xx-xx</td>
-                            <td>답변완료</td>
-                        </tr>
-                        <tr class="mypagemain_tablebody">
-                            <td><input type="checkbox" name="mypagemain_ticket1"></td>
-                            <td><a href="/QaAnswer">4</a></td>
-                            <td>유형4</td>
-                            <td><a href="/QaAnswer">제목4</a></td>
-                            <td>xx-xx-xx</td>
-                            <td>답변완료</td>
-                        </tr>
-                        <tr class="mypagemain_tablebody">
-                            <td><input type="checkbox" name="mypagemain_ticket1"></td>
-                            <td><a href="/QaAnswer">5</a></td>
-                            <td>유형5</td>
-                            <td><a href="/QaAnswer">제목5</a></td>
-                            <td>xx-xx-xx</td>
-                            <td>답변완료</td>
-                        </tr>
+                            <tr class="mypagemain_tablebody" th:each="qa:${qaList}">
+                                <td th:text="${qa.category}"></td>
+                                <td th:text="${qa.qa_title}"></td>
+                                <td th:text="${#dates.format(qa.write_date, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                                <td th:text="${qa.state}"></td>
+                            </tr>
+<!--                        <tr class="mypagemain_tablebody">-->
+<!--                            <td><input type="checkbox" name="mypagemain_ticket1"></td>-->
+<!--                            <td><a href="/QaAnswer">1</a></td>-->
+<!--                            <td>유형1</td>-->
+<!--                            <td><a href="/QaAnswer">제목1</a></td>-->
+<!--                            <td>xx-xx-xx</td>-->
+<!--                            <td>답변완료</td>-->
+<!--                        </tr>-->
+<!--                        <tr class="mypagemain_tablebody">-->
+<!--                            <td><input type="checkbox" name="mypagemain_ticket1"></td>-->
+<!--                            <td><a href="/QaAnswer">2</a></td>-->
+<!--                            <td>유형2</td>-->
+<!--                            <td><a href="/QaAnswer">제목2</a></td>-->
+<!--                            <td>xx-xx-xx</td>-->
+<!--                            <td>답변완료</td>-->
+<!--                        </tr>-->
+<!--                        <tr class="mypagemain_tablebody">-->
+<!--                            <td><input type="checkbox" name="mypagemain_ticket1"></td>-->
+<!--                            <td><a href="/QaAnswer">3</a></td>-->
+<!--                            <td>유형3</td>-->
+<!--                            <td><a href="/QaAnswer">제목3</a></td>-->
+<!--                            <td>xx-xx-xx</td>-->
+<!--                            <td>답변완료</td>-->
+<!--                        </tr>-->
+<!--                        <tr class="mypagemain_tablebody">-->
+<!--                            <td><input type="checkbox" name="mypagemain_ticket1"></td>-->
+<!--                            <td><a href="/QaAnswer">4</a></td>-->
+<!--                            <td>유형4</td>-->
+<!--                            <td><a href="/QaAnswer">제목4</a></td>-->
+<!--                            <td>xx-xx-xx</td>-->
+<!--                            <td>답변완료</td>-->
+<!--                        </tr>-->
+<!--                        <tr class="mypagemain_tablebody">-->
+<!--                            <td><input type="checkbox" name="mypagemain_ticket1"></td>-->
+<!--                            <td><a href="/QaAnswer">5</a></td>-->
+<!--                            <td>유형5</td>-->
+<!--                            <td><a href="/QaAnswer">제목5</a></td>-->
+<!--                            <td>xx-xx-xx</td>-->
+<!--                            <td>답변완료</td>-->
+<!--                        </tr>-->
                         <tr>
                             <td class="mypagemain_spacetable" colspan="6">
                                 <button class="mypagemain_pageleft">&lt</button>
@@ -270,16 +183,24 @@
     </div>
 </footer>
 <script th:inline="javascript">
+    window.onload = function() {
+   var message = /*[[${message}]]*/ '';
+
+   if(message) {
+       window.alert(message);
+   }
+}
+
 const Btn = document.querySelector("#login")
 
 if(Btn.getAttribute("src") === '/image/icon/로그아웃.png'){
-    Btn.addEventListener("click", function(event){
-        if(confirm("로그아웃 하시겠습니까?")){
-            alert("로그아웃되었습니다.");
-        } else{
-            event.preventDefault();
-        }
-    });
+Btn.addEventListener("click", function(event){
+    if(confirm("로그아웃 하시겠습니까?")){
+        alert("로그아웃되었습니다.");
+    } else{
+        event.preventDefault();
+    }
+});
 }
 </script>
 <script src="/js/mypagemainjs.js"></script>
