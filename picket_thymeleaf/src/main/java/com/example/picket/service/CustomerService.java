@@ -4,6 +4,7 @@ package com.example.picket.service;
 import com.example.picket.dto.AddCustomerRequest;
 import com.example.picket.repository.CustomerRepository;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -30,6 +31,20 @@ public class CustomerService {
                 .point(dto.getPoint())
                 .build());
     }
+
+    @Transactional
+    public void edit(AddCustomerRequest dto, String id){
+        Customer customer = customerRepository.findById(id).orElse(null);
+        if(customer != null){;
+            customer.setPassword(bCryptPasswordEncoder.encode(dto.getPassword()));
+            customer.setName(dto.getName());
+            customer.setEmail(dto.getEmail());
+            customer.setTel(dto.getTel());
+            customer.setBirthdate(dto.getBirthdate());
+            customerRepository.save(customer);
+        }
+    }
+
     public boolean authentication(String id, String password) {
         String encodedPassword = customerRepository.findById(id).orElse(null).getPassword();
         log.info("id: "+id);

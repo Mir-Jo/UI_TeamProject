@@ -1,5 +1,6 @@
 package com.example.picket.entity;
 
+import com.example.picket.dto.AddCustomerRequest;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -77,4 +78,5 @@ public class Customer implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
 }

@@ -1,13 +1,8 @@
 package com.example.picket.dto;
 
-import jakarta.persistence.Column;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
-@Getter
-@Setter
-@ToString
+@Data
 public class AddCustomerRequest {
     private String id;
     private String password;
@@ -16,4 +11,6 @@ public class AddCustomerRequest {
     private String birthdate;
     private String tel;
     private Long point;
+
+
 }
