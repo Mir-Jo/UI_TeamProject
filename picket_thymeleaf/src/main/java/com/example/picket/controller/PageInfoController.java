@@ -141,7 +141,9 @@ public class PageInfoController {
 
     @GetMapping("/musical/musical_touching.info")
     public String touching(Model model, HttpServletRequest request){
+        log.info("서블릿리퀘스트:"+request.toString());
         PerformanceForm performanceForm = performanceService.findInfo("뮤지컬 [낭만별곡]");
+        log.info("낭만별곡"+performanceForm.toString());
         performanceService.toModel(performanceForm, model);
 
         HttpSession session = request.getSession();

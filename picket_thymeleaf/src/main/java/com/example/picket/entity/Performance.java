@@ -13,12 +13,7 @@ import lombok.ToString;
 @Getter
 @ToString
 public class Performance {
-
     @Id
-//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "performance_seq")
-//    @SequenceGenerator(name = "performance_seq", sequenceName = "performance_seq", initialValue = 1, allocationSize = 1)
-//    private Long performance_id;
-//    @Column(nullable = false)
     private String title;
     @Column(nullable = false)
     private String place;

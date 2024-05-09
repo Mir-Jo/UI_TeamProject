@@ -5,6 +5,7 @@ import com.example.picket.entity.Customer;
 import com.example.picket.entity.QA;
 import com.example.picket.repository.QARepository;
 import jakarta.servlet.http.HttpSession;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -31,9 +32,17 @@ public class QAService {
         );
     }
 
+    @Transactional
     public List<QA> getAllQA(HttpSession session) {
         Customer customer = (Customer) session.getAttribute("customer");
         List<String> customerIds = Collections.singletonList(customer.getId());
         return qaRepository.findAllByCustomerIds(customerIds);
+    }
+
+    @Transactional
+    public List<QA> findAllDescDate(HttpSession session,List<QA> qas){
+        Customer customer = (Customer) session.getAttribute("customer");
+        List<String> customerIds = Collections.singletonList(customer.getId());
+        return qaRepository.findAllByCustomerIdsOrderByDesc(customerIds);
     }
 }
