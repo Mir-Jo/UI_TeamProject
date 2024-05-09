@@ -11,10 +11,6 @@ import lombok.*;
 @ToString
 @IdClass(WishCompositeKey.class)
 public class WishList {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "wish_id")
-//    @SequenceGenerator(name = "wish_id", sequenceName = "wish_id", initialValue = 1, allocationSize = 1)
-//    private Long wish_id;
     @Id
     @ManyToOne
     @JoinColumn(name = "title", nullable = false)

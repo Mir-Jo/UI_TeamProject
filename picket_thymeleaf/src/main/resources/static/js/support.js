@@ -3,7 +3,6 @@ let test2 = document.getElementById("test2");
 let test3 = document.getElementById("test3");
 let test4 = document.getElementById("test4");
 let test5 = document.getElementById("test5");
-let test6 = document.getElementById("test6");
 // let testaa = document.querySelector("#aa1");
 
 let testaa1 = document.getElementById("aa1");
@@ -11,7 +10,6 @@ let testaa2 = document.getElementById("aa2");
 let testaa3 = document.getElementById("aa3");
 let testaa4 = document.getElementById("aa4");
 let testaa5 = document.getElementById("aa5");
-let testaa6 = document.getElementById("aa6");
 
 
 let testFAQ1 = document.getElementById("testFAQ1");
@@ -24,8 +22,6 @@ let testFAQ4 = document.getElementById("testFAQ4");
 let height4 = testFAQ4.clientHeight + "px";
 let testFAQ5 = document.getElementById("testFAQ5");
 let height5 = testFAQ5.clientHeight + "px";
-let testFAQ6 = document.getElementById("testFAQ6");
-let height6 = testFAQ6.clientHeight + "px";
 let timer; // 타이머 식별자를 저장할 변수
 
 /*111111111111111111111111111111111111111111111111111111111111*/
@@ -36,19 +32,17 @@ testaa2.style.transition = "none";
 testaa3.style.transition = "none";
 testaa4.style.transition = "none";
 testaa5.style.transition = "none";
-testaa6.style.transition = "none";
 clearTimeout(timer);
 timer = null; // timer 초기화
 testaa3.style.opacity = "0";
 testaa2.style.opacity = "0";
 testaa4.style.opacity = "0";
 testaa5.style.opacity = "0";
-testaa6.style.opacity = "0";
 testaa2.style.height = "0px";
 testaa3.style.height = "0px";
 testaa4.style.height = "0px";
 testaa5.style.height = "0px";
-testaa6.style.height = "0px";
+
 
 
 if(testaa1.style.opacity == "0"){
@@ -60,7 +54,6 @@ if(testaa1.style.opacity == "0"){
     testaa3.style.height = "0px";
     testaa4.style.height = "0px";
     testaa5.style.height = "0px";
-    testaa6.style.height = "0px";
 
     if(timer) clearTimeout(timer); // 타이머가 있다면 취소
     timer = setTimeout(() => {
@@ -85,19 +78,16 @@ testaa2.style.transition = "none";
 testaa3.style.transition = "none";
 testaa4.style.transition = "none";
 testaa5.style.transition = "none";
-testaa6.style.transition = "none";
 clearTimeout(timer);
 timer = null; // timer 초기화
 testaa1.style.opacity = "0";
 testaa3.style.opacity = "0";
 testaa4.style.opacity = "0";
 testaa5.style.opacity = "0";
-testaa6.style.opacity = "0";
 testaa1.style.height = "0px";
 testaa3.style.height = "0px";
 testaa4.style.height = "0px";
 testaa5.style.height = "0px";
-testaa6.style.height = "0px";
 
 
 if(testaa2.style.opacity == "0"){
@@ -108,7 +98,6 @@ if(testaa2.style.opacity == "0"){
     testaa3.style.height = "0px";
     testaa4.style.height = "0px";
     testaa5.style.height = "0px";
-    testaa6.style.height = "0px";
 
     if(timer) clearTimeout(timer); // 타이머가 있다면 취소
     timer = setTimeout(() => {
@@ -134,19 +123,16 @@ testaa2.style.transition = "none";
 testaa3.style.transition = "none";
 testaa4.style.transition = "none";
 testaa5.style.transition = "none";
-testaa6.style.transition = "none";
 clearTimeout(timer);
 timer = null; // timer 초기화
 testaa1.style.opacity = "0";
 testaa2.style.opacity = "0";
 testaa4.style.opacity = "0";
 testaa5.style.opacity = "0";
-testaa6.style.opacity = "0";
 testaa1.style.height = "0px";
 testaa2.style.height = "0px";
 testaa4.style.height = "0px";
 testaa5.style.height = "0px";
-testaa6.style.height = "0px";
 
 
 if(testaa3.style.opacity == "0"){
@@ -157,7 +143,6 @@ if(testaa3.style.opacity == "0"){
     testaa1.style.height = "0px";
     testaa4.style.height = "0px";
     testaa5.style.height = "0px";
-    testaa6.style.height = "0px";
 
     if(timer) clearTimeout(timer); // 타이머가 있다면 취소
     timer = setTimeout(() => {
@@ -182,19 +167,16 @@ testaa2.style.transition = "none";
 testaa3.style.transition = "none";
 testaa4.style.transition = "none";
 testaa5.style.transition = "none";
-testaa6.style.transition = "none";
 clearTimeout(timer);
 timer = null; // timer 초기화
 testaa3.style.opacity = "0";
 testaa2.style.opacity = "0";
 testaa1.style.opacity = "0";
 testaa5.style.opacity = "0";
-testaa6.style.opacity = "0";
 testaa2.style.height = "0px";
 testaa3.style.height = "0px";
 testaa1.style.height = "0px";
 testaa5.style.height = "0px";
-testaa6.style.height = "0px";
 
 
 if(testaa4.style.opacity == "0"){
@@ -206,7 +188,6 @@ if(testaa4.style.opacity == "0"){
     testaa3.style.height = "0px";
     testaa1.style.height = "0px";
     testaa5.style.height = "0px";
-    testaa6.style.height = "0px";
 
     if(timer) clearTimeout(timer); // 타이머가 있다면 취소
     timer = setTimeout(() => {
@@ -230,19 +211,16 @@ testaa2.style.transition = "none";
 testaa3.style.transition = "none";
 testaa4.style.transition = "none";
 testaa5.style.transition = "none";
-testaa6.style.transition = "none";
 clearTimeout(timer);
 timer = null; // timer 초기화
 testaa3.style.opacity = "0";
 testaa2.style.opacity = "0";
 testaa4.style.opacity = "0";
 testaa1.style.opacity = "0";
-testaa6.style.opacity = "0";
 testaa2.style.height = "0px";
 testaa3.style.height = "0px";
 testaa4.style.height = "0px";
 testaa1.style.height = "0px";
-testaa6.style.height = "0px";
 
 
 if(testaa5.style.opacity == "0"){
@@ -254,7 +232,6 @@ if(testaa5.style.opacity == "0"){
     testaa3.style.height = "0px";
     testaa4.style.height = "0px";
     testaa1.style.height = "0px";
-    testaa6.style.height = "0px";
 
     if(timer) clearTimeout(timer); // 타이머가 있다면 취소
     timer = setTimeout(() => {
@@ -266,55 +243,6 @@ else if(testaa5.style.opacity == "1"){
     clearTimeout(timer); // 타이머가 있다면 취소
     testaa5.style.opacity = "0";
     testaa5.style.height = "0px";
-    timer = null; // timer 초기화
-}
-});
-
-/*66666666666666666666666666666666666666666666666666666666666666666666666666*/
-testaa6.style.opacity = "0";
-// testaa1.style.transition = "none";
-test6.addEventListener("click", ()=>{
-testaa1.style.transition = "none";
-testaa2.style.transition = "none";
-testaa3.style.transition = "none";
-testaa4.style.transition = "none";
-testaa5.style.transition = "none";
-testaa6.style.transition = "none";
-clearTimeout(timer);
-timer = null; // timer 초기화
-testaa3.style.opacity = "0";
-testaa2.style.opacity = "0";
-testaa4.style.opacity = "0";
-testaa5.style.opacity = "0";
-testaa1.style.opacity = "0";
-testaa2.style.height = "0px";
-testaa3.style.height = "0px";
-testaa4.style.height = "0px";
-testaa5.style.height = "0px";
-testaa1.style.height = "0px";
-
-
-if(testaa6.style.opacity == "0"){
-    testaa6.style.transition = "1s all";
-
-    testaa6.style.height = height6;
-    testaa6.style.opacity = "1";
-    testaa2.style.height = "0px";
-    testaa3.style.height = "0px";
-    testaa4.style.height = "0px";
-    testaa5.style.height = "0px";
-    testaa1.style.height = "0px";
-
-    if(timer) clearTimeout(timer); // 타이머가 있다면 취소
-    timer = setTimeout(() => {
-        testaa6.style.height = "auto";
-    }, 1000);
-}
-else if(testaa6.style.opacity == "1"){
-    testaa6.style.transition = "none";
-    clearTimeout(timer); // 타이머가 있다면 취소
-    testaa6.style.opacity = "0";
-    testaa6.style.height = "0px";
     timer = null; // timer 초기화
 }
 });

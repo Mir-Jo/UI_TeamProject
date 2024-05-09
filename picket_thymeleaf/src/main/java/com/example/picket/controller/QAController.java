@@ -31,6 +31,8 @@ public class QAController {
         model.addAttribute("qaList", qaList);
         return "/mypage/QA_list";
     }
+
+
     /* 1:1문의 등록으로 이동 */
     @GetMapping("/QAWrite")
     public String qaWrite(){ return "/support/QA_Write"; }
