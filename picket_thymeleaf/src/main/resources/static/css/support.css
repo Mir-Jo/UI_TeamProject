@@ -365,6 +365,6 @@ input[id *="answer"]:checked + label +div{max-height: 100px;}
 input[id *="answer"]:checked + label em{background-position: 0 -30px;}
 
 
-#un{
+.un{
  width:35px;
 }
