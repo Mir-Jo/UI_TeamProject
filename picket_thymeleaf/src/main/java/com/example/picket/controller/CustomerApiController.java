@@ -24,7 +24,7 @@ public class CustomerApiController {
             rttr.addFlashAttribute("errorMessage", "이미 사용중인 id입니다!");
             return "redirect:/loginpage";
         }
-        else if(request.getId().length() > 20 || request.getId().trim().equals("")){
+        else if(request.getId().length() > 20 || request.getId().trim().isEmpty()){
             rttr.addFlashAttribute("errorMessage", "유효하지 않은 아이디입니다!");
             return "redirect:/loginpage";
         }
@@ -32,7 +32,7 @@ public class CustomerApiController {
             rttr.addFlashAttribute("errorMessage", "이미 사용중인 전화번호입니다!");
             return "redirect:/loginpage";
         }
-        else if(request.getName().trim().length() > 20 || request.getName().trim().equals("")){
+        else if(request.getName().trim().length() > 20 || request.getName().trim().isEmpty()){
             rttr.addFlashAttribute("errorMessage", "유효하지 않은 이름입니다!");
             return "redirect:/loginpage";
         }

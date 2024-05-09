@@ -36,6 +36,7 @@ public class CustomerViewController{
         return "/login/login";
     }
 
+
     @GetMapping("/logout")
     public String logout(HttpServletRequest request, HttpServletResponse response, HttpSession session){
         new SecurityContextLogoutHandler().logout(request, response, SecurityContextHolder.getContext().getAuthentication());
@@ -44,6 +45,8 @@ public class CustomerViewController{
         log.info("세션 무력화 완료");
         return "redirect:/main";
     }
+    @GetMapping("/FindIDPW")
+    public String findIDPW(){ return "/login/FindIDPW"; }
 
     @PostMapping("/FindId")
     public String findId(String name, String tel, RedirectAttributes rttr){
@@ -78,7 +81,8 @@ public class CustomerViewController{
     }
 
     @PostMapping("/ChangePW")
-    public String changePW(String changedPW, String changedPWCheck,HttpServletRequest request, RedirectAttributes rttr, HttpSession session){
+    public String changePW(String changedPW, String changedPWCheck,HttpServletRequest request,
+                           RedirectAttributes rttr, HttpSession session){
         if(changedPW.equals(changedPWCheck)){
             String userId = session.getAttribute("id2").toString();
             if(userId != null){

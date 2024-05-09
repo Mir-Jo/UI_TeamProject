@@ -46,10 +46,8 @@ public class WebSecurityConfig {
                 .headers(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authorize ->
                         authorize
-//                                .requestMatchers("/loginpage", "/main", "/signup", "/login",
-//                                        "/categories/**", "/FindIDPW", "/FindId", "/FindPW", "/ChangePW").permitAll()
-//                                .anyRequest().authenticated()
-                                .requestMatchers("/QAWrite", "/QAList", "/mypagemain", "/loginmain").authenticated()
+                                .requestMatchers("/QAWrite", "/QAList",
+                                        "/mypagemain", "/profile", "/withdrawal", "/profileEdit", "/DeleteCustomer").authenticated()
                                 .anyRequest().permitAll()
                 )
                 .formLogin(login -> login
@@ -78,6 +76,7 @@ public class WebSecurityConfig {
                         .logoutUrl("/logout")
                         .deleteCookies("JSESSIONID", "remember-me")
                         .logoutSuccessUrl("/main")
+                        .invalidateHttpSession(true)
                 ).build();
     }
 
@@ -97,3 +96,4 @@ public class WebSecurityConfig {
         return new BCryptPasswordEncoder();
     }
 }
+

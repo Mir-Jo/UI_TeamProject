@@ -1,18 +1,15 @@
 package com.example.picket.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import jakarta.servlet.http.HttpSession;
+import lombok.*;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Entity
-@AllArgsConstructor
+@Data
 @NoArgsConstructor
-@Getter
-@ToString
 public class QA {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "qa_id")
@@ -31,4 +28,16 @@ public class QA {
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
+
+    @Builder
+    public QA(Long id, String qa_title, String qa_content, Timestamp write_date, String category, String state, Customer customer){
+        this.qa_id = id;
+        this.qa_title = qa_title;
+        this.qa_content = qa_content;
+        this.write_date = (write_date != null) ? write_date : Timestamp.valueOf(LocalDateTime.now());
+        this.category = category;
+        this.state = (state != null) ? state : "답변 대기중";
+        this.customer = customer;
+    }
+
 }

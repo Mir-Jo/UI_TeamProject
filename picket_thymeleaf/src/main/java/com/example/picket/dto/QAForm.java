@@ -10,28 +10,14 @@ import lombok.*;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
+@Data
 public class QAForm {
     private Long qa_id;
-
     private String qa_title;
-
     private String qa_content;
-
     private Timestamp write_date;
-
     private String category;
-
     private String state;
-
     private Customer customer;
-
-
-    public QA toEntity(){
-        return new QA(qa_id, qa_title,qa_content, write_date, category, state, customer);
-    }
+    
 }

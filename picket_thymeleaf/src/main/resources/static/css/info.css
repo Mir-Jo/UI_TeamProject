@@ -650,3 +650,27 @@ width: 50%;
 html{
   height:100%;
 }
+
+
+/*결제창 테스트*/
+#paymentModal{
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000044;
+    z-index: 200;
+}
+
+#paymentWindow{
+    position: fixed;
+    top: calc(50vh / 2);
+    left: calc(65vw / 2);
+    width: 35vw;
+    height: 50vh;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}

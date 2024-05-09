@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -10,7 +9,7 @@
 
     <title>마이 티켓</title>
 
-<!--    지울거-->
+    <!--    지울거-->
     <style>
         .truncate {
             white-space: nowrap;
@@ -28,14 +27,12 @@
     </style>
 
 
-
-
 </head>
 <body>
 <header>
     <nav id="nav1">
 
-        <a href="/main"><img id="logo" src="/image/icon/로고.png" width="55%" ></a>
+        <a href="/main"><img id="logo" src="/image/icon/로고.png" width="55%"></a>
         <ul>
             <li><a href="/categories/concertlist">콘서트</a></li>
             <li><a href="/categories/musicallist">뮤지컬</a></li>
@@ -57,8 +54,8 @@
 
                 <div>
                     <div class="usernicknamebox">
-                            <span class="usernickname" th:text="${session.customer.name}"></span>님<br>어서오세요
-                            <br>
+                        <span class="usernickname" th:text="${session.customer.name}"></span>님<br>어서오세요
+                        <br>
 
                     </div>
 
@@ -66,10 +63,19 @@
 
             </div>
             <div class="mypagelist">
-                <a href="/mypagemain"><img src="/image/mypage/ticket.png"><div class="mypagelist_right_border">마이 티켓<br><span>1</span></div></a>
-                <a href="/wishlist"><img src="/image/mypage/heart.png"><div class="mypagelist_right_border">관심목록<br><span>1</span></div></a>
-                <a href="/pointlist"><img src="/image/mypage/point.png"><div class="mypagelist_right_border">포인트<br><span th:text="${session.customer.point}"></span></div></a>
-                <a href="/QAList"><img src="/image/mypage/qalist.png"><div class="mypagelist_last_right_border">문의내역<br><span>1</span></div></a>
+                <a href="/mypagemain"><img src="/image/mypage/ticket.png">
+                    <div class="mypagelist_right_border">마이 티켓<br><span>1</span></div>
+                </a>
+                <a href="/wishlist"><img src="/image/mypage/heart.png">
+                    <div class="mypagelist_right_border">관심목록<br><span>1</span></div>
+                </a>
+                <a href="/pointlist"><img src="/image/mypage/point.png">
+                    <div class="mypagelist_right_border">포인트<br><span th:text="${session.customer.point}"></span></div>
+                </a>
+                <a href="/QAList"><img src="/image/mypage/qalist.png">
+                    <div class="mypagelist_last_right_border">문의내역<br><span th:text="${#lists.size(qaList)}"></span>
+                    </div>
+                </a>
             </div>
             <div class="mypagekind">
 
@@ -87,118 +93,103 @@
             <li><a href="/QAList" class="mypagemain_item">문의내역</a></li>
         </ul>
     </div>
-    <form>
+    </div>
+
+
+    <!--<div class="listbox">-->
+    <div class="mypagemain_titlename"><h2>마이 티켓</h2></div>
+    <div class="mypagemain_asta">
+        <div class="mypagemain_listmain">
+            <table>
+                <thead>
+                <tr class="mypagemain_select_tr">
+                    <th colspan="2" class="mypagemain_select_th">
+                        <form>
+                            <label>카테고리 :</label>
+                            <select class="mypagemain_select">
+                                <option>콘서트</option>
+                                <option>뮤지컬</option>
+                                <option>연극</option>
+                                <option>전시</option>
+                                <option>클래식</option>
+                            </select>
+                        </form>
+                <tr class="mypagemain_tablehead">
+                    <th class="mypagemain_checkbox_width"><input type="checkbox" name="mypagemain_ticket1"
+                                                                 onclick='selectAll1(this)'></th>
+                    <th>예매 일자</th>
+                    <th>티켓 목록</th>
+                    <th>공연 일자 / 매수</th>
+                    <th>취소 가능일</th>
+                    <th>가격</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="mypagemain_tablebody">
+                    <td><input type="checkbox" name="mypagemain_ticket1"></td>
+                    <td>2024-03-26</td>
+                    <td><a href="/season" class="truncate">후지시로 세이지 탄생 100주년 기념 오사카 파노라마展</a></td>
+                    <td>2024-03-29<br>1매</td>
+                    <td>2024-04-01</td>
+                    <td>140000</td>
+                </tr>
+                <tr class="mypagemain_tablebody">
+                    <td><input type="checkbox" name="mypagemain_ticket1"></td>
+                    <td th:text="${pay_date}"></td>
+                    <td><a href="/season" class="truncate_leaf" th:text="${title}"></a></td>
+                    <td th:text="${perform_date}"><br>1매</td>
+                    <td th:text="${cancel_date}">2024-04-01</td>
+                    <td th:text="${price}">140000</tdth:>
+                </tr>
+                <tr class="mypagemain_tablebody" th:each="payment:${payment}">
+                    <td><input type="checkbox" name="mypagemain_ticket1"></td>
+                    <td>2024-03-26</td>
+                    <td><a href="/season">뮤지컬 물랑루즈</a></td>
+                    <td>2024-03-29 <br>1매</td>
+                    <td>2024-04-01</td>
+                    <td>140000</td>
+                </tr>
+                <tr class="mypagemain_tablebody">
+                    <td><input type="checkbox" name="mypagemain_ticket1"></td>
+                    <td>2024-03-26</td>
+                    <td><a href="/season">뮤지컬 물랑루즈</a></td>
+                    <td>2024-03-29 <br>1매</td>
+                    <td>2024-04-01</td>
+                    <td>140000</td>
+                </tr>
+                <tr class="mypagemain_tablebody">
+                    <td><input type="checkbox" name="mypagemain_ticket1"></td>
+                    <td>2024-03-26</td>
+                    <td><a href="/season">뮤지컬 물랑루즈</a></td>
+                    <td>2024-03-29<br>1매</td>
+                    <td>2024-04-01</td>
+                    <td>140000</td>
+                </tr>
+                <tr>
+                    <td class="mypagemain_tablebutton" colspan="6">
+
+                        <button class="mypagemain_buttons">환불하기</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
-
-
-        <!--<div class="listbox">-->
-        <div class="mypagemain_titlename"><h2>마이 티켓</h2></div>
-        <form>
-            <div class="mypagemain_asta">
-
-
-                <div class="mypagemain_listmain">
-
-                    <table>
-                        <thead>
-                        <tr class="mypagemain_select_tr">
-                            <th colspan="2"class="mypagemain_select_th">
-                                <div>카테고리 :
-                                    <select class="mypagemain_select">
-                                        <option>콘서트</option>
-                                        <option>뮤지컬</option>
-                                        <option>연극</option>
-                                        <option>전시</option>
-                                        <option>클래식</option>
-                                    </select>
-                                </div>
-                            </th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-
-                        <tr class="mypagemain_tablehead">
-                            <th class="mypagemain_checkbox_width"><input type="checkbox" name="mypagemain_ticket1" onclick='selectAll1(this)'></th>
-                            <th>예매 일자</th>
-                            <th>티켓 목록</th>
-                            <th>공연 일자 / 매수</th>
-                            <th>취소 가능일</th>
-                            <th>가격</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr class="mypagemain_tablebody">
-                            <td><input type="checkbox" name="mypagemain_ticket1"></td>
-                            <td>2024-03-26</td>
-                            <td ><a href="/season" class="truncate">후지시로 세이지 탄생 100주년 기념 오사카 파노라마展</a></td>
-                            <td>2024-03-29<br>1매</td>
-                            <td>2024-04-01</td>
-                            <td>140000</td>
-                        </tr>
-                        <tr class="mypagemain_tablebody">
-                            <td><input type="checkbox" name="mypagemain_ticket1"></td>
-                            <td th:text="${pay_date}"></td>
-                            <td><a href="/season" class="truncate_leaf" th:text="${title}"></a></td>
-                            <td th:text="${perform_date}"><br>1매</td>
-                            <td th:text="${cancel_date}">2024-04-01</td>
-                             <td th:text="${price}">140000</tdth:>
-                        </tr>
-                        <tr class="mypagemain_tablebody" th:each="payment:${payment}">
-                            <td><input type="checkbox" name="mypagemain_ticket1"></td>
-                            <td>2024-03-26</td>
-                            <td><a href="/season">뮤지컬 물랑루즈</a></td>
-                            <td>2024-03-29 <br>1매</td>
-                            <td>2024-04-01</td>
-                            <td>140000</td>
-                        </tr>
-                        <tr class="mypagemain_tablebody">
-                            <td><input type="checkbox" name="mypagemain_ticket1"></td>
-                            <td>2024-03-26</td>
-                            <td><a href="/season">뮤지컬 물랑루즈</a></td>
-                            <td>2024-03-29 <br>1매</td>
-                            <td>2024-04-01</td>
-                            <td>140000</td>
-                        </tr>
-                        <tr class="mypagemain_tablebody">
-                            <td><input type="checkbox" name="mypagemain_ticket1"></td>
-                            <td>2024-03-26</td>
-                            <td><a href="/season">뮤지컬 물랑루즈</a></td>
-                            <td>2024-03-29<br>1매</td>
-                            <td>2024-04-01</td>
-                            <td>140000</td>
-                        </tr>
-                        <tr>
-                            <td class="mypagemain_spacetable" colspan="6">
-                                <button class="mypagemain_pageleft">&lt</button>
-                                <button class="mypagemain_pagenum">1</button>
-                                <button class="mypagemain_pagenum">2</button>
-                                <button class="mypagemain_pagenum">3</button>
-                                <button class="mypagemain_pagenum">4</button>
-                                <button class="mypagemain_pagenum">5</button>
-                                <button class="mypagemain_pageright">&gt</button>
-                            </td>
-
-                        </tr>
-
-                        <tr>
-                            <td class="mypagemain_tablebutton" colspan="6">
-
-                                <button class="mypagemain_buttons">환불하기</button>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </form>
-    </form>
+    </div>
+    <div class="mypagemain_spacetable">
+        <button class="mypagemain_pageleft">&lt</button>
+        <button class="mypagemain_pagenum">1</button>
+        <button class="mypagemain_pagenum">2</button>
+        <button class="mypagemain_pagenum">3</button>
+        <button class="mypagemain_pagenum">4</button>
+        <button class="mypagemain_pagenum">5</button>
+        <button class="mypagemain_pageright">&gt</button>
+    </div>
 </main>
 
 <footer>
     <div class="footer-side">
-        <div id="foot-top"> <a href="#" >이용약관 </a><a href="#">단체 문의</a><a href="#" >공연 등록 문의</a><a href="#" >개인정보처리방침</a><a href="#" >청소년보호정책</a>
+        <div id="foot-top"><a href="#">이용약관 </a><a href="#">단체 문의</a><a href="#">공연 등록 문의</a><a href="#">개인정보처리방침</a><a
+                href="#">청소년보호정책</a>
         </div>
         <div id="footer-left">
             <span> <h4>고객센터 1600-1588(유료)</h4></span>
@@ -209,12 +200,12 @@
 
         <img src="/image/icon/피켓로고검정.png" width="10%">
         <div>
-            <span>대표자 TeamProject |</span><span> 서울 강남구 풍성로 62길 대우빌딩</span> <span>| 사업자 등록번호 154-15-11562</span ><span>| 통신판매업신고 : 제2024-0001호</span><br>
+            <span>대표자 TeamProject |</span><span> 서울 강남구 풍성로 62길 대우빌딩</span> <span>| 사업자 등록번호 154-15-11562</span><span>| 통신판매업신고 : 제2024-0001호</span><br>
             <span>호스팅서비스사업자 : Picket(주) </span><span>&copy;PicketCorp.Allright Reserved</span>
         </div>
     </div>
-    <script>
-        /*<![CDATA[*/
+</footer>
+    <script th:inline="javascript">
     const Btn = document.querySelector("#login")
 
     if(Btn.getAttribute("src") === '/image/icon/로그아웃.png'){
@@ -226,9 +217,7 @@
             }
         });
     }
-        /*]]>*/
     </script>
-</footer>
 <script src="/js/mypagemainjs.js"></script>
 </body>
 

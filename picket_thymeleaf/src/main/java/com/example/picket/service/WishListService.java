@@ -20,7 +20,7 @@ public class WishListService {
 
     public void wishListDelete(String customer_id, String title){ wishListRepository.deleteWish(customer_id, title);}
 
-    public void WishListFind(String title, String customer_id, Model model){
+    public void WishListSelectIcon(String title, String customer_id, Model model){
 
         AtomicReference<Boolean> titleCheck = new AtomicReference<>(false);
 
@@ -40,5 +40,14 @@ public class WishListService {
         else {
             model.addAttribute("imgUrl", "../image/info/heart.png");
         }
+    }
+
+    public List<WishList> WishListFind(String customer_id){
+        List<WishList> wishLists = null;
+        if(customer_id != null){
+            wishLists = wishListRepository.findByAllCustomerId(customer_id);
+        }
+
+        return wishLists;
     }
 }

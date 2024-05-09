@@ -42,19 +42,19 @@
             <option name="유형5" id="유형5">유형5</option>
         </select>
         <hr>
-        <h5>이름</h5>
-        <input type="text" placeholder="예)홍길동" name="name" id="name">
-        <h5>전화번호</h5>
-        <input type="tel" pattern="^01[0-9]{1}-?[0-9]{3,4}-?[0-9]{4}$"
-               placeholder="예)010-1234-5678" name="tel" id="tel">
-        <hr>
+<!--        <h5>이름</h5>-->
+<!--        <input type="text" placeholder="예)홍길동" name="name" id="name" required>-->
+<!--        <h5>전화번호</h5>-->
+<!--        <input type="tel" pattern="^01[0-9]{1}-?[0-9]{3,4}-?[0-9]{4}$"-->
+<!--               placeholder="예)010-1234-5678" name="tel" id="tel" required>-->
+<!--        <hr>-->
         <h5>문의 제목</h5><br><input type="text" name="qa_title"
-               maxlength="50" id="QA_title" placeholder="여기에 제목을 입력해주세요.(최대 50자)">
+               maxlength="50" id="QA_title" placeholder="여기에 제목을 입력해주세요.(최대 50자)" required>
         <br>
         <h5>문의 내용</h5><br><textarea name="qa_content" id="QA_comment"
                                     style="width:100%"
                                     maxlength="1000"
-                                    placeholder="여기에 내용을 입력해주세요(최대 1000자)"></textarea>
+                                    placeholder="여기에 내용을 입력해주세요(최대 1000자)" required></textarea>
         <span class="counter_others">(&nbsp;</span><span id="comment_length">0</span> <span class="counter_others"> / 1000 )</span>
         <hr>
         <h5>첨부 파일</h5><input type="file" name="file" id="file">
@@ -73,8 +73,7 @@
 </main>
 <footer>
 </footer>
-<script>
-    /*<![CDATA[*/
+<script th:inline="javascript">
 const Btn = document.querySelector("#login")
 
 if(Btn.getAttribute("src") === '/image/icon/로그아웃.png'){
@@ -86,7 +85,6 @@ if(Btn.getAttribute("src") === '/image/icon/로그아웃.png'){
         }
     });
 }
-    /*]]>*/
 </script>
 <script src="js/QA_write.js"></script>
 </body>

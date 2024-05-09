@@ -13,7 +13,7 @@
 <header>
     <nav id="nav1">
 
-        <a href="/main"><img id="logo" src="/image/icon/로고.png" width="55%" ></a>
+        <a href="/main"><img id="logo" src="/image/icon/로고.png" width="55%"></a>
         <ul>
             <li><a href="/categories/concertlist">콘서트</a></li>
             <li><a href="/categories/musicallist">뮤지컬</a></li>
@@ -40,10 +40,19 @@
                 </div>
             </div>
             <div class="mypagelist">
-                <a href="/mypagemain"><img src="/image/mypage/ticket.png"><div class="mypagelist_right_border">마이 티켓<br><span>1</span></div></a>
-                <a href="/wishlist"><img src="/image/mypage/heart.png"><div class="mypagelist_right_border">관심목록<br><span>1</span></div></a>
-                <a href="/pointlist"><img src="/image/mypage/point.png"><div class="mypagelist_right_border">포인트<br><span th:text="${session.customer.point}"></span></div></a>
-                <a href="/QAList"><img src="/image/mypage/qalist.png"><div class="mypagelist_last_right_border">문의내역<br><span>1</span></div></a>
+                <a href="/mypagemain"><img src="/image/mypage/ticket.png">
+                    <div class="mypagelist_right_border">마이 티켓<br><span>1</span></div>
+                </a>
+                <a href="/wishlist"><img src="/image/mypage/heart.png">
+                    <div class="mypagelist_right_border">관심목록<br><span>1</span></div>
+                </a>
+                <a href="/pointlist"><img src="/image/mypage/point.png">
+                    <div class="mypagelist_right_border">포인트<br><span th:text="${session.customer.point}"></span></div>
+                </a>
+                <a href="/QAList"><img src="/image/mypage/qalist.png">
+                    <div class="mypagelist_last_right_border">문의내역<br><span th:text="${#lists.size(qaList)}"></span>
+                    </div>
+                </a>
             </div>
             <div class="mypagekind">
 
@@ -61,78 +70,67 @@
             <li><a href="/QAList" class="mypagemain_item">문의내역</a></li>
         </ul>
     </div>
-    <form>
-        <div class="mypagemain_titlename"><h2>포인트</h2></div>
-        <form>
-            <div class="mypagemain_asta">
-
-
-                <div class="mypagemain_listmain">
-
-                    <table>
-                        <thead>
-
-                        <tr class="mypagemain_tablehead">
-                            <th class="point_col_name">포인트명</th>
-                            <th>포인트</th>
-                            <th>사용기간</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr class="mypagemain_tablebody">
-                            <td>신규회원</td>
-                            <td>50000</td>
-                            <td>2024-04-01 ~ 2024-04-01</td>
-                        </tr>
-                        <tr class="mypagemain_tablebody">
-                            <td>신규회원</td>
-                            <td>50000</td>
-                            <td>2024-04-01 ~ 2024-04-01</td>
-                        </tr>
-                        <tr class="mypagemain_tablebody">
-                            <td>신규회원</td>
-                            <td>50000</td>
-                            <td>2024-04-01 ~ 2024-04-01</td>
-                        </tr>
-                        <tr class="mypagemain_tablebody">
-                            <td>신규회원</td>
-                            <td>50000</td>
-                            <td>2024-04-01 ~ 2024-04-01</td>
-                        </tr>
-                        <tr class="mypagemain_tablebody">
-                            <td>신규회원</td>
-                            <td>50000</td>
-                            <td>2024-04-01 ~ 2024-04-01</td>
-                        </tr>
-                        <tr>
-                            <td class="mypagemain_spacetable" colspan="6">
-                                <button class="mypagemain_pageleft">&lt</button>
-                                <button class="mypagemain_pagenum">1</button>
-                                <button class="mypagemain_pagenum">2</button>
-                                <button class="mypagemain_pagenum">3</button>
-                                <button class="mypagemain_pagenum">4</button>
-                                <button class="mypagemain_pagenum">5</button>
-                                <button class="mypagemain_pageright">&gt</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="mypagemain_tablebutton" colspan="6">
-                                <button class="mypagemain_buttons">환불하기</button>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </form>
+    <div class="mypagemain_titlename"><h2>포인트</h2></div>
+    <div class="mypagemain_asta">
+        <div class="mypagemain_listmain">
+            <table>
+                <thead>
+                <tr class="mypagemain_tablehead">
+                    <th class="point_col_name">포인트명</th>
+                    <th>포인트</th>
+                    <th>사용기간</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="mypagemain_tablebody">
+                    <td>신규회원</td>
+                    <td>50000</td>
+                    <td>2024-04-01 ~ 2024-04-01</td>
+                </tr>
+                <tr class="mypagemain_tablebody">
+                    <td>신규회원</td>
+                    <td>50000</td>
+                    <td>2024-04-01 ~ 2024-04-01</td>
+                </tr>
+                <tr class="mypagemain_tablebody">
+                    <td>신규회원</td>
+                    <td>50000</td>
+                    <td>2024-04-01 ~ 2024-04-01</td>
+                </tr>
+                <tr class="mypagemain_tablebody">
+                    <td>신규회원</td>
+                    <td>50000</td>
+                    <td>2024-04-01 ~ 2024-04-01</td>
+                </tr>
+                <tr class="mypagemain_tablebody">
+                    <td>신규회원</td>
+                    <td>50000</td>
+                    <td>2024-04-01 ~ 2024-04-01</td>
+                </tr>
+                <tr>
+                    <td class="mypagemain_tablebutton" colspan="6">
+                        <button class="mypagemain_buttons">환불하기</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
+    </div>
+        <div class="mypagemain_spacetable">
+            <button class="mypagemain_pageleft">&lt</button>
+            <button class="mypagemain_pagenum">1</button>
+            <button class="mypagemain_pagenum">2</button>
+            <button class="mypagemain_pagenum">3</button>
+            <button class="mypagemain_pagenum">4</button>
+            <button class="mypagemain_pagenum">5</button>
+            <button class="mypagemain_pageright">&gt</button>
         </div>
-    </form>
 </main>
 
 <footer>
     <div class="footer-side">
-        <div id="foot-top"> <a href="#" >이용약관 </a><a href="#">단체 문의</a><a href="#" >공연 등록 문의</a><a href="#" >개인정보처리방침</a><a href="#" >청소년보호정책</a>
+        <div id="foot-top"><a href="#">이용약관 </a><a href="#">단체 문의</a><a href="#">공연 등록 문의</a><a href="#">개인정보처리방침</a><a
+                href="#">청소년보호정책</a>
         </div>
         <div id="footer-left">
             <span> <h4>고객센터 1600-1588(유료)</h4></span>
@@ -143,13 +141,12 @@
 
         <img src="/image/icon/피켓로고검정.png" width="10%">
         <div>
-            <span>대표자 TeamProject |</span><span> 서울 강남구 풍성로 62길 대우빌딩</span> <span>| 사업자 등록번호 154-15-11562</span ><span>| 통신판매업신고 : 제2024-0001호</span><br>
+            <span>대표자 TeamProject |</span><span> 서울 강남구 풍성로 62길 대우빌딩</span> <span>| 사업자 등록번호 154-15-11562</span><span>| 통신판매업신고 : 제2024-0001호</span><br>
             <span>호스팅서비스사업자 : Picket(주) </span><span>&copy;PicketCorp.Allright Reserved</span>
         </div>
     </div>
 </footer>
-<script>
-    /*<![CDATA[*/
+<script th:inline="javascript">
 const Btn = document.querySelector("#login")
 
 if(Btn.getAttribute("src") === '/image/icon/로그아웃.png'){
@@ -161,7 +158,6 @@ if(Btn.getAttribute("src") === '/image/icon/로그아웃.png'){
         }
     });
 }
-    /*]]>*/
 </script>
 <script src="/js/mypagemainjs.js"></script>
 </body>
