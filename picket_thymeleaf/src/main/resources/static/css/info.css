@@ -1,11 +1,16 @@
 /* 달력  */
+
+.selected {
+    background-color: orange;
+}
+
+
+
 .calendar-boxbox{
-  border:1px solid #ddd;
   padding: 10px 0 25px;
 }
 
 .calendar-tit1 {
-  border-bottom: 1px solid #000;
   position: relative;
   padding: 30px 0 18px 0;
   font-size: 20px;
@@ -34,12 +39,15 @@
 .calendar-container {
   width: 500px auto;
   height: 300px;
-
-  border: 1px solid #ccc;
+  border: 1px solid #000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   padding: 10px 0;
   background-color: #ffffff;
   text-align: center;
+  font-family: 'fair';
+}
+.calendar-header img{
+  cursor:pointer;
 }
 
 .calendar-header {
@@ -76,7 +84,7 @@
 }
 
 .date:hover {
-  background-color: #f5f5f5;
+  background-color: #e0e0e0;
 }
 .booking{
   display: flex;
@@ -94,6 +102,15 @@
   border: 2px solid orange;
   cursor: pointer;
 }
+.booking button:hover {
+  margin-left: 0px;
+  transform: scale(1.1,1.1);
+  -ms-transform: scale(1.1,1.1);
+  -webkit-transform: scale(1.1,1.1);
+  box-shadow: 0px 5px 5px -2px rgba(0, 0, 0, 0.25);
+}
+
+
 #image-container img{
   cursor: pointer;
 }
@@ -181,6 +198,9 @@ dt {
   margin-top: 50px;
 
 }
+.rn-01 a {
+    font-family:'wind';
+}
 .rn-01 .rn-location {
   float: left;
   margin-top: 3px;
@@ -212,6 +232,11 @@ dt {
   letter-spacing: -0.003em;
   margin-bottom: 0;
 }
+.renew-content span {
+    font-family: 'wind';
+}
+
+
 .renew-content {
   width: 1200px;
   margin: 0 auto;
@@ -431,6 +456,10 @@ margin-top: 20px;
 margin-bottom: 20px;
 }
 
+.rn-05 h5 {
+    font-family:'fair';
+}
+
 .rn-05 > div {
   font-size: 30px;
   font-weight: bold;
@@ -448,9 +477,9 @@ img {
 
 .table_underline1{
   margin:auto;
-  border-bottom:2px solid#9e9696cc;
+  border-bottom:1px solid#9e9696cc;
   margin-bottom:45px;
-  width:1200px;
+  width:962px;
 }
 
 .productWrapper .moreinfoTitle {
@@ -555,7 +584,7 @@ table{
   margin:auto;
   margin-bottom:40px;
   width:600px;
-  border-bottom:2px solid #9e9696cc;
+  border-bottom:1px solid #9e9696cc;
 }
 caption {
   display: table-caption;
@@ -574,7 +603,7 @@ tbody{
   display: table-row-group;
 }
 #map{
-  border:3px solid #9e9696cc;
+  border:1px solid #9e9696cc;
 }
 #map div {
   width:270px

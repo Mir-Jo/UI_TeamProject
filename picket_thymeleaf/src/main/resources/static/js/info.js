@@ -1,8 +1,4 @@
 
-
-
-
-
 /* 달력 */
 
 const calendarDates = document.getElementById("calendarDates");
@@ -11,62 +7,59 @@ const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 const today = new Date();
 let currentMonth = today.getMonth();
-
 let currentYear = today.getFullYear();
+let selectedDate = null; // 이전에 선택된 요소를 저장할 변수
 
 function renderCalendar() {
+    const firstDayOfMonth = new Date(currentYear, currentMonth, 1);
+    const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+    const startDayOfWeek = firstDayOfMonth.getDay();
+    currentMonthElement.textContent = `${currentYear}년 ${currentMonth + 1}월`;
 
-  const firstDayOfMonth = new Date(currentYear, currentMonth, 1);
+    calendarDates.innerHTML = "";
 
-  const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+    for (let i = 0; i < startDayOfWeek; i++) {
+        const emptyDate = document.createElement("div");
+        emptyDate.classList.add("date", "empty");
+        calendarDates.appendChild(emptyDate);
+    }
 
-  const startDayOfWeek = firstDayOfMonth.getDay();
-
-  currentMonthElement.textContent = `${currentYear}년 ${currentMonth + 1}월`;
-
-
-  calendarDates.innerHTML = "";
-
-
-  for (let i = 0; i < startDayOfWeek; i++) {
-    const emptyDate = document.createElement("div");
-
-    emptyDate.classList.add("date", "empty");
-
-    calendarDates.appendChild(emptyDate);
-
-  }
-
-
-  for (let i = 1; i <= daysInMonth; i++) {
-    const dateElement = document.createElement("div");
-    dateElement.classList.add("date");
-    dateElement.textContent = i;
-    calendarDates.appendChild(dateElement);
-  }
-
+    for (let i = 1; i <= daysInMonth; i++) {
+        const dateElement = document.createElement("div");
+        dateElement.classList.add("date");
+        dateElement.textContent = i;
+        dateElement.addEventListener("click", function() {
+            // 이전에 선택된 요소의 스타일 제거
+            if (selectedDate) {
+                selectedDate.classList.remove("selected");
+            }
+            // 클릭된 요소에 스타일 추가
+            this.classList.add("selected");
+            // 클릭된 요소를 이전에 선택된 요소로 저장
+            selectedDate = this;
+        });
+        calendarDates.appendChild(dateElement);
+    }
 }
 
 renderCalendar();
 
-
 prevBtn.addEventListener("click", () => {
-  currentMonth--;
-  if (currentMonth < 0) {
-    currentMonth = 11;
-    currentYear--;
-  }
-  renderCalendar();
+    currentMonth--;
+    if (currentMonth < 0) {
+        currentMonth = 11;
+        currentYear--;
+    }
+    renderCalendar();
 });
 
-
 nextBtn.addEventListener("click", () => {
-  currentMonth++;
-  if (currentMonth > 11) {
-    currentMonth = 0;
-    currentYear++;
-  }
-  renderCalendar();
+    currentMonth++;
+    if (currentMonth > 11) {
+        currentMonth = 0;
+        currentYear++;
+    }
+    renderCalendar();
 });
 
 /* 달력 끝*/
