@@ -28,7 +28,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Concert/season";
     }
@@ -41,7 +41,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Concert/beautiful";
     }
@@ -54,7 +54,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Concert/lovesome";
     }
@@ -67,7 +67,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Concert/boys";
     }
@@ -80,7 +80,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Concert/daysix";
     }
@@ -93,7 +93,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Concert/king";
     }
@@ -106,7 +106,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Concert/glow";
     }
@@ -119,7 +119,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Concert/hipho";
     }
@@ -134,7 +134,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Musical/paris";
     }
@@ -149,7 +149,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Musical/touching";
     }
@@ -162,7 +162,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Musical/디아길레프";
     }
@@ -175,7 +175,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Musical/dear";
     }
@@ -188,7 +188,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Musical/bear";
     }
@@ -201,7 +201,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Musical/next";
     }
@@ -214,7 +214,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Musical/here";
     }
@@ -227,7 +227,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Musical/violin";
     }
@@ -242,7 +242,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
 
         return "/categories/Act/musicalTheaterCarol";
@@ -256,7 +256,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Act/theaterCloser";
     }
@@ -269,7 +269,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Act/theaterHangOver";
     }
@@ -282,7 +282,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Act/theaterHerzKlang";
     }
@@ -295,7 +295,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Act/theaterHeungSinSo";
     }
@@ -308,7 +308,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Act/theaterInHell";
     }
@@ -321,7 +321,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Act/theaterPSpartner";
     }
@@ -334,7 +334,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Act/theaterRainbow";
     }
@@ -350,7 +350,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Classic/LaTraviata";
     }
@@ -364,7 +364,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Classic/Maxim";
     }
@@ -378,7 +378,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Classic/Swan";
     }
@@ -392,7 +392,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Classic/JohnWilliams";
     }
@@ -406,7 +406,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Classic/MidsummerNight";
     }
@@ -420,7 +420,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Classic/Debussy";
     }
@@ -434,7 +434,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Classic/GhiBli";
     }
@@ -448,7 +448,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Classic/Jung";
     }
@@ -479,7 +479,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Exhibit/banksy";
     }
@@ -492,7 +492,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Exhibit/ghibli";
     }
@@ -505,7 +505,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Exhibit/graffiti";
     }
@@ -518,7 +518,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Exhibit/india";
     }
@@ -531,7 +531,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Exhibit/osaka";
     }
@@ -544,7 +544,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Exhibit/seoul";
     }
@@ -557,7 +557,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Exhibit/todusk";
     }
@@ -570,7 +570,7 @@ public class PageInfoController {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
 
-        wishListService.WishListFind(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
         return "/categories/Exhibit/unity";
     }
