@@ -1,12 +1,14 @@
 package com.example.picket.controller;
 
 import com.example.picket.dto.AddCustomerRequest;
+import com.example.picket.dto.PerformanceForm;
 import com.example.picket.entity.Customer;
+import com.example.picket.entity.Performance;
 import com.example.picket.entity.QA;
+import com.example.picket.entity.WishList;
 import com.example.picket.repository.CustomerRepository;
-import com.example.picket.service.CustomerService;
-import com.example.picket.service.ProfileService;
-import com.example.picket.service.QAService;
+import com.example.picket.service.*;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -16,6 +18,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,6 +26,9 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @Controller
 public class ProfileController {
+
+    private  final WishListService wishListService;
+    private  final PerformanceService performanceService;
 
     private final QAService qaService;
     @Autowired
@@ -42,9 +48,26 @@ public class ProfileController {
     }
     /* 찜목록 */
     @GetMapping("/wishlist")
-    public String gotowishlist(Model model, HttpSession session) {
+    public String gotowishlist(Model model, HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        Customer customer = (Customer) session.getAttribute("customer");
+
         List<QA> qaList = qaService.getAllQA(session);
         model.addAttribute("qaList", qaList);
+
+        /* 작동 테스트 (확인 완료)*/
+//        List<PerformanceForm> performances = new ArrayList<>();;
+//        List<WishList> wishLists = wishListService.WishListFind((customer != null ? customer.getId() : null));
+//        if(wishLists != null){
+//            for(WishList wishList: wishLists){
+//                System.out.println("확인: " + performanceService.findInfo(wishList.getPerformance().getTitle()));
+//                performances.add(performanceService.findInfo(wishList.getPerformance().getTitle()));
+//            }
+//        }
+//
+//        model.addAttribute("performances", performances);
+        /* 작동 테스트 (확인 완료)*/
+
         return "/mypage/wishlist";
     }
     /* 포인트 내역 */

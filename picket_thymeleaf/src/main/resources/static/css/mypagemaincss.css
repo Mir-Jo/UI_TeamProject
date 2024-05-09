@@ -106,8 +106,11 @@ main{
   .mypagemain_tablehead , .mypagemain_tablebody {
     border-bottom:2px solid gray;
     font-weight: bold;
-
   }
+  .mypagemain_tablehead:hover{
+    cursor:pointer;
+  }
+
   .mypagemain_tablebody a{
     color:#000000;
     font-size:20px;
@@ -132,6 +135,10 @@ main{
 
   }
   .mypagemain_spacetable{
+    display:block;
+    text-align:center;
+    width:30%;
+    margin: 3% auto;
     border-bottom:0px;
     padding-bottom:7%;
   }

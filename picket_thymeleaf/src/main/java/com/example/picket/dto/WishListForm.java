@@ -11,7 +11,6 @@ import lombok.ToString;
 @ToString
 @Getter
 public class WishListForm {
-//    private Long wish_id;
     private Performance performance;
     private Customer customer;
 

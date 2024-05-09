@@ -12,6 +12,11 @@ import java.util.List;
 
 
 public interface QARepository extends JpaRepository<QA, Long> {
-    @Query("SELECT qa FROM QA qa WHERE qa.customer.id IN :customerIds")
+    /* 날짜정렬 */
+    @Query("SELECT qa FROM QA qa WHERE qa.customer.id IN :customerIds ORDER BY qa.write_date")
     List<QA> findAllByCustomerIds(@Param("customerIds") List<String> customerIds);
+    @Query("SELECT qa FROM QA qa WHERE qa.customer.id IN : customerIds ORDER BY qa.write_date DESC")
+    List<QA> findAllByCustomerIdsOrderByDesc(@Param("customerIds") List<String> customerIds);
+
+
 }
