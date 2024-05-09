@@ -3,13 +3,13 @@ let test2 = document.getElementById("test2");
 let test3 = document.getElementById("test3");
 let test4 = document.getElementById("test4");
 let test5 = document.getElementById("test5");
-// let testaa = document.querySelector("#aa1");
 
 let testaa1 = document.getElementById("aa1");
 let testaa2 = document.getElementById("aa2");
 let testaa3 = document.getElementById("aa3");
 let testaa4 = document.getElementById("aa4");
 let testaa5 = document.getElementById("aa5");
+
 
 
 let testFAQ1 = document.getElementById("testFAQ1");
@@ -42,6 +42,9 @@ testaa2.style.height = "0px";
 testaa3.style.height = "0px";
 testaa4.style.height = "0px";
 testaa5.style.height = "0px";
+
+
+let timer; // 타이머 식별자를 저장할 변수
 
 
 
@@ -144,6 +147,7 @@ if(testaa3.style.opacity == "0"){
     testaa4.style.height = "0px";
     testaa5.style.height = "0px";
 
+
     if(timer) clearTimeout(timer); // 타이머가 있다면 취소
     timer = setTimeout(() => {
         testaa3.style.height = "auto";
@@ -223,6 +227,7 @@ testaa4.style.height = "0px";
 testaa1.style.height = "0px";
 
 
+
 if(testaa5.style.opacity == "0"){
     testaa5.style.transition = "1s all";
 
@@ -232,6 +237,7 @@ if(testaa5.style.opacity == "0"){
     testaa3.style.height = "0px";
     testaa4.style.height = "0px";
     testaa1.style.height = "0px";
+
 
     if(timer) clearTimeout(timer); // 타이머가 있다면 취소
     timer = setTimeout(() => {
