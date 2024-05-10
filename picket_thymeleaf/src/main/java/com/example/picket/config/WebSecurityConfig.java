@@ -4,6 +4,7 @@ package com.example.picket.config;
 import com.example.picket.entity.Customer;
 import com.example.picket.repository.CustomerRepository;
 import com.example.picket.service.CustomerDetailService;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,7 +65,7 @@ public class WebSecurityConfig {
                                     session.setMaxInactiveInterval(1800);
 
                                     log.info("customer name: "+customer.getName()+"customer id:"+customer.getId());
-                                    response.sendRedirect("/main");
+                                        response.sendRedirect("/main");
                                 }
                         })
                         .failureHandler((request, response, exception) -> {
@@ -95,5 +96,5 @@ public class WebSecurityConfig {
     public  BCryptPasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
-}
 
+}

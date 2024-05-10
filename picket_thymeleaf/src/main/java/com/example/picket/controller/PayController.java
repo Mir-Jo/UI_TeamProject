@@ -32,6 +32,8 @@ public class PayController {
             String paymentResponse = sendGetRequest(paymentUrl, access_token);
             JSONObject paymentJson = new JSONObject(paymentResponse);
 
+            System.out.println(paymentResponse);
+
             String paymentStatus = paymentJson.getJSONObject("response").getString("status");
             switch (paymentStatus) {
                 case "ready":
