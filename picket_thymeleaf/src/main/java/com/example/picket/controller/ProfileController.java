@@ -7,6 +7,9 @@ import com.example.picket.entity.Performance;
 import com.example.picket.entity.QA;
 import com.example.picket.entity.WishList;
 import com.example.picket.repository.CustomerRepository;
+import com.example.picket.repository.QARepository;
+import com.example.picket.repository.TicketRepository;
+import com.example.picket.repository.WishListRepository;
 import com.example.picket.service.*;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -32,7 +35,13 @@ public class ProfileController {
 
     private final QAService qaService;
     @Autowired
+    private WishListRepository wishListRepository;
+    @Autowired
     private CustomerRepository customerRepository;
+    @Autowired
+    private QARepository qaRepository;
+    @Autowired
+    private TicketRepository ticketRepository;
 
     @Autowired
     private CustomerService customerService;

@@ -59,22 +59,52 @@
             </div>
         </div>
     </div>
-        <div class="modal">
-            <div class="modal_body">
-                <h2>비밀번호 변경</h2>
-                <form id="changePW" action="/ChangePW" method="POST">
-                    <input type="password" name="changedPW" id="changedPW"
-                           placeholder="비밀번호(특수문자,숫자를 포함한 8~15자)"
-                           pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d@$!%*?&]{8,15}$"
-                           required />
-                    <input type="password" name="changedPWCheck" id="changedPWCheck"
-                           placeholder="비밀번호(특수문자,숫자를 포함한 8~15자)"
-                           pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d@$!%*?&]{8,15}$"
-                           required />
-                    <div><button type="submit">변경</button> <button id="cancel" type="button">취소</button></div>
-                </form>
-            </div>
+    <!-- 비밀번호 변경 모달 -->
+    <div class="modal">
+        <div class="modal_body">
+            <h2>비밀번호 변경</h2>
+            <form id="changePW" action="/ChangePW" method="POST">
+                <input type="password" name="changedPW" id="changedPW"
+                       placeholder="새 비밀번호(특수문자,숫자를 포함한 8~15자)"
+                       required />
+                <input type="password" name="changedPWCheck" id="changedPWCheck"
+                       placeholder="새 비밀번호(확인)"
+                       required />
+                <div><button type="submit">변경</button> <button id="cancel" type="button">취소</button></div>
+            </form>
         </div>
+    </div>
+    <script th:inline="javascript">
+        // 정규식 패턴
+        const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d@$!%*?&]{8,15}$/;
+
+        // 비밀번호 변경 양식 검증 함수
+        function validatePassword() {
+            const changedPW = document.getElementById('changedPW').value;
+            const changedPWCheck = document.getElementById('changedPWCheck').value;
+            if (!passwordPattern.test(changedPW)) {
+                alert("새 비밀번호는 특수문자, 숫자를 포함한 8~15자여야 합니다.");
+                return false;
+            }
+            if (changedPW !== changedPWCheck) {
+                alert("새 비밀번호와 확인 비밀번호가 일치하지 않습니다.");
+                return false;
+            }
+            return true;
+        }
+
+        // 비밀번호 변경 양식 제출 시 검증
+        document.getElementById('changePW').addEventListener('submit', function(event) {
+            if (!validatePassword()) {
+                event.preventDefault(); // 제출 중지
+            }
+        });
+
+        // 취소 버튼 클릭 시 이벤트 처리
+        document.getElementById("cancel").addEventListener('click', function(event){
+            window.location.href = 'http://localhost:8080/FindIDPW';
+        });
+    </script>
 </main>
 <script src="/js/FindIDPW.js">
 </script>
@@ -100,23 +130,6 @@
     if(changePW == true){
         modal.style.display="flex";
     }
-
-    function changePW(e){
-        console.log("비밀번호 변경 요청");
-        var changedPW = document.getElementById('changedPW');
-        var changedPWCheck = document.getElementById('changedPWCheck');
-        var myForm = document.getElementById('changePW');
-        if(changedPW === changedPWCheck){
-            return "/ChangePW";
-        }
-        else{
-            document.getElementById('changedPW').focus();
-        }
-    }
-    const cancel = document.getElementById("cancel");
-    cancel.addEventListener('click', function(event){
-        window.location.href = 'http://localhost:8080/FindIDPW';
-    });
 </script>
 </body>
 </html>
