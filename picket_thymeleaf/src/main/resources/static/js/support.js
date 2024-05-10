@@ -27,6 +27,7 @@ let timer; // 타이머 식별자를 저장할 변수
 /*111111111111111111111111111111111111111111111111111111111111*/
 testaa1.style.opacity = "0";
 test1.addEventListener("click", ()=>{
+console.log("확인");
 testaa1.style.transition = "none";
 testaa2.style.transition = "none";
 testaa3.style.transition = "none";
@@ -42,10 +43,6 @@ testaa2.style.height = "0px";
 testaa3.style.height = "0px";
 testaa4.style.height = "0px";
 testaa5.style.height = "0px";
-
-
-let timer; // 타이머 식별자를 저장할 변수
-
 
 
 if(testaa1.style.opacity == "0"){
