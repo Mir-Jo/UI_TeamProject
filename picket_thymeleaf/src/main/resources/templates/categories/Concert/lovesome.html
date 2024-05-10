@@ -48,6 +48,12 @@
             <div class="rn-03-left">
                 <div class="rn-product-imgbox">
                     <img src="../image/category/concert_info/lovesome_1.jpg"></div>
+                <div class="rn-product-social">
+                    <div id="image-container">
+                        <img th:src="@{${imgUrl}}" alt="Image" onclick="changeImage()">
+                        <span><b>찜하기</b></span>
+                    </div>
+                </div>
             </div>
             <div class="rn-03-right">
                 <div class="rn-product-area1">
@@ -59,11 +65,8 @@
                         <dt>출연</dt>
                         <dd>&nbsp; 10CM, 멜로망스, 정세운, 하현상, NEW HOPE CLUB, 가호, 남우현, 데이브레이크, 샘김, 적재, 치즈, 도영, 박원, 소란, THE SOLUTIONS, 쏜애플, 유채훈, 이승윤, 키</dd>
                         <dt>가격</dt>
-
                         <dd th:text="${price} + '원'"></dd>
 
-                        <dt>혜택</dt>
-                        <dd><button>사용가능쿠폰</button></dd>
                     </dl>
                 </div>
                 <dt>공연시간 안내</dt>
@@ -105,18 +108,7 @@
         </div>
     </div>
 </div>
-<div class="renew-content">
-    <div class="rn-03">
-        <div class="rn-03-left">
-            <div class="rn-product-social">
-                <div id="image-container">
-                    <img th:src="@{${imgUrl}}" alt="Image" onclick="changeImage()">
-                    <span><b>찜하기</b></span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <div>
     <div class="renew-content">
         <div class="rn-04">

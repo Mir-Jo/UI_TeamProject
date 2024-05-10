@@ -94,7 +94,6 @@
 .booking button {
   width: 50%;
   height: 50px;
-  margin-top: 50px;
   border-radius: 8px;
   font-size: 20px;
   background-color: orange;
@@ -256,6 +255,7 @@ dt {
 .rn-03-left .rn-product-social {
   width: 100%;
   height: 75px;
+  margin-top:25px;
 
   position: relative;
 }
@@ -277,6 +277,9 @@ dt {
   height: 85px;
   bottom: 26px;
   right: 26px;
+}
+.rn-product-imgbox2 {
+    margin-top : 25px;
 }
 .rn-03-right {
   float: right;
