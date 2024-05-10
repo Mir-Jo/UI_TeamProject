@@ -46,6 +46,12 @@ insert into performance(title, category, dates, place, price)
 values('연극 〈헤르츠클란〉', '연극 > 대학로', '2024.01.16 ~ 2024.04.07', '링크아트센터드림 드림3관', 66000);
 insert into performance(title, category, dates, place, price)
 values('연극 [나의PS파트너]', '연극 > 대학로', 'OPEN RUN', '대학로 마루아트홀(구, 레몬아트홀)', 40000);
+insert into performance(title, category, dates, place, price)
+values('연극 [한뼘사이]', '연극 > 대학로', '2021.03.19 ~ 2024.05.31', '라온아트홀', 50000);
+insert into performance(title, category, dates, place, price)
+values('연극 [벚꽃동산]', '연극 > 기타지역', '2024.06.04 ~ 2024.07.07', 'LG아트센터 서울, LG SIGNATURE 홀', 40000);
+insert into performance(title, category, dates, place, price)
+values('연극 〈바스커빌 : 셜록홈즈 미스터리〉', '연극 > 대학로', '2024.03.28 ~ 2024.06.09', 'PICKET24아트원 3관', 60000);
 insert into performance(title, category, dates, place, price) 
 values('라 트라비아타 - 춘희', '클래식/무용/국악>오페라', '2024.04.25 ~ 2024.04.28', '세종문화회관 대극장', 50000);
 insert into performance(title, category, dates, place, price) 

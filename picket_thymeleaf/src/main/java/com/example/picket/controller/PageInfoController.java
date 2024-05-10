@@ -247,6 +247,42 @@ public class PageInfoController {
 
         return "/categories/Act/musicalTheaterCarol";
     }
+    @GetMapping("/act/theaterBaskervilles")
+    public String theaterBasterCarol(Model model, HttpServletRequest request){
+        PerformanceForm performanceForm = performanceService.findInfo("연극 〈바스커빌 : 셜록홈즈 미스터리〉");
+        performanceService.toModel(performanceForm, model);
+
+        HttpSession session = request.getSession();
+        Customer customer = (Customer) session.getAttribute("customer");
+
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+
+        return "/categories/Act/theaterBaskervilles";
+    }
+    @GetMapping("/act/theaterBlossom")
+    public String theaterBlossom(Model model, HttpServletRequest request){
+        PerformanceForm performanceForm = performanceService.findInfo("연극 [벚꽃동산]");
+        performanceService.toModel(performanceForm, model);
+
+        HttpSession session = request.getSession();
+        Customer customer = (Customer) session.getAttribute("customer");
+
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+
+        return "/categories/Act/theaterBlossom";
+    }
+    @GetMapping("/act/theaterhandspan")
+    public String theaterhandspan(Model model, HttpServletRequest request){
+        PerformanceForm performanceForm = performanceService.findInfo("연극 [한뼘사이]");
+        performanceService.toModel(performanceForm, model);
+
+        HttpSession session = request.getSession();
+        Customer customer = (Customer) session.getAttribute("customer");
+
+        wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
+
+        return "/categories/Act/theaterhandspan";
+    }
 
     @GetMapping("/act/theaterCloserInfo")
     public String theaterCloser(Model model, HttpServletRequest request){

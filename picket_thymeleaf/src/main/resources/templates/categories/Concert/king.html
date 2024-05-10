@@ -48,6 +48,12 @@
             <div class="rn-03-left">
                 <div class="rn-product-imgbox">
                     <img src="../image/category/concert_info/king_gnu_asia_1.jpg"></div>
+                <div class="rn-product-social">
+                    <div id="image-container">
+                        <img th:src="@{${imgUrl}}" alt="Image" onclick="changeImage()">
+                        <span><b>찜하기</b></span>
+                    </div>
+                </div>
             </div>
             <div class="rn-03-right">
                 <div class="rn-product-area1">
@@ -62,8 +68,6 @@
 
                         <dd th:text="${price} + '원'"></dd>
 
-                        <dt>혜택</dt>
-                        <dd><button>사용가능쿠폰</button></dd>
                     </dl>
                 </div>
                 <dt>공연시간 안내</dt>
@@ -108,21 +112,7 @@
         </div>
     </div>
 </div>
-</div>
-</div>
-<div class="renew-content">
-    <div class="rn-03">
-        <div class="rn-03-left">
-            <div class="rn-product-social">
-                <div id="image-container">
-                    <img th:src="@{${imgUrl}}" alt="Image" onclick="changeImage()">
-                    <span><b>찜하기</b></span>
 
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <div>
 
     <div class="renew-content">

@@ -1,5 +1,5 @@
 
-IMP.init("imp01723330");
+IMP.init("imp01723330");3
 
 function requestPay() {
     IMP.request_pay({
