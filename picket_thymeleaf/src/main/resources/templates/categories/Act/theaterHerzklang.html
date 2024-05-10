@@ -47,6 +47,12 @@
             <div class="rn-03-left">
                 <div class="rn-product-imgbox">
                     <img src="/image/category/act_info/theaterHerzKlang/theaterHerzKlang_detail_main.jpg"></div>
+                <div class="rn-product-social">
+                    <div id="image-container">
+                        <img th:src="@{${imgUrl}}" alt="Image" onclick="changeImage()">
+                        <span><b>찜하기</b></span>
+                    </div>
+                </div>
             </div>
             <div class="rn-03-right">
                 <div class="rn-product-area1">
@@ -58,11 +64,7 @@
                         <dt>출연</dt>
                         <dd>&nbsp;김도빈,조풍래,성연,최호승,강찬,안지환,허영손,김서환,강은빈,김기리,오정택,안창용</dd>
                         <dt>가격</dt>
-
                         <dd th:text="${price} + '원'"></dd>
-
-                        <dt>혜택</dt>
-                        <dd><button>사용가능쿠폰</button></dd>
                     </dl>
                 </div>
                 <dt>공연시간 안내</dt>
@@ -102,18 +104,6 @@
                 </div>
                 <div class="booking">
                     <button><b>예매하기</b></button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="renew-content">
-    <div class="rn-03">
-        <div class="rn-03-left">
-            <div class="rn-product-social">
-                <div id="image-container">
-                    <img th:src="@{${imgUrl}}" alt="Image" onclick="changeImage()">
-                    <span><b>찜하기</b></span>
                 </div>
             </div>
         </div>

@@ -307,7 +307,10 @@ main{
     align-items: center;
 
   }
-
+.mypagelist a{
+    text-decoration:none;
+    color:inherit;
+}
 
 
 
