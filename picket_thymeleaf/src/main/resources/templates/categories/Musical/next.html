@@ -48,6 +48,12 @@
             <div class="rn-03-left">
                 <div class="rn-product-imgbox">
                     <img src="/image/category/musical_info/넥스트투노멀.jpg"></div>
+                <div class="rn-product-social">
+                    <div id="image-container">
+                        <img th:src="@{${imgUrl}}" alt="Image" onclick="changeImage()">
+                        <span><b>찜하기</b></span>
+                    </div>
+                </div>
             </div>
             <div class="rn-03-right">
                 <div class="rn-product-area1">
@@ -59,11 +65,8 @@
                         <dt>출연</dt>
                         <dd> 다이애나: 최정원배해선 / 댄: 이건명마이클리게이브: 산들. 유회승홍기범 / 나탈리: 김환희이서영헨리: 김현진최재웅 / 의사: 박인배</dd>
                         <dt>가격</dt>
-
                         <dd th:text="${price} + '원'"></dd>
 
-                        <dt>혜택</dt>
-                        <dd><button>사용가능쿠폰</button></dd>
                     </dl>
                 </div>
                 <dt>공연시간</dt>
@@ -109,18 +112,7 @@
         </div>
     </div>
 </div>
-<div class="renew-content">
-    <div class="rn-03">
-        <div class="rn-03-left">
-            <div class="rn-product-social">
-                <div id="image-container">
-                    <img th:src="@{${imgUrl}}" alt="Image" onclick="changeImage()">
-                    <span><b>찜하기</b></span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <div>
     <div class="renew-content">
         <div class="rn-04">
