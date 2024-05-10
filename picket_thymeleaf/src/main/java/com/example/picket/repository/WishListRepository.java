@@ -1,6 +1,9 @@
 package com.example.picket.repository;
 
+import com.example.picket.entity.Customer;
+import com.example.picket.entity.Performance;
 import com.example.picket.entity.WishList;
+import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

@@ -3,6 +3,8 @@ package com.example.picket.entity;
 import jakarta.persistence.*;
 import jakarta.servlet.http.HttpSession;
 import lombok.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
@@ -27,6 +29,7 @@ public class QA {
     private String state;
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Customer customer;
 
     @Builder
