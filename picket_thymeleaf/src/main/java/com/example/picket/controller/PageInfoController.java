@@ -271,8 +271,8 @@ public class PageInfoController {
 
         return "/categories/Act/theaterBlossom";
     }
-    @GetMapping("/act/theaterhandspan")
-    public String theaterhandspan(Model model, HttpServletRequest request){
+    @GetMapping("/act/theaterHandSpan")
+    public String theaterHandSpan(Model model, HttpServletRequest request){
         PerformanceForm performanceForm = performanceService.findInfo("연극 [한뼘사이]");
         performanceService.toModel(performanceForm, model);
 
@@ -281,7 +281,7 @@ public class PageInfoController {
 
         wishListService.WishListSelectIcon(performanceForm.getTitle(), (customer != null ? customer.getId() : null), model);
 
-        return "/categories/Act/theaterhandspan";
+        return "/categories/Act/theaterHandSpan";
     }
 
     @GetMapping("/act/theaterCloserInfo")
