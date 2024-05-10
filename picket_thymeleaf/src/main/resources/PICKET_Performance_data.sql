@@ -89,7 +89,7 @@ values('THE GREAT UNITY', '전시 > 전시', '2024.03.01 ~ 2024.04.14', 'DDP 전
 
 
 insert into performance(title, category, dates, place, price)
-values('유키 구라모토 내한 25주년 기념 콘서트', '클래식/무용/국악 > 클래식', '2024.06.07 ~ 2024.06.07', '예술의전당 콘서트홀', 70,000);
+values('유키 구라모토 내한 25주년 기념 콘서트', '클래식/무용/국악 > 클래식', '2024.06.07 ~ 2024.06.07', '예술의전당 콘서트홀', 70000);
 insert into performance(title, category, dates, place, price)
 values('해리 포터와 불사조 기사단™ 인 콘서트', '클래식/무용/국악클래식', '2024.05.11 ~ 2024.05.12', '세종문화회관 대극장', 80000);
 insert into performance(title, category, dates, place, price)
