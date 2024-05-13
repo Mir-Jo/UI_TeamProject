@@ -173,6 +173,9 @@ main{
   .mypagemain_tablebutton{
     text-align:right;
   }
+  .mypagemain_refundbutton{
+    margin: 40px 0 0 1400px;
+  }
 
   .mypagemain_buttons{
     font-family: 'wind';
@@ -191,6 +194,11 @@ main{
   }
   .mypagemain_select_box{
     margin:0 0 10px 381px;
+  }
+  .mypagemain_select_box label{
+    font-family:'wind';
+    font-weight:bold;
+    font-size:20px;
   }
   .mypagemain_select_tr{
     background-color:#fff;

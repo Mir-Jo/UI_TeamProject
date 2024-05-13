@@ -94,17 +94,11 @@
         </ul>
     </div>
     </div>
-
-
     <!--<div class="listbox">-->
     <div class="mypagemain_titlename"><h2>마이 티켓</h2></div>
-    <div class="mypagemain_asta">
-        <div class="mypagemain_listmain">
-            <table>
-                <thead>
-                <tr class="mypagemain_select_tr">
-                    <th colspan="2" class="mypagemain_select_th">
-                        <form>
+    <form>
+        <div class="mypagemain_select_box">
+
                             <label>카테고리 :</label>
                             <select class="mypagemain_select">
                                 <option>콘서트</option>
@@ -113,7 +107,13 @@
                                 <option>전시</option>
                                 <option>클래식</option>
                             </select>
-                        </form>
+        </div>
+
+    <div class="mypagemain_asta">
+        <div class="mypagemain_listmain">
+            <table>
+                <thead>
+
                 <tr class="mypagemain_tablehead">
                     <th class="mypagemain_checkbox_width"><input type="checkbox" name="mypagemain_ticket1"
                                                                  onclick='selectAll1(this)'></th>
@@ -133,18 +133,18 @@
                     <td>2024-04-01</td>
                     <td>140000</td>
                 </tr>
-                <tr class="mypagemain_tablebody">
+                <tr class="mypagemain_tablebody" th:each="payment:${payment}">
                     <td><input type="checkbox" name="mypagemain_ticket1"></td>
                     <td th:text="${pay_date}"></td>
                     <td><a href="/season" class="truncate_leaf" th:text="${title}"></a></td>
                     <td th:text="${perform_date}"><br>1매</td>
                     <td th:text="${cancel_date}">2024-04-01</td>
-                    <td th:text="${price}">140000</tdth:>
+                    <td th:text="${price}">140000</td>
                 </tr>
-                <tr class="mypagemain_tablebody" th:each="payment:${payment}">
+                <tr class="mypagemain_tablebody">
                     <td><input type="checkbox" name="mypagemain_ticket1"></td>
                     <td>2024-03-26</td>
-                    <td><a href="/season">뮤지컬 물랑루즈</a></td>
+                    <td><a href="/season">뮤지컬 물랑루즈2</a></td>
                     <td>2024-03-29 <br>1매</td>
                     <td>2024-04-01</td>
                     <td>140000</td>
@@ -152,7 +152,7 @@
                 <tr class="mypagemain_tablebody">
                     <td><input type="checkbox" name="mypagemain_ticket1"></td>
                     <td>2024-03-26</td>
-                    <td><a href="/season">뮤지컬 물랑루즈</a></td>
+                    <td><a href="/season">뮤지컬 물랑루즈3</a></td>
                     <td>2024-03-29 <br>1매</td>
                     <td>2024-04-01</td>
                     <td>140000</td>
@@ -160,21 +160,21 @@
                 <tr class="mypagemain_tablebody">
                     <td><input type="checkbox" name="mypagemain_ticket1"></td>
                     <td>2024-03-26</td>
-                    <td><a href="/season">뮤지컬 물랑루즈</a></td>
+                    <td><a href="/season">뮤지컬 물랑루즈4</a></td>
                     <td>2024-03-29<br>1매</td>
                     <td>2024-04-01</td>
                     <td>140000</td>
                 </tr>
-                <tr>
-                    <td class="mypagemain_tablebutton" colspan="6">
-
-                        <button class="mypagemain_buttons">환불하기</button>
-                    </td>
-                </tr>
                 </tbody>
             </table>
+
         </div>
+
     </div>
+    <div class="mypagemain_refundbutton">
+        <button class="mypagemain_buttons">환불하기</button>
+    </div>
+    </form>
     <div class="mypagemain_spacetable">
         <button class="mypagemain_pageleft">&lt</button>
         <button class="mypagemain_pagenum">1</button>
