@@ -33,11 +33,6 @@
 
 
 
-
-
-
-
-
 // 수정하기 버튼 클릭 시 모달 열기
 var btnOpenedit = document.querySelector('#btnOpenedit');
 var modal = document.getElementById('modal');

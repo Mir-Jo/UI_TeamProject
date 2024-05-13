@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/font.css">
     <link rel="stylesheet" type="text/css" href="/css/mypagemaincss.css">
-
     <title>관심목록</title>
 </head>
 <body>
@@ -75,29 +74,11 @@
     <div class="mypagemain_titlename"><h2>관심목록</h2></div>
     </div>
     <div class="mypagemain_asta">
-
-
         <div class="mypagemain_listmain">
 
             <table>
                 <thead>
-                <tr class="mypagemain_select_tr">
-                    <th colspan="2" class="mypagemain_select_th">
-                        <div>카테고리 :
-                            <select class="mypagemain_select">
-                                <option>콘서트</option>
-                                <option>뮤지컬</option>
-                                <option>연극</option>
-                                <option>전시</option>
-                                <option>클래식</option>
-                            </select>
-                        </div>
-                    </th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
+
                 <tr class="mypagemain_tablehead">
                     <th class="mypagemain_checkbox_width"><input type="checkbox" name="mypagemain_ticket2"
                                                                  onclick='selectAll2(this)'></th>
@@ -108,97 +89,31 @@
                 </tr>
                 </thead>
 
-                <!-- 작동 테스트 (확인 완료) -->
-                <!--                        <tbody th:if="${performances == null or performances.isEmpty()}">-->
-                <!--                            <tr class="mypagemain_tablebody">-->
-                <!--                                <td>No performances in your wishlist.</td>-->
-                <!--                            </tr>-->
-                <!--                        </tbody>-->
-
-                <!--                        <tbody th:if="${performances != null and not performances.isEmpty()}">-->
-                <!--                                <tr th:each="performance : ${performances}" class="mypagemain_tablebody">-->
-                <!--                                    <td><input type="checkbox" name="mypagemain_ticket2"></td>-->
-                <!--                                    <td th:text="${performance.dates}"></td>-->
-                <!--                                    <td th:text="${performance.title}"></td>-->
-                <!--                                    <td th:text="${performance.category}"></td>-->
-                <!--                                    <td th:text="${performance.price}"></td>-->
-                <!--                                </tr>-->
-                <!--                                <tr>-->
-                <!--                                    <td class="mypagemain_spacetable" colspan="6">-->
-                <!--                                        <button class="mypagemain_pageleft">&lt</button>-->
-                <!--                                        <button class="mypagemain_pagenum">1</button>-->
-                <!--                                        <button class="mypagemain_pagenum">2</button>-->
-                <!--                                        <button class="mypagemain_pagenum">3</button>-->
-                <!--                                        <button class="mypagemain_pagenum">4</button>-->
-                <!--                                        <button class="mypagemain_pagenum">5</button>-->
-                <!--                                        <button class="mypagemain_pageright">&gt</button>-->
-                <!--                                    </td>-->
-                <!--                                </tr>-->
-                <!--                                <tr>-->
-                <!--                                    <td class="mypagemain_tablebutton" colspan="6">-->
-
-                <!--                                        <button class="mypagemain_buttons">취소하기</button>-->
-                <!--                                    </td>-->
-                <!--                                </tr>-->
-                <!-- 작동 테스트 (확인 완료) -->
-
-
-                <tbody>
+                <tbody th:if="${performances == null or performances.isEmpty()}">
                     <tr class="mypagemain_tablebody">
-                        <td><input type="checkbox" name="mypagemain_ticket2"></td>
-                        <td>2024-03-26</td>
-                        <td><a href="/season">뮤지컬 물랑루즈</a></td>
-                        <td>뮤지컬</td>
-                        <td>40000</td>
+                        <td>No performances in your wishlist.</td>
                     </tr>
-                    <tr class="mypagemain_tablebody">
-                        <td><input type="checkbox" name="mypagemain_ticket2"></td>
-                        <td>2024-03-26</td>
-                        <td><a href="/season">뮤지컬 물랑루즈</a></td>
-                        <td>뮤지컬</td>
-                        <td>40000</td>
-                    </tr>
-                    <tr class="mypagemain_tablebody">
-                        <td><input type="checkbox" name="mypagemain_ticket2"></td>
-                        <td>2024-03-26</td>
-                        <td><a href="/season">뮤지컬 물랑루즈</a></td>
-                        <td>뮤지컬</td>
+                </tbody>
 
-                        <td>40000</td>
-                    </tr>
-                    <tr class="mypagemain_tablebody">
-                        <td><input type="checkbox" name="mypagemain_ticket2"></td>
-                        <td>2024-03-26</td>
-                        <td><a href="/season">뮤지컬 물랑루즈</a></td>
-                        <td>뮤지컬</td>
-                        <td>40000</td>
-                    </tr>
-                    <tr class="mypagemain_tablebody">
-                        <td><input type="checkbox" name="mypagemain_ticket2"></td>
-                        <td>2024-03-26</td>
-                        <td><a href="/season">뮤지컬 물랑루즈</a></td>
-                        <td>뮤지컬</td>
-                        <td>40000</td>
-                    </tr>
-                    <tr>
-                        <td class="mypagemain_tablebutton" colspan="6">
+                <tbody th:if="${performances != null and not performances.isEmpty()}">
+                        <tr th:each="performance : ${performances}" class="mypagemain_tablebody">
+                            <td><input type="checkbox" name="mypagemain_ticket2" class="wishListCheckbox"></td>
+                            <td th:text="${performance.dates}"></td>
+                            <td class="truncate_leaf" ><a th:href="${performance.url}" th:text="${performance.title}"></a></td>
+                            <td th:text="${performance.category}"></td>
+                            <td th:text="${performance.price}"></td>
+                        </tr>
+                        <tr>
+                            <td class="mypagemain_tablebutton" colspan="6">
 
-                            <button class="mypagemain_buttons">취소하기</button>
-                        </td>
-                    </tr>
+                                <button class="mypagemain_buttons wishListButton">취소하기</button>
+                            </td>
+                        </tr>
                 </tbody>
             </table>
         </div>
     </div>
-    <div class="mypagemain_spacetable">
-        <button class="mypagemain_pageleft">&lt</button>
-        <button class="mypagemain_pagenum">1</button>
-        <button class="mypagemain_pagenum">2</button>
-        <button class="mypagemain_pagenum">3</button>
-        <button class="mypagemain_pagenum">4</button>
-        <button class="mypagemain_pagenum">5</button>
-        <button class="mypagemain_pageright">&gt</button>
-    </div>
+
 </main>
 
 <footer>
@@ -234,6 +149,7 @@ if(Btn.getAttribute("src") === '/image/icon/로그아웃.png'){
 }
 </script>
 <script src="/js/mypagemainjs.js"></script>
+<script src="/js/wishlistjs.js"></script>
 </body>
 
 </html>
