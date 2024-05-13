@@ -4,6 +4,7 @@ import com.example.picket.entity.WishList;
 import com.example.picket.repository.WishListRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public class WishListService {
         wishListRepository.save(wishList);
     }
 
-    public void wishListDelete(String customer_id, String title){ wishListRepository.deleteWish(customer_id, title);}
+    public void wishListDelete(String customer_id, String title){wishListRepository.deleteWish(customer_id, title); }
 
     public void WishListSelectIcon(String title, String customer_id, Model model){
 
@@ -42,6 +43,7 @@ public class WishListService {
         }
     }
 
+    @Transactional
     public List<WishList> WishListFind(String customer_id){
         List<WishList> wishLists = null;
         if(customer_id != null){

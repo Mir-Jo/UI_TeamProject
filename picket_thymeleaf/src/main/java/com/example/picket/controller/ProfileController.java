@@ -2,8 +2,8 @@ package com.example.picket.controller;
 
 import com.example.picket.dto.AddCustomerRequest;
 import com.example.picket.dto.PerformanceForm;
+import com.example.picket.dto.WishListTitleRequest;
 import com.example.picket.entity.Customer;
-import com.example.picket.entity.Performance;
 import com.example.picket.entity.QA;
 import com.example.picket.entity.WishList;
 import com.example.picket.repository.CustomerRepository;
@@ -16,6 +16,7 @@ import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -23,7 +24,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -65,20 +65,42 @@ public class ProfileController {
         model.addAttribute("qaList", qaList);
 
         /* 작동 테스트 (확인 완료)*/
-//        List<PerformanceForm> performances = new ArrayList<>();;
-//        List<WishList> wishLists = wishListService.WishListFind((customer != null ? customer.getId() : null));
-//        if(wishLists != null){
-//            for(WishList wishList: wishLists){
+        List<PerformanceForm> performances = new ArrayList<>();;
+        List<WishList> wishLists = wishListService.WishListFind((customer != null ? customer.getId() : null));
+        if(wishLists != null){
+            for(WishList wishList: wishLists){
 //                System.out.println("확인: " + performanceService.findInfo(wishList.getPerformance().getTitle()));
-//                performances.add(performanceService.findInfo(wishList.getPerformance().getTitle()));
-//            }
-//        }
-//
-//        model.addAttribute("performances", performances);
+                performances.add(performanceService.findInfo(wishList.getPerformance().getTitle()));
+            }
+        }
+
+        model.addAttribute("performances", performances);
         /* 작동 테스트 (확인 완료)*/
 
         return "/mypage/wishlist";
     }
+
+    @PostMapping("/wishlist/delete")
+    public ResponseEntity<Void> wishlistDelete(HttpServletRequest request, @RequestBody WishListTitleRequest wishListTitleRequest){
+        HttpSession session = request.getSession();
+        Customer customer = (Customer) session.getAttribute("customer");
+
+        if(customer != null){
+            String[] performanceTitles = wishListTitleRequest.getPerformanceTitles();
+
+            if(performanceTitles != null){
+                for(String performanceTitle: performanceTitles){
+                    System.out.println("위시리스트 제목 = " + performanceTitle);
+                    wishListService.wishListDelete(customer.getId(), performanceTitle);
+                    System.out.println("반복");
+                }
+            }
+        }
+
+        return ResponseEntity.ok().build();
+    }
+
+
     /* 포인트 내역 */
     @GetMapping("/pointlist")
     public String gotopointlist(Model model, HttpSession session) {

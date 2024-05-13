@@ -1,6 +1,9 @@
 package com.example.picket.controller;
 
 import com.example.picket.dto.PaymentRequest;
+import com.example.picket.repository.CustomerRepository;
+import com.example.picket.repository.PaymentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,6 +18,7 @@ import java.util.stream.Collectors;
 
 @Controller
 public class PayController {
+
     @PostMapping("/Pay")
     public void gotoPay(@RequestBody PaymentRequest request){
 //        try {
@@ -90,5 +94,6 @@ public class PayController {
 //        } else {
 //            throw new IOException("HTTP error code: " + responseCode);
 //        }
+
     }
 }
