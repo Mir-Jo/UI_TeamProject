@@ -97,7 +97,7 @@
 
                 <tbody th:if="${performances != null and not performances.isEmpty()}">
                         <tr th:each="performance : ${performances}" class="mypagemain_tablebody">
-                            <td><input type="checkbox" name="mypagemain_ticket2"></td>
+                            <td><input type="checkbox" name="mypagemain_ticket2" class="wishListCheckbox"></td>
                             <td th:text="${performance.dates}"></td>
                             <td class="truncate_leaf" ><a th:href="${performance.url}" th:text="${performance.title}"></a></td>
                             <td th:text="${performance.category}"></td>
@@ -106,7 +106,7 @@
                         <tr>
                             <td class="mypagemain_tablebutton" colspan="6">
 
-                                <button class="mypagemain_buttons">취소하기</button>
+                                <button class="mypagemain_buttons wishListButton">취소하기</button>
                             </td>
                         </tr>
                 </tbody>
@@ -149,6 +149,7 @@ if(Btn.getAttribute("src") === '/image/icon/로그아웃.png'){
 }
 </script>
 <script src="/js/mypagemainjs.js"></script>
+<script src="/js/wishlistjs.js"></script>
 </body>
 
 </html>

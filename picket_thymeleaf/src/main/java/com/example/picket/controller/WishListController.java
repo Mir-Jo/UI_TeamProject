@@ -46,7 +46,7 @@ public class WishListController {
 
 
     @PostMapping("/wishDelete")
-    public String wishDelete(HttpServletRequest request, @RequestBody AddWishRequest addWishRequest){
+    public String wishDelete(HttpServletRequest request, @RequestBody AddWishRequest addWishRequest) throws Exception {
         HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
         PerformanceForm performanceForm = performanceService.findInfo(addWishRequest.getTitle());
