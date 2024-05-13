@@ -117,7 +117,7 @@ main{
     font-size:20px;
   }
   .mypagemain_listmain td{
-    padding:2% 3%;
+    padding:2% 0%;
     font-size:20px;
   }
   .mypagemain_checkbox_width, .point_col_name{
@@ -312,10 +312,13 @@ main{
     color:inherit;
 }
 
-
-
-  /* 푸터 */
-
+    /* 글자 줄이는 스타일*/
+.truncate_leaf {
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+max-width: 200px;
+}
 
 
 

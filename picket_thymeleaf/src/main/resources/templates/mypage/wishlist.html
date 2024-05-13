@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/font.css">
     <link rel="stylesheet" type="text/css" href="/css/mypagemaincss.css">
-
     <title>관심목록</title>
 </head>
 <body>
@@ -75,29 +74,11 @@
     <div class="mypagemain_titlename"><h2>관심목록</h2></div>
     </div>
     <div class="mypagemain_asta">
-
-
         <div class="mypagemain_listmain">
 
             <table>
                 <thead>
-                <tr class="mypagemain_select_tr">
-                    <th colspan="2" class="mypagemain_select_th">
-                        <div>카테고리 :
-                            <select class="mypagemain_select">
-                                <option>콘서트</option>
-                                <option>뮤지컬</option>
-                                <option>연극</option>
-                                <option>전시</option>
-                                <option>클래식</option>
-                            </select>
-                        </div>
-                    </th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
+
                 <tr class="mypagemain_tablehead">
                     <th class="mypagemain_checkbox_width"><input type="checkbox" name="mypagemain_ticket2"
                                                                  onclick='selectAll2(this)'></th>
@@ -118,7 +99,7 @@
                         <tr th:each="performance : ${performances}" class="mypagemain_tablebody">
                             <td><input type="checkbox" name="mypagemain_ticket2"></td>
                             <td th:text="${performance.dates}"></td>
-                            <td th:text="${performance.title}"></td>
+                            <td class="truncate_leaf" th:text="${performance.title}"></td>
                             <td th:text="${performance.category}"></td>
                             <td th:text="${performance.price}"></td>
                         </tr>
@@ -132,15 +113,7 @@
             </table>
         </div>
     </div>
-    <div class="mypagemain_spacetable">
-        <button class="mypagemain_pageleft">&lt</button>
-        <button class="mypagemain_pagenum">1</button>
-        <button class="mypagemain_pagenum">2</button>
-        <button class="mypagemain_pagenum">3</button>
-        <button class="mypagemain_pagenum">4</button>
-        <button class="mypagemain_pagenum">5</button>
-        <button class="mypagemain_pageright">&gt</button>
-    </div>
+
 </main>
 
 <footer>
