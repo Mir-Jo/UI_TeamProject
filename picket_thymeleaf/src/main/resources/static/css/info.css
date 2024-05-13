@@ -94,6 +94,7 @@
 .booking button {
   width: 50%;
   height: 50px;
+  margin-top: 50px;
   border-radius: 8px;
   font-size: 20px;
   background-color: orange;
@@ -255,7 +256,6 @@ dt {
 .rn-03-left .rn-product-social {
   width: 100%;
   height: 75px;
-  margin-top:25px;
 
   position: relative;
 }
@@ -277,9 +277,6 @@ dt {
   height: 85px;
   bottom: 26px;
   right: 26px;
-}
-.rn-product-imgbox2 {
-    margin-top : 25px;
 }
 .rn-03-right {
   float: right;
@@ -475,7 +472,7 @@ img {
 }
 .productWrapper .moreinfoContainer + .moreinfoContainer {
   margin-top: 7rem;
- 
+
 }
 
 .table_underline1{
@@ -499,17 +496,17 @@ h2 {
   margin-inline-end: 0px;
   unicode-bidi: isolate;
   text-align: center;
-  
+
 }
-th {
+.moreinfoTable1 th {
   display: table-cell;
   unicode-bidi: isolate;
 }
-tr {
+.moreinfoTable1 tr {
   display: table-row;
   unicode-bidi: isolate;
 }
-td {
+.moreinfoTable1 td {
   display: table-cell;
   unicode-bidi: isolate;
 }
@@ -517,7 +514,7 @@ td {
   margin-top: 2.4rem;
   word-wrap: break-word;
   margin-bottom:20px;
-  
+
 }
 .moreinfoTable_tbody_bg_color th{
   background-color:#e7e7ba;
@@ -534,7 +531,7 @@ table {
   margin:auto;
   margin-bottom:40px;
   font-size:13px;
- 
+
 }
 table{
   border-collapse: collapse;
@@ -614,7 +611,7 @@ tbody{
 .kakaoapi{
   display:flex;
   justify-content: center;
-      
+
 }
 
 
@@ -622,7 +619,7 @@ tbody{
 footer{
   background-color: #e0dcdc;
   padding-bottom: 1%;
-  
+
 }
 .footer-side{
   padding-left: 40px;
@@ -631,49 +628,25 @@ footer{
   padding-top:  10px;
 }
 #foot-top>a{
-color:#7e7b7b; 
+color:#7e7b7b;
 font-size: 15px;
 padding: 10px 15px;
-width: 50%; 
+width: 50%;
 
 }
 .footer-side>div span{
-  color:#7e7b7b; 
+  color:#7e7b7b;
   font-size: 15px;
   /* padding:   */
 }
 
 #footer-left{
   float: inline-end;
- 
 
-  
-  
+
+
+
 }
 html{
   height:100%;
-}
-
-
-/*결제창 테스트*/
-#paymentModal{
-    display: none;
-    position: fixed;
-    top: 0%;
-    left: 0%;
-    width: 100vw;
-    height: 100vh;
-    background-color: #00000044;
-    z-index: 200;
-}
-
-#paymentWindow{
-    position: fixed;
-    top: calc(50vh / 2);
-    left: calc(65vw / 2);
-    width: 35vw;
-    height: 50vh;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
 }

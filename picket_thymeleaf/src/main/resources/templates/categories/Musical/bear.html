@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" type="text/css" href="/css/info.css">
     <link rel="stylesheet" href="/css/font.css">
+    <link rel="stylesheet" href="/css/payment.css">
     <title th:text="${title}"></title>
 </head>
 <body>
@@ -102,11 +103,67 @@
                         </div>
                     </div>
                     <div class="booking">
-                        <button><b>예매하기</b></button>
+                        <button type="button" id="btnOpenedit"><b>예매하기</b></button>
                     </div>
-                </div>
             </div>
         </div>
+    </div>
+</div>
+            <!--결제 모달 열기-->
+            <div id='modal'>
+                <div id='content'>
+                    <div class="payment_asta">
+                        <div class="payment_listmain">
+                            <button type='button' class="close" id='btnClose'>X</button>
+                            <table>
+                                <tr class="payment_tablehead">
+
+                                    <th>예매 일자</th>
+                                    <th>티켓 목록</th>
+                                    <th>공연 일자</th>
+                                    <th>개수</th>
+                                    <th>가격</th>
+                                </tr>
+                                <tr class="payment_tablebody">
+                                    <td><select>
+                                        <option>2024-xx-x1</option>
+                                        <option>2024-xx-x2</option>
+                                    </select></td>
+                                    <td>티켓 변수</a></td>
+                                    <td>2024-xx-x1 ~ 2024-xx-x2</td>
+                                    <td><select>
+                                        <option>1매</option>
+                                        <option>2매</option>
+                                        <option>3매</option>
+                                        <option>4매</option>
+                                    </select></td>
+                                    <td>가격 변수</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="payment_listmain2">
+                        <table>
+                            <tr class="payment_tablehead2">
+
+                                <th>총 티켓 금액</th>
+                                <th></th>
+                                <th>포인트</th>
+                                <th></th>
+                                <th>결제 예상 금액</th>
+
+                            </tr>
+
+                            <tr class="payment_tablebody2">
+                                <td></td>
+                                <td>-</td>
+                                <td></td>
+                                <td>=</td>
+                                <td>xxxxxxx</td>
+                            </tr>
+                        </table>
+                </div>
+            </div>
     </div>
 <div>
     <div class="renew-content">
@@ -310,5 +367,6 @@
         });
     }
 </script>
+<script src="../js/Pay.js"></script>
 </body>
 </html>
