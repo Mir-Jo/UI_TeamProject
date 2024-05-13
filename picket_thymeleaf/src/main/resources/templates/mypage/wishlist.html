@@ -107,85 +107,27 @@
                     <th>가격</th>
                 </tr>
                 </thead>
-
-                <!-- 작동 테스트 (확인 완료) -->
-                <!--                        <tbody th:if="${performances == null or performances.isEmpty()}">-->
-                <!--                            <tr class="mypagemain_tablebody">-->
-                <!--                                <td>No performances in your wishlist.</td>-->
-                <!--                            </tr>-->
-                <!--                        </tbody>-->
-
-                <!--                        <tbody th:if="${performances != null and not performances.isEmpty()}">-->
-                <!--                                <tr th:each="performance : ${performances}" class="mypagemain_tablebody">-->
-                <!--                                    <td><input type="checkbox" name="mypagemain_ticket2"></td>-->
-                <!--                                    <td th:text="${performance.dates}"></td>-->
-                <!--                                    <td th:text="${performance.title}"></td>-->
-                <!--                                    <td th:text="${performance.category}"></td>-->
-                <!--                                    <td th:text="${performance.price}"></td>-->
-                <!--                                </tr>-->
-                <!--                                <tr>-->
-                <!--                                    <td class="mypagemain_spacetable" colspan="6">-->
-                <!--                                        <button class="mypagemain_pageleft">&lt</button>-->
-                <!--                                        <button class="mypagemain_pagenum">1</button>-->
-                <!--                                        <button class="mypagemain_pagenum">2</button>-->
-                <!--                                        <button class="mypagemain_pagenum">3</button>-->
-                <!--                                        <button class="mypagemain_pagenum">4</button>-->
-                <!--                                        <button class="mypagemain_pagenum">5</button>-->
-                <!--                                        <button class="mypagemain_pageright">&gt</button>-->
-                <!--                                    </td>-->
-                <!--                                </tr>-->
-                <!--                                <tr>-->
-                <!--                                    <td class="mypagemain_tablebutton" colspan="6">-->
-
-                <!--                                        <button class="mypagemain_buttons">취소하기</button>-->
-                <!--                                    </td>-->
-                <!--                                </tr>-->
-                <!-- 작동 테스트 (확인 완료) -->
-
-
-                <tbody>
+                
+                <tbody th:if="${performances == null or performances.isEmpty()}">
                     <tr class="mypagemain_tablebody">
-                        <td><input type="checkbox" name="mypagemain_ticket2"></td>
-                        <td>2024-03-26</td>
-                        <td><a href="/season">뮤지컬 물랑루즈</a></td>
-                        <td>뮤지컬</td>
-                        <td>40000</td>
+                        <td>No performances in your wishlist.</td>
                     </tr>
-                    <tr class="mypagemain_tablebody">
-                        <td><input type="checkbox" name="mypagemain_ticket2"></td>
-                        <td>2024-03-26</td>
-                        <td><a href="/season">뮤지컬 물랑루즈</a></td>
-                        <td>뮤지컬</td>
-                        <td>40000</td>
-                    </tr>
-                    <tr class="mypagemain_tablebody">
-                        <td><input type="checkbox" name="mypagemain_ticket2"></td>
-                        <td>2024-03-26</td>
-                        <td><a href="/season">뮤지컬 물랑루즈</a></td>
-                        <td>뮤지컬</td>
+                </tbody>
 
-                        <td>40000</td>
-                    </tr>
-                    <tr class="mypagemain_tablebody">
-                        <td><input type="checkbox" name="mypagemain_ticket2"></td>
-                        <td>2024-03-26</td>
-                        <td><a href="/season">뮤지컬 물랑루즈</a></td>
-                        <td>뮤지컬</td>
-                        <td>40000</td>
-                    </tr>
-                    <tr class="mypagemain_tablebody">
-                        <td><input type="checkbox" name="mypagemain_ticket2"></td>
-                        <td>2024-03-26</td>
-                        <td><a href="/season">뮤지컬 물랑루즈</a></td>
-                        <td>뮤지컬</td>
-                        <td>40000</td>
-                    </tr>
-                    <tr>
-                        <td class="mypagemain_tablebutton" colspan="6">
+                <tbody th:if="${performances != null and not performances.isEmpty()}">
+                        <tr th:each="performance : ${performances}" class="mypagemain_tablebody">
+                            <td><input type="checkbox" name="mypagemain_ticket2"></td>
+                            <td th:text="${performance.dates}"></td>
+                            <td th:text="${performance.title}"></td>
+                            <td th:text="${performance.category}"></td>
+                            <td th:text="${performance.price}"></td>
+                        </tr>
+                        <tr>
+                            <td class="mypagemain_tablebutton" colspan="6">
 
-                            <button class="mypagemain_buttons">취소하기</button>
-                        </td>
-                    </tr>
+                                <button class="mypagemain_buttons">취소하기</button>
+                            </td>
+                        </tr>
                 </tbody>
             </table>
         </div>

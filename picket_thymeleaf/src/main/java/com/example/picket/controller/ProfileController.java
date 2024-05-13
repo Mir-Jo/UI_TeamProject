@@ -65,16 +65,16 @@ public class ProfileController {
         model.addAttribute("qaList", qaList);
 
         /* 작동 테스트 (확인 완료)*/
-//        List<PerformanceForm> performances = new ArrayList<>();;
-//        List<WishList> wishLists = wishListService.WishListFind((customer != null ? customer.getId() : null));
-//        if(wishLists != null){
-//            for(WishList wishList: wishLists){
-//                System.out.println("확인: " + performanceService.findInfo(wishList.getPerformance().getTitle()));
-//                performances.add(performanceService.findInfo(wishList.getPerformance().getTitle()));
-//            }
-//        }
-//
-//        model.addAttribute("performances", performances);
+        List<PerformanceForm> performances = new ArrayList<>();;
+        List<WishList> wishLists = wishListService.WishListFind((customer != null ? customer.getId() : null));
+        if(wishLists != null){
+            for(WishList wishList: wishLists){
+                System.out.println("확인: " + performanceService.findInfo(wishList.getPerformance().getTitle()));
+                performances.add(performanceService.findInfo(wishList.getPerformance().getTitle()));
+            }
+        }
+
+        model.addAttribute("performances", performances);
         /* 작동 테스트 (확인 완료)*/
 
         return "/mypage/wishlist";
