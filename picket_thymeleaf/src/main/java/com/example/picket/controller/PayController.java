@@ -1,6 +1,9 @@
 package com.example.picket.controller;
 
 import com.example.picket.dto.PaymentRequest;
+import com.example.picket.repository.CustomerRepository;
+import com.example.picket.repository.PaymentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,11 +18,19 @@ import java.util.stream.Collectors;
 
 @Controller
 public class PayController {
+
+    @Autowired
+    private CustomerRepository customerRepository;
+
+    @Autowired
+    private PaymentRepository paymentRepository;
+
     @PostMapping("/payment/complete")
     public void gotoPay(@RequestBody PaymentRequest request){
         try {
             String imp_uid = request.getImp_uid();
             String merchant_uid = request.getMerchant_uid();
+            Long totalPrice = request.getAmount();
 
             // 1. 포트원 API 엑세스 토큰 발급
             String tokenUrl = "https://api.iamport.kr/users/getToken";
@@ -90,5 +101,6 @@ public class PayController {
         } else {
             throw new IOException("HTTP error code: " + responseCode);
         }
+
     }
 }
