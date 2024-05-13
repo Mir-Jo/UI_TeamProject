@@ -95,3 +95,4 @@ insert into performance(title, category, dates, place, price)
 values('연극 [벚꽃동산]', '연극 > 기타지역', '2024.06.04 ~ 2024.07.07', 'LG아트센터 서울, LG SIGNATURE 홀', 40000);
 insert into performance(title, category, dates, place, price)
 values('연극 〈바스커빌 : 셜록홈즈 미스터리〉', '연극 > 대학로', '2024.03.28 ~ 2024.06.09', 'PICKET24아트원 3관', 60000);
+
