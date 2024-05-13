@@ -88,7 +88,7 @@
                     <th>가격</th>
                 </tr>
                 </thead>
-                
+
                 <tbody th:if="${performances == null or performances.isEmpty()}">
                     <tr class="mypagemain_tablebody">
                         <td>No performances in your wishlist.</td>
@@ -99,7 +99,7 @@
                         <tr th:each="performance : ${performances}" class="mypagemain_tablebody">
                             <td><input type="checkbox" name="mypagemain_ticket2"></td>
                             <td th:text="${performance.dates}"></td>
-                            <td class="truncate_leaf" th:text="${performance.title}"></td>
+                            <td class="truncate_leaf" ><a th:href="${performance.url}" th:text="${performance.title}"></a></td>
                             <td th:text="${performance.category}"></td>
                             <td th:text="${performance.price}"></td>
                         </tr>

@@ -15,7 +15,8 @@ public class PerformanceForm {
     private String dates;
     private String category;
     private Long price;
+    private String url;
 
     public Performance toEntity() {
-        return new Performance(title,place,dates,category,price);}
+        return new Performance(title,place,dates,category,price, url);}
 }
