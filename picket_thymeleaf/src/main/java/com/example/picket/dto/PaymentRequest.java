@@ -8,4 +8,9 @@ import lombok.Setter;
 public class PaymentRequest {
     private String imp_uid;
     private String merchant_uid;
+    @Getter
+    private Long amount;
+    private String customerId;
+    private Long point;
+
 }

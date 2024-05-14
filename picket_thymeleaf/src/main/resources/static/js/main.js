@@ -1,5 +1,5 @@
 const container = document.querySelector("#pic");
-const pics = ['가로슬라이드.jpg','가로슬라이드2.png','가로슬라이드3.jpg'];
+const pics = ['가로슬라이드.jpg','가로슬라이드2.jpg','가로슬라이드3.jpg'];
 const arrows = document.querySelectorAll(".arrow");
 let i = 0;  
 const transitionDuration = 1000; // 슬라이드 전환 시간 (단위: 밀리초)

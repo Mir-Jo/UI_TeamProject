@@ -23,9 +23,11 @@ public class Performance {
     private String category;
     @Column(nullable = false)
     private Long price;
+    @Column(nullable = false)
+    private String url;
 
 
     public PerformanceForm toForm(){
-        return new PerformanceForm(this.title, this.place, this.dates, this.category, this.price);
+        return new PerformanceForm(this.title, this.place, this.dates, this.category, this.price, this.url);
     }
 }

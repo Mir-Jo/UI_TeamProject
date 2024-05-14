@@ -14,7 +14,7 @@
 main{
 
   background-color:rgb(255, 255, 255);
-  height: 1100px;
+  height: 1200px;
 }
 
 /* 제목 */
@@ -117,7 +117,7 @@ main{
     font-size:20px;
   }
   .mypagemain_listmain td{
-    padding:2% 3%;
+    padding:2% 0%;
     font-size:20px;
   }
   .mypagemain_checkbox_width, .point_col_name{
@@ -173,6 +173,9 @@ main{
   .mypagemain_tablebutton{
     text-align:right;
   }
+  .mypagemain_refundbutton{
+    margin: 40px 0 0 1400px;
+  }
 
   .mypagemain_buttons{
     font-family: 'wind';
@@ -192,6 +195,11 @@ main{
   }
   .mypagemain_select_box{
     margin:0 0 10px 381px;
+  }
+  .mypagemain_select_box label{
+    font-family:'wind';
+    font-weight:bold;
+    font-size:20px;
   }
   .mypagemain_select_tr{
     background-color:#fff;
@@ -312,12 +320,23 @@ main{
     text-decoration:none;
     color:inherit;
 }
+<<<<<<< HEAD
 div#chargeButton{
     display:inline-block;
     margin:5% 10% auto 70%;
 }
   /* 푸터 */
 
+=======
+
+    /* 글자 줄이는 스타일*/
+.truncate_leaf {
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+max-width: 200px;
+}
+>>>>>>> 6cd31c8644865afff89e611803f39edfe25e1992
 
 
 
