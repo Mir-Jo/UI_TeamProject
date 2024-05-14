@@ -4,6 +4,12 @@
     background-color: orange;
 }
 
+.blockDate{
+    cursor: default;
+    color: gray;
+    padding: 5px;
+}
+
 
 
 .calendar-boxbox{
@@ -39,12 +45,13 @@
 .calendar-container {
   width: 500px auto;
   height: 300px;
-  border: 1px solid #000;
+  border: 5px solid #ba4d00b5;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   padding: 10px 0;
   background-color: #ffffff;
   text-align: center;
   font-family: 'fair';
+  border-radius: 10px;
 }
 .calendar-header img{
   cursor:pointer;
