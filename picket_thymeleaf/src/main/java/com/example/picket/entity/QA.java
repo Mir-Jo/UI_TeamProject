@@ -1,7 +1,6 @@
 package com.example.picket.entity;
 
 import jakarta.persistence.*;
-import jakarta.servlet.http.HttpSession;
 import lombok.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
