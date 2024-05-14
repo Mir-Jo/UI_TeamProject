@@ -320,14 +320,12 @@ main{
     text-decoration:none;
     color:inherit;
 }
-<<<<<<< HEAD
 div#chargeButton{
     display:inline-block;
     margin:5% 10% auto 70%;
 }
   /* 푸터 */
 
-=======
 
     /* 글자 줄이는 스타일*/
 .truncate_leaf {
@@ -336,7 +334,7 @@ overflow: hidden;
 text-overflow: ellipsis;
 max-width: 200px;
 }
->>>>>>> 6cd31c8644865afff89e611803f39edfe25e1992
+
 
 
 
