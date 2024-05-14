@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/font.css">
+    <link rel="stylesheet" type="text/css" href="/css/profilecss.css">
     <link rel="stylesheet" type="text/css" href="/css/mypagemaincss.css">
 
     <title>포인트</title>
@@ -76,55 +77,24 @@
             <table>
                 <thead>
                 <tr class="mypagemain_tablehead">
-                    <th class="point_col_name">포인트명</th>
+                    <th class="point_col_name">이용내역 유형</th>
                     <th>포인트</th>
-                    <th>사용기간</th>
+                    <th>일시</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr class="mypagemain_tablebody">
-                    <td>신규회원</td>
-                    <td>50000</td>
-                    <td>2024-04-01 ~ 2024-04-01</td>
-                </tr>
-                <tr class="mypagemain_tablebody">
-                    <td>신규회원</td>
-                    <td>50000</td>
-                    <td>2024-04-01 ~ 2024-04-01</td>
-                </tr>
-                <tr class="mypagemain_tablebody">
-                    <td>신규회원</td>
-                    <td>50000</td>
-                    <td>2024-04-01 ~ 2024-04-01</td>
-                </tr>
-                <tr class="mypagemain_tablebody">
-                    <td>신규회원</td>
-                    <td>50000</td>
-                    <td>2024-04-01 ~ 2024-04-01</td>
-                </tr>
-                <tr class="mypagemain_tablebody">
-                    <td>신규회원</td>
-                    <td>50000</td>
-                    <td>2024-04-01 ~ 2024-04-01</td>
-                </tr>
-                <tr>
-                    <td class="mypagemain_tablebutton" colspan="6">
-                        <button class="mypagemain_buttons">환불하기</button>
-                    </td>
-                </tr>
+                    <tr class="mypagemain_tablebody" th:each="point:${pointList}">
+                        <td th:text="${point.pointType}"></td>
+                        <td th:text="${point.pointChange}"></td>
+                        <td th:text="${#dates.format(point.changeDate, 'yy/MM/dd HH:mm')}"></td>
+                    </tr>
                 </tbody>
             </table>
         </div>
     </div>
-        <div class="mypagemain_spacetable">
-            <button class="mypagemain_pageleft">&lt</button>
-            <button class="mypagemain_pagenum">1</button>
-            <button class="mypagemain_pagenum">2</button>
-            <button class="mypagemain_pagenum">3</button>
-            <button class="mypagemain_pagenum">4</button>
-            <button class="mypagemain_pagenum">5</button>
-            <button class="mypagemain_pageright">&gt</button>
-        </div>
+            <div id="chargeButton">
+                    <button type="button" id="Charge" class="mypagemain_buttons">충전하기</button>
+            </div>
 </main>
 
 <footer>
@@ -145,19 +115,59 @@
             <span>호스팅서비스사업자 : Picket(주) </span><span>&copy;PicketCorp.Allright Reserved</span>
         </div>
     </div>
+    <div id='modal'>
+        <div id='content'>
+            <form id="PointCharge" action="/ChargePoint" method="POST">
+                <button type='button' class="close" id='btnClose'>X</button>
+                <label for="chargeAmount">충전 금액</label>
+                <select id="chargeAmount" name="chargeAmount">
+                    <option value="5000">5,000 포인트</option>
+                    <option value="10000">10,000 포인트</option>
+                    <option value="20000">20,000 포인트</option>
+                    <option value="30000">30,000 포인트</option>
+                    <option value="40000">40,000 포인트</option>
+                    <option value="50000">50,000 포인트</option>
+                </select>
+                    <button type="submit">충전</button>
+            </form>
+        </div>
+    </div>
 </footer>
 <script th:inline="javascript">
-const Btn = document.querySelector("#login")
+    window.onload = function() {
+                     var message = /*[[${success}]]*/ null;
+                       if(message) {
+                         alert(message);
+                       }
+                   }
 
-if(Btn.getAttribute("src") === '/image/icon/로그아웃.png'){
-    Btn.addEventListener("click", function(event){
-        if(confirm("로그아웃 하시겠습니까?")){
-            alert("로그아웃되었습니다.");
-        } else{
-            event.preventDefault();
-        }
-    });
-}
+   const Btn = document.querySelector("#login")
+
+   if(Btn.getAttribute("src") === '/image/icon/로그아웃.png'){
+       Btn.addEventListener("click", function(event){
+           if(confirm("로그아웃 하시겠습니까?")){
+               alert("로그아웃되었습니다.");
+           } else{
+               event.preventDefault();
+           }
+       });
+   }
+
+   var btn = document.querySelector('#Charge');
+   var modal = document.getElementById('modal');
+   btn.addEventListener('click', function() {
+       modal.style.display = 'block';
+   });
+
+   var btnClose = document.getElementById('btnClose');
+   btnClose.onclick = function() {
+       modal.style.display = 'none';
+   };
+
+   document.addEventListener('DOMContentLoaded', function() {
+       var chargeAmountSelect = document.getElementById('chargeAmount');
+       var customAmountDiv = document.getElementById('customAmount');
+   });
 </script>
 <script src="/js/mypagemainjs.js"></script>
 </body>

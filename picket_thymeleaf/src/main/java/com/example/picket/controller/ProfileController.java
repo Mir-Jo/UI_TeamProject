@@ -79,16 +79,11 @@ public class ProfileController {
 
         return "/mypage/wishlist";
     }
-    /* 포인트 내역 */
-    @GetMapping("/pointlist")
-    public String gotopointlist(Model model, HttpSession session) {
-        List<QA> qaList = qaService.getAllQA(session);
-        model.addAttribute("qaList", qaList);
-        return "/mypage/pointlist";
-    }
+
     /* 회원정보 */
     @GetMapping("/profile")
     public String gotoProfile() { return "/mypage/profile"; }
+
     /* 회원정보 수정 */
     @PostMapping("/EditPasswordCheck")
     public String editPwCheck(String editPasswordCheck, HttpSession session, RedirectAttributes rttr) {

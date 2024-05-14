@@ -185,6 +185,7 @@ main{
     color: #000000;
     border: 2px solid #000000;
   }
+
   .mypagemain_buttons:hover{
     background-color:#000000;
     color:#ffffff;
@@ -311,9 +312,10 @@ main{
     text-decoration:none;
     color:inherit;
 }
-
-
-
+div#chargeButton{
+    display:inline-block;
+    margin:5% 10% auto 70%;
+}
   /* 푸터 */
 
 
