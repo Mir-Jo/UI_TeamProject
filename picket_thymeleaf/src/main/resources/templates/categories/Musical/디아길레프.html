@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" type="text/css" href="/css/info.css">
+    <link rel="stylesheet" type="text/css" href="/css/payment.css">
     <link rel="stylesheet" href="/css/font.css">
     <title th:text="${title}"></title>
 </head>
@@ -102,14 +103,54 @@
                     </div>
                 </div>
                 <div class="booking">
-                    <button><b>예매하기</b></button>
+                    <button type="button" id="btnOpenedit"><b>예매하기</b></button>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    <!--결제 모달 열기-->
+    <div id='modal'>
+        <div id='content'>
+            <div> <img src="../image/icon/피켓로고검정.png"></div>
+            <button type='button' class="close" id='btnClose'>X</button>
+            <form>
+                <table id="pay">
+                    <tr>
 
-<div>
+                    </tr>
+                    <tr class="payment_tablehead">
+                        <th class="payment_th">예매 일자</th>
+                        <th class="payment_th">티켓 목록</th>
+                        <th class="payment_th">공연 일자</th>
+                        <th class="payment_th">개수</th>
+                        <th class="payment_th">가격</th>
+                    </tr>
+                    <tr class="payment_tablebody">
+                        <td>예매일자 변수</td>
+                        <td>티켓 변수</a></td>
+                        <td>2024-xx-x1</td>
+                        <td><input type="number" id="pay_count" min="0" value="1"></td>
+                        <td>가격 변수</td>
+                    </tr>
+
+                </table>
+
+                <div>
+                    <table id="math">
+                        <tr>
+                            <th>포인트</th><th class="thwidth"></th><th>금액</th><th class="thwidth"></th><th>잔여 포인트</th>
+                        </tr>
+                        <tr>
+
+                        </tr>
+                        <td class="number">포인트 금액 </td><th class="number">-</th><td class="number">티켓 가격</td><td class="number">=</td><td class="number">포인트 금액 - 티켓 가격</td>
+                    </table>
+                </div>
+                <button type="button" class="payment-btn">결제하기</button>
+            </form>
+        </div>
+    </div>
+    <script src="../js/Pay.js"></script>
     <div class="renew-content">
         <div class="rn-04">
             <a href="#scroll1" class="on">
