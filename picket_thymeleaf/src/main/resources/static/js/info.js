@@ -18,7 +18,7 @@ function renderCalendar() {
 
     calendarDates.innerHTML = "";
 
-    if(currentYear >= today.getFullYear() && currentMonth >= today.getMonth()){
+    if(currentYear > today.getFullYear()){
         for (let i = 0; i < startDayOfWeek; i++) {
             const emptyDate = document.createElement("div");
             emptyDate.classList.add("blockDate", "empty");
@@ -28,7 +28,34 @@ function renderCalendar() {
         for (let i = 1; i <= daysInMonth; i++) {
             const dateElement = document.createElement("div");
             dateElement.textContent = i;
-            if(i <= today.getDate()){
+
+            dateElement.classList.add("date");
+            dateElement.addEventListener("click", function() {
+                // 이전에 선택된 요소의 스타일 제거
+                if (selectedDate) {
+                    selectedDate.classList.remove("selected");
+                }
+                // 클릭된 요소에 스타일 추가
+                this.classList.add("selected");
+                // 클릭된 요소를 이전에 선택된 요소로 저장
+                selectedDate = this;
+            });
+
+            calendarDates.appendChild(dateElement);
+        }
+    }
+
+    else if((currentYear == today.getFullYear()) && (currentMonth >= today.getMonth())){
+        for (let i = 0; i < startDayOfWeek; i++) {
+            const emptyDate = document.createElement("div");
+            emptyDate.classList.add("blockDate", "empty");
+            calendarDates.appendChild(emptyDate);
+        }
+
+        for (let i = 1; i <= daysInMonth; i++) {
+            const dateElement = document.createElement("div");
+            dateElement.textContent = i;
+            if((currentMonth == today.getMonth()) && (i <= today.getDate())){
                 dateElement.classList.add("blockDate");
             }
             else{
@@ -62,8 +89,6 @@ function renderCalendar() {
             calendarDates.appendChild(dateElement);
         }
     }
-
-
 }
 
 renderCalendar();

@@ -39,8 +39,8 @@ var modal = document.getElementById('modal');
 let calcResultBox = document.querySelector('.number:nth-of-type(4)');
 let customerPointBox = document.querySelector('.number:nth-of-type(1)');
 let mathPriceValueBox = document.querySelector('.number:nth-of-type(2)');
-let priceValue = document.querySelector('.payment_tablebody td:nth-of-type(5)');
-let performanceDate = document.querySelector('.payment_tablebody td:nth-of-type(3)');
+let priceValue = document.querySelector('.payment_tablebody td:nth-of-type(4)');
+let performanceDate = document.querySelector('.payment_tablebody td:nth-of-type(2)');
 let currentDate = document.querySelector('.payment_tablebody td:nth-of-type(1)');
 let currentYearMonth;
 let date;
@@ -132,9 +132,9 @@ btnOpenedit.addEventListener('click', function() {
 let ticketCount = document.querySelector('#pay_count');
 
 ticketCount.addEventListener('change', (event) => {
-    priceValue.textContent = (parseInt(performanceFormReceive.price) * parseInt(ticketCount.value)).toString();
-    mathPriceValueBox.textContent = priceValue.textContent;
-    calcResultBox.textContent = (parseInt(customerPointBox.textContent) - parseInt(priceValue.textContent)).toString();
+//    priceValue.textContent = (parseInt(performanceFormReceive.price) * parseInt(ticketCount.value)).toString();
+    mathPriceValueBox.textContent = (parseInt(performanceFormReceive.price) * parseInt(ticketCount.value)).toString();
+    calcResultBox.textContent = (parseInt(customerPointBox.textContent) - parseInt(mathPriceValueBox.textContent)).toString();
 })
 
 // 수정 모달 닫기
