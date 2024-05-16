@@ -7,11 +7,9 @@ import com.example.picket.service.QAService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
@@ -51,7 +49,13 @@ public class QAController {
         }
     }
 
-    @GetMapping("/QaAnswer")
-    public String gotoQaAnswer() { return "/mypage/QaAnswer";}
+    @GetMapping("/QA/Detail/{id}")
+    public String getQADetail(@PathVariable("id") Long id, HttpSession session, Model model){
+        List<QA> qaList = qaService.getAllQA(session);
+        QA qaDetail = qaService.getQADetailById(id);
+        model.addAttribute("qaList", qaList);
+        model.addAttribute("qaDetail", qaDetail);
+        return "/mypage/QaAnswer";
+    }
 
 }
