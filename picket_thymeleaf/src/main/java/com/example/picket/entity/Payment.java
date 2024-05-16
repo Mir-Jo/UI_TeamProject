@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @NoArgsConstructor
@@ -20,9 +21,9 @@ public class Payment {
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
     @Column(nullable = false)
-    private Date perform_date;
+    private LocalDate perform_date;
     @Column(nullable = false)
-    private Timestamp pay_date;
+    private LocalDate pay_date;
     @Column(nullable = false)
-    private Date cancel_date;
+    private LocalDate cancel_date;
 }

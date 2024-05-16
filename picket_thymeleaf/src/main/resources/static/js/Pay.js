@@ -33,7 +33,7 @@
 
 
 
-// 수정하기 버튼 클릭 시 모달 열기
+// 예매하기 버튼 클릭 시 모달 열기
 var btnOpenedit = document.querySelector('#btnOpenedit');
 var modal = document.getElementById('modal');
 let calcResultBox = document.querySelector('.number:nth-of-type(4)');
@@ -105,6 +105,7 @@ btnOpenedit.addEventListener('click', function() {
                             performanceDate.textContent = currentYearMonth.textContent + " " + date.textContent + "일";
                             priceValue.textContent = performanceForm.price;
 
+                            console.log(point);
                             customerPointBox.textContent = point.toString();
                             mathPriceValueBox.textContent = performanceForm.price;
                             calcResultBox.textContent = (point - parseInt(performanceForm.price)).toString();
@@ -171,3 +172,34 @@ function formatYearMonth(yearMonthText) {
     // 연도와 월을 소수점 형태로 조합하여 반환
     return `${year}.${month}.`; // "2024.5"
 }
+
+
+
+//결제 버튼을 눌렀을때
+const paymentButton = document.querySelector('.payment-btn');
+const titleTextBox = document.querySelector('.rn-big-title b');
+
+paymentButton.addEventListener("click", function(){
+    fetch("http://localhost:8080/doPay",{
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            ticketCount: ticketCount.value,
+            performDate: performanceDate.textContent,
+            payDate: currentDate.textContent,
+            customerPoint: calcResultBox.textContent,
+            performanceTitle: titleTextBox.textContent
+        })
+    })
+    .then(response => {
+        if(response.ok){
+            alert('결제가 완료되었습니다!!');
+        }
+        else{
+            alert('결제가 실패하였습니다!!');
+        }
+
+        let currentPage = window.location.href;
+        window.location.href = currentPage;
+    })
+});
