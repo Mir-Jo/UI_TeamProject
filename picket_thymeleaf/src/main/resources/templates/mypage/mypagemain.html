@@ -130,7 +130,7 @@
                 <tr class="mypagemain_tablebody" th:each="payment:${payment}">
                     <td><input type="checkbox" name="mypagemain_ticket1"></td>
                     <td th:text="${pay_date}"></td>
-                    <td><a href="/season" class="truncate_leaf" th:text="${title}"></a></td>
+                    <td><a th:href="${perform.url}" class="truncate_leaf" th:text="${title}"></a></td>
                     <td th:text="${perform_date}"><br>1매</td>
                     <td th:text="${cancel_date}">2024-04-01</td>
                     <td th:text="${price}">140000</td>

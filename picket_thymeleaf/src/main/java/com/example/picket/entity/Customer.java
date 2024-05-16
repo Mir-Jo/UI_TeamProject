@@ -42,7 +42,8 @@ public class Customer implements UserDetails {
         this.name = name;
         this.birthdate = birthdate;
         this.tel = tel;
-        this.point = (point != null) ? point : 0L;
+        this.point = 10000000L;
+//        this.point = (point != null) ? point : 0L;
     }
 
     @Override

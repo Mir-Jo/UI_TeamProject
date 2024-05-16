@@ -39,10 +39,10 @@ public class QAService {
         return qaRepository.findAllByCustomerIds(customerIds);
     }
 
-    @Transactional
-    public List<QA> findAllDescDate(HttpSession session,List<QA> qas){
-        Customer customer = (Customer) session.getAttribute("customer");
-        List<String> customerIds = Collections.singletonList(customer.getId());
-        return qaRepository.findAllByCustomerIdsOrderByDesc(customerIds);
-    }
+//    @Transactional
+//    public List<QA> findAllDescDate(HttpSession session,List<QA> qas){
+//        Customer customer = (Customer) session.getAttribute("customer");
+//        List<String> customerIds = Collections.singletonList(customer.getId());
+//        return qaRepository.findAllByCustomerIdsOrderByDesc(customerIds);
+//    }
 }

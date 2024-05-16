@@ -1,11 +1,16 @@
 package com.example.picket.controller;
 
 import com.example.picket.dto.AddCustomerRequest;
+import com.example.picket.entity.Customer;
 import com.example.picket.repository.CustomerRepository;
 import com.example.picket.service.CustomerService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -39,5 +44,18 @@ public class CustomerApiController {
         customerService.save(request);
         rttr.addFlashAttribute("successMessage", "가입이 완료되었습니다.");
         return "redirect:/loginpage";
+    }
+
+
+    /*로그인 상태 확인*/
+    @GetMapping("/loginStateCheck")
+    public ResponseEntity<Boolean> loginStateCheck(HttpServletRequest request){
+        HttpSession session = request.getSession();
+        Customer customer = (Customer) session.getAttribute("customer");
+
+        if(customer != null){
+            return ResponseEntity.ok(true);
+        }
+        return ResponseEntity.ok(false);
     }
 }
