@@ -325,6 +325,9 @@ div#chargeButton{
     display:inline-block;
     margin:5% 10% auto 70%;
 }
+
+  /* 푸터 */
+
     /* 글자 줄이는 스타일*/
 .truncate_leaf {
 white-space: nowrap;
