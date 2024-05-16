@@ -18,7 +18,7 @@
 .QA_ContentTitle{
   font-size:25px;
   font-weight:bold;
-  margin:450px;
+  margin: 1% 0 0.5% 24%;
 }
 h5{
   display: inline;
@@ -94,7 +94,7 @@ font-size: 20px;
 }
 .QA_box{
   width: 50%;
-  margin: 0% auto 1%;
+  margin: 0% auto 0%;
   height: auto;
   padding: 1% 3% 1% 3%;
   border: 2px solid black;
@@ -103,7 +103,7 @@ font-size: 20px;
 }
 #QA_boxId{
   width: 50%;
-    margin: 0% auto 5%;
+    margin: 0% auto 1%;
     height: auto;
     padding: 1% 3% 1% 3%;
     border: 2px solid black;

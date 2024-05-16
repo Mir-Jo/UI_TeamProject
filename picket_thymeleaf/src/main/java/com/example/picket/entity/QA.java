@@ -30,6 +30,8 @@ public class QA {
     @JoinColumn(name = "customer_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Customer customer;
+    @Column
+    private String qa_answer;
 
     @Builder
     public QA(Long id, String qa_title, String qa_content, Timestamp write_date, String category, String state, Customer customer){
