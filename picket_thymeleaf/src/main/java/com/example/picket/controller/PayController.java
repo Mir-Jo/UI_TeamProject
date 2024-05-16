@@ -1,23 +1,31 @@
 package com.example.picket.controller;
 
+import com.example.picket.dto.DoPaymentForm;
 import com.example.picket.dto.PaymentRequest;
-import com.example.picket.repository.CustomerRepository;
-import com.example.picket.repository.PaymentRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.picket.entity.Customer;
+import com.example.picket.entity.Ticket;
+import com.example.picket.service.CustomerService;
+import com.example.picket.service.PaymentService;
+import com.example.picket.service.TicketService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import org.json.JSONObject;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.stream.Collectors;
+import java.util.List;
+
+import static java.lang.Long.parseLong;
 
 @Controller
+@RequiredArgsConstructor
 public class PayController {
+
+    private final TicketService ticketCreateService;
+    private final CustomerService customerService;
+    private final PaymentService paymentService;
 
     @PostMapping("/Pay")
     public void gotoPay(@RequestBody PaymentRequest request){
@@ -95,5 +103,24 @@ public class PayController {
 //            throw new IOException("HTTP error code: " + responseCode);
 //        }
 
+    }
+
+
+    @PostMapping("/doPay")
+    public ResponseEntity<Void> doPay(HttpServletRequest request, @RequestBody DoPaymentForm doPaymentForm){
+        System.out.println("결제확인: " + doPaymentForm.toString());
+
+        HttpSession session = request.getSession();
+        Customer customer = (Customer) session.getAttribute("customer");
+
+        customerService.pointUpdate(doPaymentForm.getCustomerPoint(), customer.getId());
+        customer.setPoint(parseLong(doPaymentForm.getCustomerPoint()));
+        session.setAttribute("customer", customer);
+        List<Ticket> tickets = ticketCreateService.ticketCreateInput(doPaymentForm.getTicketCount(), doPaymentForm.getPerformanceTitle());
+        if(!tickets.isEmpty()){
+            paymentService.paymentInfoInput(tickets, customer, doPaymentForm);
+            return ResponseEntity.ok().build();
+        }
+        return ResponseEntity.badRequest().build();
     }
 }

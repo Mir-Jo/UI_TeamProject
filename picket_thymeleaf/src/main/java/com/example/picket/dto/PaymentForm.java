@@ -7,6 +7,7 @@ import lombok.ToString;
 
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @AllArgsConstructor
@@ -14,9 +15,9 @@ import java.time.LocalDateTime;
 public class PaymentForm {
     private String ticket_id;
     private Customer customer;
-    private Date perform_date;
-    private Timestamp pay_date; // 결제일
-    private Date cancel_date; //취소 가능일
+    private LocalDate perform_date;
+    private LocalDate pay_date; // 결제일
+    private LocalDate cancel_date; //취소 가능일
 
     public Payment toEntity(){ return new Payment(ticket_id,customer ,perform_date,pay_date,cancel_date);}
 

@@ -23,6 +23,10 @@ public class  PerformanceService {
         return performance != null ? performance.toForm() : null;
     }
 
+//    public Performance findInfoEnity(String title){
+//        return performanceRepository.findById(title).orElse(null);
+//    }
+
 
     public void toModel(PerformanceForm performanceForm, Model model){
         if(performanceForm != null){

@@ -12,6 +12,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import com.example.picket.entity.Customer;
 
+import static java.lang.Long.parseLong;
+
 @Slf4j
 @RequiredArgsConstructor
 @Service
@@ -90,5 +92,10 @@ public class CustomerService {
     public String getReferer(HttpServletRequest request){
         String referer = request.getHeader("Referer");
         return referer;
+    }
+
+    @Transactional
+    public void pointUpdate(String updatePoint, String customerId){
+        customerRepository.updatePoint(parseLong(updatePoint), customerId);
     }
 }
