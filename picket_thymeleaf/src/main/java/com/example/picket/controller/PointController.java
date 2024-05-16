@@ -3,10 +3,12 @@ package com.example.picket.controller;
 import com.example.picket.entity.Customer;
 import com.example.picket.entity.PointHistory;
 import com.example.picket.entity.QA;
+import com.example.picket.entity.WishList;
 import com.example.picket.repository.CustomerRepository;
 import com.example.picket.repository.PointHistoryRepository;
 import com.example.picket.service.PointService;
 import com.example.picket.service.QAService;
+import com.example.picket.service.WishListService;
 import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,8 @@ import java.util.List;
 @Slf4j
 @Controller
 public class PointController {
+    @Autowired
+    private WishListService wishListService;
 
     @Autowired
     private CustomerRepository customerRepository;
@@ -35,10 +39,15 @@ public class PointController {
     /* 포인트 내역 */
     @GetMapping("/pointlist")
     public String gotopointlist(Model model, HttpSession session) {
+        Customer customer = (Customer) session.getAttribute("customer");
+
         List<PointHistory> pointList = pointService.getAllPointHistory(session);
         List<QA> qaList = qaService.getAllQA(session);
         model.addAttribute("pointList", pointList);
         model.addAttribute("qaList", qaList);
+
+        List<WishList> wishListCount = wishListService.WishListFind(customer.getId());
+        model.addAttribute("wishList", wishListCount);
         return "/mypage/pointlist";
     }
 

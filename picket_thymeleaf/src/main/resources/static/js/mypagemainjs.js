@@ -14,3 +14,7 @@ function selectAll2(selectAll)  {
     checkbox.checked = selectAll.checked
   })
 };
+
+
+//환불하기
+const payCancelButton = document.querySelector("#payCancelBtn");

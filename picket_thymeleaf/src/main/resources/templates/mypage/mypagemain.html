@@ -61,7 +61,7 @@
                     <div class="mypagelist_right_border">마이 티켓<br><span>1</span></div>
                 </a>
                 <a href="/wishlist"><img src="/image/mypage/heart.png">
-                    <div class="mypagelist_right_border">관심목록<br><span>1</span></div>
+                    <div class="mypagelist_right_border">관심목록<br><span th:text="${#lists.size(wishList)}"></span></div>
                 </a>
                 <a href="/pointlist"><img src="/image/mypage/point.png">
                     <div class="mypagelist_right_border">포인트<br><span th:text="${session.customer.point}"></span></div>
@@ -118,47 +118,19 @@
                     <th>가격</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr class="mypagemain_tablebody">
-                    <td><input type="checkbox" name="mypagemain_ticket1"></td>
-                    <td>2024-03-26</td>
-                    <td><a href="/season" class="truncate">후지시로 세이지 탄생 100주년 기념 오사카 파노라마展</a></td>
-                    <td>2024-03-29<br>1매</td>
-                    <td>2024-04-01</td>
-                    <td>140000</td>
-                </tr>
-                <tr class="mypagemain_tablebody" th:each="payment:${payment}">
-                    <td><input type="checkbox" name="mypagemain_ticket1"></td>
-                    <td th:text="${pay_date}"></td>
-                    <td><a th:href="${perform.url}" class="truncate_leaf" th:text="${title}"></a></td>
-                    <td th:text="${perform_date}"><br>1매</td>
-                    <td th:text="${cancel_date}">2024-04-01</td>
-                    <td th:text="${price}">140000</td>
-                </tr>
-                <tr class="mypagemain_tablebody">
-                    <td><input type="checkbox" name="mypagemain_ticket1"></td>
-                    <td>2024-03-26</td>
-                    <td><a href="/season">뮤지컬 물랑루즈2</a></td>
-                    <td>2024-03-29 <br>1매</td>
-                    <td>2024-04-01</td>
-                    <td>140000</td>
-                </tr>
-                <tr class="mypagemain_tablebody">
-                    <td><input type="checkbox" name="mypagemain_ticket1"></td>
-                    <td>2024-03-26</td>
-                    <td><a href="/season">뮤지컬 물랑루즈3</a></td>
-                    <td>2024-03-29 <br>1매</td>
-                    <td>2024-04-01</td>
-                    <td>140000</td>
-                </tr>
-                <tr class="mypagemain_tablebody">
-                    <td><input type="checkbox" name="mypagemain_ticket1"></td>
-                    <td>2024-03-26</td>
-                    <td><a href="/season">뮤지컬 물랑루즈4</a></td>
-                    <td>2024-03-29<br>1매</td>
-                    <td>2024-04-01</td>
-                    <td>140000</td>
-                </tr>
+                <tbody th:if="${payTicketList.isEmpty()}">
+                    <tr class="mypagemain_tablebody">
+                    </tr>
+                </tbody>
+                <tbody th:if="${not payTicketList.isEmpty()}">
+                    <tr th:each="payTicket : ${payTicketList}" class="mypagemain_tablebody">
+                        <td><input type="checkbox" name="mypagemain_ticket1"></td>
+                        <td th:text="${payTicket.payDate}"></td>
+                        <td ><a th:href="${payTicket.performanceUrl}" class="truncate" th:text="${payTicket.performanceTitle}"></a></td>
+                        <td><span th:text="${payTicket.performDate}"></span><br><p th:text="${payTicket.ticketCount}"></p></td>
+                        <td th:text="${payTicket.cancelDate}"></td>
+                        <td th:text="${payTicket.totalPrice}"></td>
+                    </tr>
                 </tbody>
             </table>
 
@@ -167,7 +139,7 @@
     </div>
 
     <div class="mypagemain_refundbutton">
-        <button class="mypagemain_buttons">환불하기</button>
+        <button id="payCancelBtn" class="mypagemain_buttons">환불하기</button>
     </div>
     </form>
     <div class="mypagemain_spacetable">

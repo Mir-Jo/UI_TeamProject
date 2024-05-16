@@ -1,11 +1,10 @@
 package com.example.picket.controller;
 
 import com.example.picket.dto.AddCustomerRequest;
+import com.example.picket.dto.PaymentResponse;
 import com.example.picket.dto.PerformanceForm;
 import com.example.picket.dto.WishListTitleRequest;
-import com.example.picket.entity.Customer;
-import com.example.picket.entity.QA;
-import com.example.picket.entity.WishList;
+import com.example.picket.entity.*;
 import com.example.picket.repository.CustomerRepository;
 import com.example.picket.repository.QARepository;
 import com.example.picket.repository.TicketRepository;
@@ -22,8 +21,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+
+import static java.lang.Integer.parseInt;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -32,6 +35,8 @@ public class ProfileController {
 
     private  final WishListService wishListService;
     private  final PerformanceService performanceService;
+    private  final PaymentService paymentService;
+    private  final TicketService ticketService;
 
     private final QAService qaService;
     @Autowired
@@ -51,8 +56,41 @@ public class ProfileController {
     /* 마이페이지*/
     @GetMapping("/mypagemain")
     public String gotoMyPage(Model model, HttpSession session) {
+        Customer customer = (Customer) session.getAttribute("customer");
+
+        ticketService.ticketListModel(model, customer.getId());
+
+//        List<Payment> paymentList = paymentService.findPaymentList(customer.getId());
+//        List<PaymentResponse> paymentResponseList = new ArrayList<>();
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy년 M월 d일", Locale.KOREA);
+//        boolean addCheck = true; //true = 추가, false = 숫자 업데이트
+//
+//        if(paymentList != null){
+//            for(Payment payment: paymentList){
+//                Ticket ticket = ticketService.findTicketId(payment.getTicket_id());
+//                for(PaymentResponse paymentResponse: paymentResponseList){
+//                    if(ticket.getPerformance().getTitle().equals(paymentResponse.getPerformanceTitle())){
+//                        paymentResponse.setTicketCount(Integer.toString(parseInt(paymentResponse.getTicketCount()) + 1));
+//                        paymentResponse.setTotalPrice(Integer.toString(parseInt(paymentResponse.getTotalPrice() + ticket.getPerformance().getPrice())));
+//                        addCheck = false;
+//                    }
+//                    else {
+//                        addCheck = true;
+//                    }
+//                }
+//                if(addCheck){
+//                    paymentResponseList.add(new PaymentResponse(payment.getPay_date().format(formatter), ticket.getPerformance().getTitle(),
+//                            payment.getPerform_date().format(formatter), payment.getCancel_date().format(formatter),
+//                            "1", Long.toString(ticket.getPerformance().getPrice())));
+//                }
+//            }
+//        }
+
         List<QA> qaList = qaService.getAllQA(session);
         model.addAttribute("qaList", qaList);
+
+        List<WishList> wishListCount = wishListService.WishListFind(customer.getId());
+        model.addAttribute("wishList", wishListCount);
         return "/mypage/mypagemain";
     }
     /* 찜목록 */
@@ -63,6 +101,9 @@ public class ProfileController {
 
         List<QA> qaList = qaService.getAllQA(session);
         model.addAttribute("qaList", qaList);
+
+        List<WishList> wishListCount = wishListService.WishListFind(customer.getId());
+        model.addAttribute("wishList", wishListCount);
 
         /* 작동 테스트 (확인 완료)*/
         List<PerformanceForm> performances = new ArrayList<>();;

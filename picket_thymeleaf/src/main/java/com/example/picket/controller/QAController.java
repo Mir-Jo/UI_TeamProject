@@ -3,7 +3,9 @@ package com.example.picket.controller;
 import com.example.picket.dto.QAForm;
 import com.example.picket.entity.Customer;
 import com.example.picket.entity.QA;
+import com.example.picket.entity.WishList;
 import com.example.picket.service.QAService;
+import com.example.picket.service.WishListService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -21,14 +23,20 @@ import java.util.List;
 @Controller
 public class QAController {
 
+    private final WishListService wishListService;
 
     private final QAService qaService;
 
     /* 내 문의내역으로 이동 */
     @GetMapping("/QAList")
     public String gotoQAList(Model model, HttpSession session) {
+        Customer customer = (Customer) session.getAttribute("customer");
+
         List<QA> qaList = qaService.getAllQA(session);
         model.addAttribute("qaList", qaList);
+
+        List<WishList> wishListCount = wishListService.WishListFind(customer.getId());
+        model.addAttribute("wishList", wishListCount);
         return "/mypage/QA_list";
     }
 
