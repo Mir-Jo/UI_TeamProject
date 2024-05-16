@@ -78,20 +78,20 @@
 
 
     <!--<div class="listbox">-->
-    <span class="QA_ContentTitle">문의 제목</span>
+    <p class="QA_ContentTitle">문의 제목</p>
     <div class="QA_box">
         <p th:text="${qaDetail.qa_title}"></p>
     </div>
-    <span class="QA_ContentTitle">등록일</span>
+    <p class="QA_ContentTitle">등록일</p>
     <div id="QA_boxId">
         <p th:text="${#dates.format(qaDetail.write_date, 'yy/MM/dd HH:mm')}"></p>
     </div>
 <!-- 첨부 파일 공간 -->
-    <span class="QA_ContentTitle" style="margin-top:1%">문의내용</span>
+    <p class="QA_ContentTitle" style="margin-top:1%">문의내용</p>
     <div class="QA_TextArea">
         <textarea class="QA_box" rows="8" cols="50" th:text="${qaDetail.qa_content}" readonly></textarea>
     </div>
-    <span class="QA_ContentTitle">답변내용</span>
+    <p class="QA_ContentTitle">답변내용</p>
     <div class="QA_TextArea">
         <textarea class="QA_box" rows="8" cols="50" th:text="${qaDetail.qa_answer}" readonly></textarea>
     </div>
