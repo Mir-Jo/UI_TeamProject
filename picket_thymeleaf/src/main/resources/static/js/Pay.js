@@ -196,7 +196,7 @@ paymentButton.addEventListener("click", function(){
             alert('결제가 완료되었습니다!!');
         }
         else{
-            alert('결제가 실패하였습니다!!');
+            alert('포인트 잔액이 부족합니다!!');
         }
 
         let currentPage = window.location.href;

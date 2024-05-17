@@ -4,8 +4,11 @@ import com.example.picket.dto.DoPaymentForm;
 import com.example.picket.dto.PaymentRequest;
 import com.example.picket.entity.Customer;
 import com.example.picket.entity.Ticket;
+import com.example.picket.repository.PerformanceRepository;
+import com.example.picket.repository.PointHistoryRepository;
 import com.example.picket.service.CustomerService;
 import com.example.picket.service.PaymentService;
+import com.example.picket.service.PointService;
 import com.example.picket.service.TicketService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -26,6 +29,8 @@ public class PayController {
     private final TicketService ticketCreateService;
     private final CustomerService customerService;
     private final PaymentService paymentService;
+    private final PerformanceRepository performanceRepository;
+    private final PointService pointService;
 
     @PostMapping("/Pay")
     public void gotoPay(@RequestBody PaymentRequest request){
@@ -107,19 +112,26 @@ public class PayController {
 
 
     @PostMapping("/doPay")
-    public ResponseEntity<Void> doPay(HttpServletRequest request, @RequestBody DoPaymentForm doPaymentForm){
+    public ResponseEntity<Void> doPay(HttpServletRequest request,HttpSession session, @RequestBody DoPaymentForm doPaymentForm){
         System.out.println("결제확인: " + doPaymentForm.toString());
+        String performanceTitle = doPaymentForm.getPerformanceTitle();
+        Long currentPerformancePrice = parseLong(doPaymentForm.getTicketCount()) * performanceRepository.findById(performanceTitle).orElse(null).getPrice();
 
-        HttpSession session = request.getSession();
         Customer customer = (Customer) session.getAttribute("customer");
+        Long currentUserBalance = customer.getPoint();
 
-        customerService.pointUpdate(doPaymentForm.getCustomerPoint(), customer.getId());
-        customer.setPoint(parseLong(doPaymentForm.getCustomerPoint()));
-        session.setAttribute("customer", customer);
-        List<Ticket> tickets = ticketCreateService.ticketCreateInput(doPaymentForm.getTicketCount(), doPaymentForm.getPerformanceTitle());
-        if(!tickets.isEmpty()){
-            paymentService.paymentInfoInput(tickets, customer, doPaymentForm);
-            return ResponseEntity.ok().build();
+        if(currentUserBalance >= currentPerformancePrice && currentUserBalance >= 0){
+            customerService.pointUpdate(doPaymentForm.getCustomerPoint(), customer.getId());
+            pointService.payment(currentPerformancePrice, session);
+            customer.setPoint(parseLong(doPaymentForm.getCustomerPoint()));
+            session.setAttribute("customer", customer);
+
+
+            List<Ticket> tickets = ticketCreateService.ticketCreateInput(doPaymentForm.getTicketCount(), doPaymentForm.getPerformanceTitle());
+            if(!tickets.isEmpty()){
+                paymentService.paymentInfoInput(tickets, customer, doPaymentForm);
+                return ResponseEntity.ok().build();
+            }
         }
         return ResponseEntity.badRequest().build();
     }
