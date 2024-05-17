@@ -41,6 +41,21 @@ public class PointService {
             session.setAttribute("customer", customer);
         }
     }
+    @Transactional
+    public void payment(Long requiredPoint, HttpSession session){
+        Customer currentUser = (Customer)session.getAttribute("customer");
+        Customer customer = customerRepository.findById(currentUser.getId()).orElse(null);
+
+        if(customer != null && requiredPoint != null){
+            pointHistoryRepository.save(
+                    PointHistory.builder()
+                            .pointType("결제")
+                            .pointChange(-requiredPoint)
+                            .customer((Customer)session.getAttribute("customer"))
+                            .build()
+            );
+        }
+    }
 
     @Transactional
     public List<PointHistory> getAllPointHistory(HttpSession session) {
