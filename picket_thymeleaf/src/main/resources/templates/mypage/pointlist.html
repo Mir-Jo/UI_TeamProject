@@ -42,7 +42,7 @@
             </div>
             <div class="mypagelist">
                 <a href="/mypagemain"><img src="/image/mypage/ticket.png">
-                    <div class="mypagelist_right_border">마이 티켓<br><span>1</span></div>
+                    <div class="mypagelist_right_border">마이 티켓<br><span th:text="${#lists.size(myTicketList)}"></span></div>
                 </a>
                 <a href="/wishlist"><img src="/image/mypage/heart.png">
                     <div class="mypagelist_right_border">관심목록<br><span th:text="${#lists.size(wishList)}"></span></div>

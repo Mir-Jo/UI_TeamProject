@@ -60,37 +60,15 @@ public class ProfileController {
 
         ticketService.ticketListModel(model, customer.getId());
 
-//        List<Payment> paymentList = paymentService.findPaymentList(customer.getId());
-//        List<PaymentResponse> paymentResponseList = new ArrayList<>();
-//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy년 M월 d일", Locale.KOREA);
-//        boolean addCheck = true; //true = 추가, false = 숫자 업데이트
-//
-//        if(paymentList != null){
-//            for(Payment payment: paymentList){
-//                Ticket ticket = ticketService.findTicketId(payment.getTicket_id());
-//                for(PaymentResponse paymentResponse: paymentResponseList){
-//                    if(ticket.getPerformance().getTitle().equals(paymentResponse.getPerformanceTitle())){
-//                        paymentResponse.setTicketCount(Integer.toString(parseInt(paymentResponse.getTicketCount()) + 1));
-//                        paymentResponse.setTotalPrice(Integer.toString(parseInt(paymentResponse.getTotalPrice() + ticket.getPerformance().getPrice())));
-//                        addCheck = false;
-//                    }
-//                    else {
-//                        addCheck = true;
-//                    }
-//                }
-//                if(addCheck){
-//                    paymentResponseList.add(new PaymentResponse(payment.getPay_date().format(formatter), ticket.getPerformance().getTitle(),
-//                            payment.getPerform_date().format(formatter), payment.getCancel_date().format(formatter),
-//                            "1", Long.toString(ticket.getPerformance().getPrice())));
-//                }
-//            }
-//        }
-
         List<QA> qaList = qaService.getAllQA(session);
         model.addAttribute("qaList", qaList);
 
         List<WishList> wishListCount = wishListService.WishListFind(customer.getId());
         model.addAttribute("wishList", wishListCount);
+
+        List<Payment> myTicketList = paymentService.findPaymentList(customer.getId());
+        model.addAttribute("myTicketList", myTicketList);
+
         return "/mypage/mypagemain";
     }
     /* 찜목록 */
@@ -117,6 +95,9 @@ public class ProfileController {
 
         model.addAttribute("performances", performances);
         /* 작동 테스트 (확인 완료)*/
+
+        List<Payment> myTicketList = paymentService.findPaymentList(customer.getId());
+        model.addAttribute("myTicketList", myTicketList);
 
         return "/mypage/wishlist";
     }

@@ -98,4 +98,8 @@ public class CustomerService {
     public void pointUpdate(String updatePoint, String customerId){
         customerRepository.updatePoint(parseLong(updatePoint), customerId);
     }
+
+    public Long getPoint(String customerId){
+        return customerRepository.findById(customerId).orElse(null).getPoint();
+    }
 }

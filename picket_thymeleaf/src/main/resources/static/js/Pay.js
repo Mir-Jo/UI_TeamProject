@@ -180,6 +180,8 @@ const paymentButton = document.querySelector('.payment-btn');
 const titleTextBox = document.querySelector('.rn-big-title b');
 
 paymentButton.addEventListener("click", function(){
+    let currentPage = window.location.href;
+
     fetch("http://localhost:8080/doPay",{
         method: "POST",
         headers: {"Content-Type": "application/json"},
@@ -198,8 +200,6 @@ paymentButton.addEventListener("click", function(){
         else{
             alert('결제가 실패하였습니다!!');
         }
-
-        let currentPage = window.location.href;
         window.location.href = currentPage;
     })
 });

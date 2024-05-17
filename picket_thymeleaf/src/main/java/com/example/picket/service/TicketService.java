@@ -37,6 +37,10 @@ public class TicketService {
         return sb.toString();
     }
 
+    public List<Ticket> findTicketId(String performanceTitle){
+        return ticketRepository.findByTitle(performanceTitle);
+    }
+
     public List<Ticket> ticketCreateInput(String ticketCount, String performanceTitle){
         Performance performance = performanceRepository.findById(performanceTitle).orElse(null);
         List<Ticket> tickets = new ArrayList<>();

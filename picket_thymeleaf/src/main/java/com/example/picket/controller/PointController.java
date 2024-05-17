@@ -1,11 +1,9 @@
 package com.example.picket.controller;
 
-import com.example.picket.entity.Customer;
-import com.example.picket.entity.PointHistory;
-import com.example.picket.entity.QA;
-import com.example.picket.entity.WishList;
+import com.example.picket.entity.*;
 import com.example.picket.repository.CustomerRepository;
 import com.example.picket.repository.PointHistoryRepository;
+import com.example.picket.service.PaymentService;
 import com.example.picket.service.PointService;
 import com.example.picket.service.QAService;
 import com.example.picket.service.WishListService;
@@ -25,6 +23,9 @@ import java.util.List;
 public class PointController {
     @Autowired
     private WishListService wishListService;
+
+    @Autowired
+    private PaymentService paymentService;
 
     @Autowired
     private CustomerRepository customerRepository;
@@ -48,6 +49,9 @@ public class PointController {
 
         List<WishList> wishListCount = wishListService.WishListFind(customer.getId());
         model.addAttribute("wishList", wishListCount);
+
+        List<Payment> myTicketList = paymentService.findPaymentList(customer.getId());
+        model.addAttribute("myTicketList", myTicketList);
         return "/mypage/pointlist";
     }
 
