@@ -1,5 +1,7 @@
 package com.example.picket.controller;
 
+import com.example.picket.dto.DeletePayContentForm;
+import com.example.picket.dto.DeletePayRequestForm;
 import com.example.picket.dto.DoPaymentForm;
 import com.example.picket.dto.PaymentRequest;
 import com.example.picket.entity.Customer;
@@ -18,7 +20,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.SplittableRandom;
 
 import static java.lang.Long.parseLong;
 
@@ -26,7 +30,7 @@ import static java.lang.Long.parseLong;
 @RequiredArgsConstructor
 public class PayController {
 
-    private final TicketService ticketCreateService;
+    private final TicketService ticketService;
     private final CustomerService customerService;
     private final PaymentService paymentService;
     private final PerformanceRepository performanceRepository;
@@ -127,12 +131,23 @@ public class PayController {
             session.setAttribute("customer", customer);
 
 
-            List<Ticket> tickets = ticketCreateService.ticketCreateInput(doPaymentForm.getTicketCount(), doPaymentForm.getPerformanceTitle());
+            List<Ticket> tickets = ticketService.ticketCreateInput(doPaymentForm.getTicketCount(), doPaymentForm.getPerformanceTitle());
             if(!tickets.isEmpty()){
                 paymentService.paymentInfoInput(tickets, customer, doPaymentForm);
                 return ResponseEntity.ok().build();
             }
         }
         return ResponseEntity.badRequest().build();
+    }
+
+    @PostMapping("/deletePayment")
+    public void deletePayment(@RequestBody DeletePayRequestForm deletePayRequestForm, HttpSession session){
+        Customer customer = (Customer) session.getAttribute("customer");
+
+        paymentService.deletePayment(customer.getId(), deletePayRequestForm);
+
+        customer.setPoint(customerService.getPoint(customer.getId()));
+
+        session.setAttribute("customer", customer);
     }
 }

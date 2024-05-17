@@ -58,7 +58,7 @@
             </div>
             <div class="mypagelist">
                 <a href="/mypagemain"><img src="/image/mypage/ticket.png">
-                    <div class="mypagelist_right_border">마이 티켓<br><span>1</span></div>
+                    <div class="mypagelist_right_border">마이 티켓<br><span th:text="${#lists.size(myTicketList)}"></span></div>
                 </a>
                 <a href="/wishlist"><img src="/image/mypage/heart.png">
                     <div class="mypagelist_right_border">관심목록<br><span th:text="${#lists.size(wishList)}"></span></div>
@@ -123,8 +123,8 @@
                     </tr>
                 </tbody>
                 <tbody th:if="${not payTicketList.isEmpty()}">
-                    <tr th:each="payTicket : ${payTicketList}" class="mypagemain_tablebody">
-                        <td><input type="checkbox" name="mypagemain_ticket1"></td>
+                    <tr th:each="payTicket : ${payTicketList}" class="mypagemain_tablebody payTicketTablebody">
+                        <td><input class="payTicketCheckbox" type="checkbox" name="mypagemain_ticket1"></td>
                         <td th:text="${payTicket.payDate}"></td>
                         <td ><a th:href="${payTicket.performanceUrl}" class="truncate" th:text="${payTicket.performanceTitle}"></a></td>
                         <td><span th:text="${payTicket.performDate}"></span><br><p th:text="${payTicket.ticketCount}"></p></td>

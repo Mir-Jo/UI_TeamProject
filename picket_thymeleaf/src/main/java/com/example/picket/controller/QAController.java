@@ -2,8 +2,10 @@ package com.example.picket.controller;
 
 import com.example.picket.dto.QAForm;
 import com.example.picket.entity.Customer;
+import com.example.picket.entity.Payment;
 import com.example.picket.entity.QA;
 import com.example.picket.entity.WishList;
+import com.example.picket.service.PaymentService;
 import com.example.picket.service.QAService;
 import com.example.picket.service.WishListService;
 import jakarta.servlet.http.HttpSession;
@@ -20,6 +22,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Controller
 public class QAController {
+    private final PaymentService paymentService;
 
     private final WishListService wishListService;
 
@@ -35,6 +38,9 @@ public class QAController {
 
         List<WishList> wishListCount = wishListService.WishListFind(customer.getId());
         model.addAttribute("wishList", wishListCount);
+
+        List<Payment> myTicketList = paymentService.findPaymentList(customer.getId());
+        model.addAttribute("myTicketList", myTicketList);
         return "/mypage/QA_list";
     }
 
