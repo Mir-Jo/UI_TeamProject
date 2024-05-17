@@ -6,6 +6,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
@@ -19,5 +20,6 @@ public class QAForm {
     private String category;
     private String state;
     private Customer customer;
+    private MultipartFile file;
     
 }

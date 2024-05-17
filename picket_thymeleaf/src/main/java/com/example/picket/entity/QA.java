@@ -5,6 +5,7 @@ import lombok.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
+import java.sql.Blob;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
@@ -26,6 +27,8 @@ public class QA {
     private String category;
     @Column(nullable = false)
     private String state;
+    @Column(nullable = true)
+    private String filePath;
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
@@ -34,7 +37,7 @@ public class QA {
     private String qa_answer;
 
     @Builder
-    public QA(Long id, String qa_title, String qa_content, Timestamp write_date, String category, String state, Customer customer){
+    public QA(Long id, String qa_title, String qa_content, Timestamp write_date, String category, String state, Customer customer, String filePath){
         this.qa_id = id;
         this.qa_title = qa_title;
         this.qa_content = qa_content;
@@ -42,6 +45,7 @@ public class QA {
         this.category = category;
         this.state = (state != null) ? state : "답변 대기중";
         this.customer = customer;
+        this.filePath = filePath;
     }
 
 }

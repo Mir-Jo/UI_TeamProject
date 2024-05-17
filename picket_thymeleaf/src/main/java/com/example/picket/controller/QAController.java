@@ -16,6 +16,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.io.IOException;
 import java.util.List;
 
 @Slf4j
@@ -48,8 +49,9 @@ public class QAController {
     /* 1:1문의 등록으로 이동 */
     @GetMapping("/QAWrite")
     public String qaWrite(){ return "/support/QA_Write"; }
+
     @PostMapping("/newQA")
-    public String newQA(QAForm dto, HttpSession session, RedirectAttributes rttr){
+    public String newQA(QAForm dto, HttpSession session, RedirectAttributes rttr) throws IOException {
         qaService.save(dto, session);
         if(dto != null && session.getAttribute("customer") !=null ){
             Customer customer = (Customer)session.getAttribute("customer");
