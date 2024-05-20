@@ -52,6 +52,7 @@ public class QAController {
 
     @PostMapping("/newQA")
     public String newQA(QAForm dto, HttpSession session, RedirectAttributes rttr) throws IOException {
+        System.out.println("시작");
         qaService.save(dto, session);
         if(dto != null && session.getAttribute("customer") !=null ){
             Customer customer = (Customer)session.getAttribute("customer");

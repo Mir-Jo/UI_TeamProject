@@ -36,24 +36,41 @@ public class QAService {
 
     public void save(QAForm dto, HttpSession session) throws IOException {
 
-        Path filePath = Paths.get(fileDir + ((Customer) session.getAttribute("customer")).getId());
-        boolean directoryExists = Files.exists(filePath) && Files.isDirectory(filePath);
-        if (!directoryExists) {
-            Files.createDirectories(filePath);
-        }
-        filePath = Paths.get(fileDir + ((Customer) session.getAttribute("customer")).getId() + File.separator + dto.getFile().getOriginalFilename());
-        Files.copy(dto.getFile().getInputStream(), filePath);
+        if(!dto.getFile().isEmpty()){
+            Path filePath = Paths.get(fileDir + ((Customer) session.getAttribute("customer")).getId());
+            boolean directoryExists = Files.exists(filePath) && Files.isDirectory(filePath);
+            if (!directoryExists) {
+                Files.createDirectories(filePath);
+            }
+            filePath = Paths.get(fileDir + ((Customer) session.getAttribute("customer")).getId() + File.separator + dto.getFile().getOriginalFilename());
+            Files.copy(dto.getFile().getInputStream(), filePath);
 
-        qaRepository.save(QA.builder()
-                .qa_title(dto.getQa_title())
-                .qa_content(dto.getQa_content())
-                .write_date(dto.getWrite_date())
-                .category(dto.getCategory())
-                .state(dto.getState())
-                .customer((Customer)session.getAttribute("customer"))
-                .filePath(fileDir + ((Customer) session.getAttribute("customer")).getId() + File.separator + dto.getFile().getOriginalFilename())
-                .build()
-        );
+            qaRepository.save(QA.builder()
+                    .qa_title(dto.getQa_title())
+                    .qa_content(dto.getQa_content())
+                    .write_date(dto.getWrite_date())
+                    .category(dto.getCategory())
+                    .state(dto.getState())
+                    .customer((Customer)session.getAttribute("customer"))
+                    .filePath(fileDir + ((Customer) session.getAttribute("customer")).getId() + File.separator + dto.getFile().getOriginalFilename())
+                    .build()
+            );
+        }
+        else {
+            qaRepository.save(QA.builder()
+                    .qa_title(dto.getQa_title())
+                    .qa_content(dto.getQa_content())
+                    .write_date(dto.getWrite_date())
+                    .category(dto.getCategory())
+                    .state(dto.getState())
+                    .customer((Customer)session.getAttribute("customer"))
+                    .build()
+            );
+        }
+
+
+
+
     }
 
     @Transactional
