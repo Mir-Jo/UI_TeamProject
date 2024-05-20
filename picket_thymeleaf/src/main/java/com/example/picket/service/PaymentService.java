@@ -9,6 +9,7 @@ import com.example.picket.entity.Ticket;
 import com.example.picket.repository.CustomerRepository;
 import com.example.picket.repository.PaymentRepository;
 import com.example.picket.repository.TicketRepository;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +25,7 @@ public class PaymentService {
     private final PaymentRepository paymentRepository;
     private final TicketRepository ticketRepository;
     private final CustomerRepository customerRepository;
+    private PointService pointService;
 
     public void paymentInfoInput(List<Ticket> tickets, Customer customer, DoPaymentForm doPaymentForm){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy년 M월 d일", Locale.KOREA);
@@ -40,10 +42,11 @@ public class PaymentService {
         return paymentRepository.customerPayment(customerId);
     }
 
-    public void deletePayment(String customerId, DeletePayRequestForm deletePayRequestForm){
+    public Long deletePayment(String customerId, DeletePayRequestForm deletePayRequestForm){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy년 M월 d일", Locale.KOREA);
         List<String> performTitles = new ArrayList<>();
         List<String> ticketIds = new ArrayList<>();
+        Long totalRefundPrice = 0L;
 
         for(DeletePayContentForm deletePayContentForm: deletePayRequestForm.getPayTicketRequestBody()){
             if(!performTitles.contains(deletePayContentForm.getPerformTitle())){
@@ -65,8 +68,10 @@ public class PaymentService {
                     paymentRepository.deleteById(ticketId);
                     ticketRepository.deleteById(ticketId);
                     customerRepository.updatePointPlus(performPrice, customerId);
+                    totalRefundPrice += performPrice;
                 }
             }
         }
+        return totalRefundPrice;
     }
 }

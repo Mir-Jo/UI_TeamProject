@@ -14,7 +14,8 @@
 main{
 
   background-color:rgb(255, 255, 255);
-  height: 1200px;
+  min-height: 1000px;
+  height: 100%;
 }
 
 /* 제목 */
@@ -323,7 +324,7 @@ main{
 
 div#chargeButton{
     display:inline-block;
-    margin:5% 10% auto 70%;
+    margin:1.5% 10% 5% 75%
 }
 
   /* 푸터 */

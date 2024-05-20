@@ -58,6 +58,22 @@ public class PointService {
     }
 
     @Transactional
+    public void refund(Long paidPoint, HttpSession session){
+        log.info("환불한 금액"+paidPoint);
+        Customer currentUser = (Customer) session.getAttribute("customer");
+
+        pointHistoryRepository.save(
+                PointHistory.builder()
+                        .pointType("환불")
+                        .pointChange(paidPoint)
+                        .customer((Customer) session.getAttribute("customer"))
+                        .build()
+        );
+        log.info("현재 포인트"+currentUser.getPoint());
+        session.setAttribute("customer", currentUser);
+    }
+
+    @Transactional
     public List<PointHistory> getAllPointHistory(HttpSession session) {
         Customer customer = (Customer) session.getAttribute("customer");
         List<String> customerIds = Collections.singletonList(customer.getId());

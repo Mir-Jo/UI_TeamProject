@@ -12,4 +12,5 @@ public interface PointHistoryRepository extends JpaRepository<PointHistory, Long
 
     @Query("SELECT p FROM PointHistory p WHERE p.customer.id IN :customerIds ORDER BY p.changeDate")
     List<PointHistory> findAllByCustomerIds(@Param("customerIds") List<String> customerIds);
+
 }
