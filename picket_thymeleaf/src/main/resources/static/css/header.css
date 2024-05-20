@@ -12,13 +12,14 @@ header{
 /* 메인 홈 페이지 헤더 */
 
 ul, ol{list-style:none}
-a{text-decoration:none;color:#fff;font-size:20px}
+a{text-decoration:none;color:#fff;font-size:26px}
 nav{width:100%;overflow:hidden;height:70px;background-color:#000000; }
 #nav1 {
   width: 100%;
   position: relative ;
   display:  flex;
   justify-content: center;
+  align-items: center;
 }
 
 #nav1>a {
@@ -26,22 +27,27 @@ nav{width:100%;overflow:hidden;height:70px;background-color:#000000; }
   font-size: 50px ;
   position: absolute;
   left: 10px;
-} 
+}
+
+#logo{
+  padding-top: 19px;
+}
+
 #my{ 
   position:absolute;
   top: 10px;    
-  right: 7%;}
+  right: 3.5%;}
 
 #login{
   position:absolute;
   top: 15px;    
-  right: 10%;
+  right: 6.5%;
 }
 
 /* 고객센터 */
 #callcenter{ position:absolute; 
     top: 14px;    
-    right: 4.5%;}     
+    right: 1%;}
 
 #nav1>ul {
   display: inline-block;
@@ -49,6 +55,7 @@ nav{width:100%;overflow:hidden;height:70px;background-color:#000000; }
 #nav1>ul li {
   font-family:'wind';
   font-weight: 500;
+
   float: left;
   line-height: 60px;
   padding: 0 30px;
