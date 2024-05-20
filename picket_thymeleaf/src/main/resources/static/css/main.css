@@ -55,7 +55,7 @@ main{ background-color: #000000;
 /* 슬라이드 큰거 이미지 */
 #pic{
   position:relative;
-  width:1920px auto;
+  width:1920px;
   height:700px ;
   display: flex;
   justify-content: space-between;
@@ -65,11 +65,11 @@ main{ background-color: #000000;
 
 .arrow {
   z-index:100;
-  font-size:2em;
-  padding:10px;
-  background:#ddd;
-  color:#222;
-  opacity:0.2;
+  font-size:8em;
+  padding:10px 10px 50px 10px;
+  /*background:#ddd;*/
+  color:#000000;
+  opacity:0.5;
 }
 
 .arrow:hover {
