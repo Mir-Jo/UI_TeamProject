@@ -42,7 +42,7 @@
         </ul>
     </div>
     <div class="profile_titlename"><h2>회원정보수정</h2></div>
-    <form action="/EditedProfile" method="POST">
+    <form action="/EditedProfile" id="EditedProfile" method="POST">
         <div class="profile_asta">
             <div class="profile_tablemain">
                 <table class="profile_tablebox">
@@ -56,6 +56,7 @@
                     <tr class="profile_solid_tr">
                         <th>PW</th>
                         <td class="profile_table_td"><input type="password" name="password"
+                                                            id="newPassword"
                                                             style="width:300px;height:40px;font-size:25px;"
                                                             pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d@$!%*?&]{8,15}$"
                                                             placeholder="new Password"></td>
@@ -122,6 +123,25 @@ window.onload = function() {
         alert(message);
     }
 }
+
+// 정규식 패턴
+const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d@$!%*?&]{8,15}$/;
+
+// 비밀번호 변경 양식 검증 함수
+function validatePassword() {
+    const changedPW = document.getElementById('newPassword').value;
+        if (!passwordPattern.test(changedPW)) {
+            alert("비밀번호 양식이 일치하지 않습니다. 새 비밀번호는 특수문자, 숫자를 포함한 8~15자여야 합니다.");
+            return false;
+        }
+            return true;
+}
+// 비밀번호 변경 양식 제출 시 검증
+document.getElementById('EditedProfile').addEventListener('submit', function(event) {
+    if (!validatePassword()) {
+        event.preventDefault(); // 제출 중지
+    }
+});
 </script>
 </body>
 </html>
